@@ -175,48 +175,13 @@
 		FB2564CE1E24A6C700A9B857 /* Apps */ = {
 			isa = PBXGroup;
 			children = (
-				FB2564CF1E24A6C700A9B857 /* Chat */,
-				FB2564D01E24A6C700A9B857 /* CRM */,
-				FB2564D11E24A6C700A9B857 /* Login */,
-				FB2564D21E24A6C700A9B857 /* MyInfomation */,
-				FB2564D31E24A6C700A9B857 /* Office */,
+				FB2564DB1E24BD7700A9B857 /* Chat */,
+				FB2564DC1E24BD7700A9B857 /* CRM */,
+				FB2564DD1E24BD7700A9B857 /* Login */,
+				FB2564DE1E24BD7700A9B857 /* MyInfomation */,
+				FB2564DF1E24BD7700A9B857 /* Office */,
 			);
 			path = Apps;
-			sourceTree = "<group>";
-		};
-		FB2564CF1E24A6C700A9B857 /* Chat */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Chat;
-			sourceTree = "<group>";
-		};
-		FB2564D01E24A6C700A9B857 /* CRM */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CRM;
-			sourceTree = "<group>";
-		};
-		FB2564D11E24A6C700A9B857 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		FB2564D21E24A6C700A9B857 /* MyInfomation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MyInfomation;
-			sourceTree = "<group>";
-		};
-		FB2564D31E24A6C700A9B857 /* Office */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Office;
 			sourceTree = "<group>";
 		};
 		FB2564D41E24A6C700A9B857 /* CommonUI */ = {
@@ -266,6 +231,41 @@
 			children = (
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		FB2564DB1E24BD7700A9B857 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		FB2564DC1E24BD7700A9B857 /* CRM */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CRM;
+			sourceTree = "<group>";
+		};
+		FB2564DD1E24BD7700A9B857 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		FB2564DE1E24BD7700A9B857 /* MyInfomation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MyInfomation;
+			sourceTree = "<group>";
+		};
+		FB2564DF1E24BD7700A9B857 /* Office */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Office;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
