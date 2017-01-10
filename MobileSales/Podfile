@@ -1,0 +1,8 @@
+target 'MobileSales' do
+pod 'AFNetworking', '~> 3.0'
+pod 'MJExtension'
+pod 'MJRefresh'
+pod 'IQKeyboardManager'
+pod 'Masonry'
+pod 'UMengAnalytics'
+end
