@@ -100,6 +100,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5C6E9C441E25D0CA0092425C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		FB25648F1E24A6AD00A9B857 = {
 			isa = PBXGroup;
 			children = (
@@ -175,9 +182,9 @@
 		FB2564CE1E24A6C700A9B857 /* Apps */ = {
 			isa = PBXGroup;
 			children = (
+				5C6E9C441E25D0CA0092425C /* Login */,
 				FB2564DB1E24BD7700A9B857 /* Chat */,
 				FB2564DC1E24BD7700A9B857 /* CRM */,
-				FB2564DD1E24BD7700A9B857 /* Login */,
 				FB2564DE1E24BD7700A9B857 /* MyInfomation */,
 				FB2564DF1E24BD7700A9B857 /* Office */,
 			);
@@ -245,13 +252,6 @@
 			children = (
 			);
 			path = CRM;
-			sourceTree = "<group>";
-		};
-		FB2564DD1E24BD7700A9B857 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Login;
 			sourceTree = "<group>";
 		};
 		FB2564DE1E24BD7700A9B857 /* MyInfomation */ = {
