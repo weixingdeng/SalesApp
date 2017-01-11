@@ -1,0 +1,29 @@
+//
+//  MSPrefixHeader.pch
+//  MobileSales
+//
+//  Created by dengwx on 17/1/11.
+//  Copyright © 2017年 wxdeng. All rights reserved.
+//
+
+#ifndef MSPrefixHeader_pch
+#define MSPrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* MSPrefixHeader_pch */
+
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import "MSCommonUtils.h"
+
+    #ifdef DEBUG
+        #define NSLog(...) NSLog(@"%s [%d] %@\n",__func__,__LINE__,[NSString stringWithFormat:__VA_ARGS__])
+    #else
+        #define NSLog(...)
+    #endif
+
+#endif

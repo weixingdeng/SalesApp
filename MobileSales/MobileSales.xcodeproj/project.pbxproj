@@ -24,6 +24,8 @@
 		FB2564EC1E25D24100A9B857 /* 新项目.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB2564E51E25D24100A9B857 /* 新项目.rtf */; };
 		FB2564ED1E25D24100A9B857 /* 新项目.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB2564E71E25D24100A9B857 /* 新项目.rtf */; };
 		FB2564EE1E25D24100A9B857 /* 新项目.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB2564E91E25D24100A9B857 /* 新项目.rtf */; };
+		FB2564F21E25D8B800A9B857 /* MSCommonUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2564F11E25D8B800A9B857 /* MSCommonUtils.m */; };
+		FB2564F51E25ECF000A9B857 /* UIColor+ColorWithHex.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2564F41E25ECF000A9B857 /* UIColor+ColorWithHex.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,11 @@
 		FB2564E51E25D24100A9B857 /* 新项目.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "新项目.rtf"; sourceTree = "<group>"; };
 		FB2564E71E25D24100A9B857 /* 新项目.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "新项目.rtf"; sourceTree = "<group>"; };
 		FB2564E91E25D24100A9B857 /* 新项目.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "新项目.rtf"; sourceTree = "<group>"; };
+		FB2564EF1E25D3E400A9B857 /* MSPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPrefixHeader.pch; sourceTree = "<group>"; };
+		FB2564F01E25D8B800A9B857 /* MSCommonUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCommonUtils.h; sourceTree = "<group>"; };
+		FB2564F11E25D8B800A9B857 /* MSCommonUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCommonUtils.m; sourceTree = "<group>"; };
+		FB2564F31E25ECF000A9B857 /* UIColor+ColorWithHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ColorWithHex.h"; sourceTree = "<group>"; };
+		FB2564F41E25ECF000A9B857 /* UIColor+ColorWithHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ColorWithHex.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +203,7 @@
 				FB2564A91E24A6AD00A9B857 /* LaunchScreen.storyboard */,
 				FB2564AC1E24A6AD00A9B857 /* Info.plist */,
 				FB25649C1E24A6AD00A9B857 /* main.m */,
+				FB2564EF1E25D3E400A9B857 /* MSPrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -268,6 +276,8 @@
 		FB2564D91E24A6C700A9B857 /* Thirds */ = {
 			isa = PBXGroup;
 			children = (
+				FB2564F31E25ECF000A9B857 /* UIColor+ColorWithHex.h */,
+				FB2564F41E25ECF000A9B857 /* UIColor+ColorWithHex.m */,
 			);
 			path = Thirds;
 			sourceTree = "<group>";
@@ -275,6 +285,8 @@
 		FB2564DA1E24A6C700A9B857 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				FB2564F01E25D8B800A9B857 /* MSCommonUtils.h */,
+				FB2564F11E25D8B800A9B857 /* MSCommonUtils.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -515,8 +527,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB2564F21E25D8B800A9B857 /* MSCommonUtils.m in Sources */,
 				FB2564A31E24A6AD00A9B857 /* ViewController.m in Sources */,
 				FB2564A01E24A6AD00A9B857 /* AppDelegate.m in Sources */,
+				FB2564F51E25ECF000A9B857 /* UIColor+ColorWithHex.m in Sources */,
 				FB25649D1E24A6AD00A9B857 /* main.m in Sources */,
 				5C6E9C601E263E880092425C /* EHLoginViewController.m in Sources */,
 				5C6E9C671E263E980092425C /* EHMineViewController.m in Sources */,
@@ -671,6 +685,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WSJK7MN7ZH;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MobileSales/MSPrefixHeader.pch";
 				INFOPLIST_FILE = MobileSales/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -685,6 +701,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WSJK7MN7ZH;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MobileSales/MSPrefixHeader.pch";
 				INFOPLIST_FILE = MobileSales/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
