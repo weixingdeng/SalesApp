@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "EHLoginViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    EHLoginViewController *loginCtrl = [[EHLoginViewController alloc] init];
+    UINavigationController *rootCtrl = [[UINavigationController alloc] initWithRootViewController:loginCtrl];
+    self.window.rootViewController = rootCtrl;
+    
     return YES;
 }
 

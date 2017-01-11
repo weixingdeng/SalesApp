@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C6E9C601E263E880092425C /* EHLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E9C5F1E263E880092425C /* EHLoginViewController.m */; };
+		5C6E9C671E263E980092425C /* EHMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E9C631E263E980092425C /* EHMineViewController.m */; };
+		5C6E9C681E263E980092425C /* EHMineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E9C661E263E980092425C /* EHMineHeaderView.m */; };
 		AC306C9B95FE8E79D7E1020A /* libPods-MobileSales.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 085593713B4FFC660683E189 /* libPods-MobileSales.a */; };
 		FB25649D1E24A6AD00A9B857 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB25649C1E24A6AD00A9B857 /* main.m */; };
 		FB2564A01E24A6AD00A9B857 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB25649F1E24A6AD00A9B857 /* AppDelegate.m */; };
@@ -16,6 +19,11 @@
 		FB2564AB1E24A6AD00A9B857 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB2564A91E24A6AD00A9B857 /* LaunchScreen.storyboard */; };
 		FB2564B61E24A6AD00A9B857 /* MobileSalesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2564B51E24A6AD00A9B857 /* MobileSalesTests.m */; };
 		FB2564C11E24A6AD00A9B857 /* MobileSalesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2564C01E24A6AD00A9B857 /* MobileSalesUITests.m */; };
+		FB2564EA1E25D24100A9B857 /* 新项目.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB2564E11E25D24100A9B857 /* 新项目.rtf */; };
+		FB2564EB1E25D24100A9B857 /* 新项目.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB2564E31E25D24100A9B857 /* 新项目.rtf */; };
+		FB2564EC1E25D24100A9B857 /* 新项目.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB2564E51E25D24100A9B857 /* 新项目.rtf */; };
+		FB2564ED1E25D24100A9B857 /* 新项目.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB2564E71E25D24100A9B857 /* 新项目.rtf */; };
+		FB2564EE1E25D24100A9B857 /* 新项目.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB2564E91E25D24100A9B857 /* 新项目.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +46,12 @@
 /* Begin PBXFileReference section */
 		0179A64639E27837308FB472 /* Pods-MobileSales.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileSales.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobileSales/Pods-MobileSales.release.xcconfig"; sourceTree = "<group>"; };
 		085593713B4FFC660683E189 /* libPods-MobileSales.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MobileSales.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C6E9C5E1E263E880092425C /* EHLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHLoginViewController.h; sourceTree = "<group>"; };
+		5C6E9C5F1E263E880092425C /* EHLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHLoginViewController.m; sourceTree = "<group>"; };
+		5C6E9C621E263E980092425C /* EHMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHMineViewController.h; sourceTree = "<group>"; };
+		5C6E9C631E263E980092425C /* EHMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHMineViewController.m; sourceTree = "<group>"; };
+		5C6E9C651E263E980092425C /* EHMineHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHMineHeaderView.h; sourceTree = "<group>"; };
+		5C6E9C661E263E980092425C /* EHMineHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHMineHeaderView.m; sourceTree = "<group>"; };
 		6761FB462D2B42CFD819AECF /* Pods-MobileSales.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileSales.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileSales/Pods-MobileSales.debug.xcconfig"; sourceTree = "<group>"; };
 		FB2564981E24A6AD00A9B857 /* MobileSales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileSales.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB25649C1E24A6AD00A9B857 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -55,6 +69,11 @@
 		FB2564BC1E24A6AD00A9B857 /* MobileSalesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileSalesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB2564C01E24A6AD00A9B857 /* MobileSalesUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobileSalesUITests.m; sourceTree = "<group>"; };
 		FB2564C21E24A6AD00A9B857 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB2564E11E25D24100A9B857 /* 新项目.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "新项目.rtf"; sourceTree = "<group>"; };
+		FB2564E31E25D24100A9B857 /* 新项目.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "新项目.rtf"; sourceTree = "<group>"; };
+		FB2564E51E25D24100A9B857 /* 新项目.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "新项目.rtf"; sourceTree = "<group>"; };
+		FB2564E71E25D24100A9B857 /* 新项目.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "新项目.rtf"; sourceTree = "<group>"; };
+		FB2564E91E25D24100A9B857 /* 新项目.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "新项目.rtf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,11 +119,31 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		5C6E9C441E25D0CA0092425C /* Login */ = {
+		5C6E9C5D1E263E880092425C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5C6E9C5E1E263E880092425C /* EHLoginViewController.h */,
+				5C6E9C5F1E263E880092425C /* EHLoginViewController.m */,
 			);
-			path = Login;
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5C6E9C611E263E980092425C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5C6E9C621E263E980092425C /* EHMineViewController.h */,
+				5C6E9C631E263E980092425C /* EHMineViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5C6E9C641E263E980092425C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5C6E9C651E263E980092425C /* EHMineHeaderView.h */,
+				5C6E9C661E263E980092425C /* EHMineHeaderView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		FB25648F1E24A6AD00A9B857 = {
@@ -182,11 +221,11 @@
 		FB2564CE1E24A6C700A9B857 /* Apps */ = {
 			isa = PBXGroup;
 			children = (
-				5C6E9C441E25D0CA0092425C /* Login */,
-				FB2564DB1E24BD7700A9B857 /* Chat */,
-				FB2564DC1E24BD7700A9B857 /* CRM */,
-				FB2564DE1E24BD7700A9B857 /* MyInfomation */,
-				FB2564DF1E24BD7700A9B857 /* Office */,
+				FB2564E01E25D24100A9B857 /* Chat */,
+				FB2564E21E25D24100A9B857 /* CRM */,
+				FB2564E41E25D24100A9B857 /* Login */,
+				FB2564E61E25D24100A9B857 /* MyInfomation */,
+				FB2564E81E25D24100A9B857 /* Office */,
 			);
 			path = Apps;
 			sourceTree = "<group>";
@@ -240,30 +279,45 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		FB2564DB1E24BD7700A9B857 /* Chat */ = {
+		FB2564E01E25D24100A9B857 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				FB2564E11E25D24100A9B857 /* 新项目.rtf */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
 		};
-		FB2564DC1E24BD7700A9B857 /* CRM */ = {
+		FB2564E21E25D24100A9B857 /* CRM */ = {
 			isa = PBXGroup;
 			children = (
+				FB2564E31E25D24100A9B857 /* 新项目.rtf */,
 			);
 			path = CRM;
 			sourceTree = "<group>";
 		};
-		FB2564DE1E24BD7700A9B857 /* MyInfomation */ = {
+		FB2564E41E25D24100A9B857 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				5C6E9C5D1E263E880092425C /* Controller */,
+				FB2564E51E25D24100A9B857 /* 新项目.rtf */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		FB2564E61E25D24100A9B857 /* MyInfomation */ = {
+			isa = PBXGroup;
+			children = (
+				5C6E9C611E263E980092425C /* Controller */,
+				5C6E9C641E263E980092425C /* View */,
+				FB2564E71E25D24100A9B857 /* 新项目.rtf */,
 			);
 			path = MyInfomation;
 			sourceTree = "<group>";
 		};
-		FB2564DF1E24BD7700A9B857 /* Office */ = {
+		FB2564E81E25D24100A9B857 /* Office */ = {
 			isa = PBXGroup;
 			children = (
+				FB2564E91E25D24100A9B857 /* 新项目.rtf */,
 			);
 			path = Office;
 			sourceTree = "<group>";
@@ -381,8 +435,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB2564EE1E25D24100A9B857 /* 新项目.rtf in Resources */,
+				FB2564EC1E25D24100A9B857 /* 新项目.rtf in Resources */,
+				FB2564EA1E25D24100A9B857 /* 新项目.rtf in Resources */,
+				FB2564ED1E25D24100A9B857 /* 新项目.rtf in Resources */,
 				FB2564AB1E24A6AD00A9B857 /* LaunchScreen.storyboard in Resources */,
 				FB2564A81E24A6AD00A9B857 /* Assets.xcassets in Resources */,
+				FB2564EB1E25D24100A9B857 /* 新项目.rtf in Resources */,
 				FB2564A61E24A6AD00A9B857 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,6 +518,9 @@
 				FB2564A31E24A6AD00A9B857 /* ViewController.m in Sources */,
 				FB2564A01E24A6AD00A9B857 /* AppDelegate.m in Sources */,
 				FB25649D1E24A6AD00A9B857 /* main.m in Sources */,
+				5C6E9C601E263E880092425C /* EHLoginViewController.m in Sources */,
+				5C6E9C671E263E980092425C /* EHMineViewController.m in Sources */,
+				5C6E9C681E263E980092425C /* EHMineHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
