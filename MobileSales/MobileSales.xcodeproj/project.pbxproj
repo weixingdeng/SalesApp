@@ -16,11 +16,6 @@
 		FB2564AB1E24A6AD00A9B857 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB2564A91E24A6AD00A9B857 /* LaunchScreen.storyboard */; };
 		FB2564B61E24A6AD00A9B857 /* MobileSalesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2564B51E24A6AD00A9B857 /* MobileSalesTests.m */; };
 		FB2564C11E24A6AD00A9B857 /* MobileSalesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2564C01E24A6AD00A9B857 /* MobileSalesUITests.m */; };
-		FB2564EA1E25D24100A9B857 /* 新项目.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB2564E11E25D24100A9B857 /* 新项目.rtf */; };
-		FB2564EB1E25D24100A9B857 /* 新项目.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB2564E31E25D24100A9B857 /* 新项目.rtf */; };
-		FB2564EC1E25D24100A9B857 /* 新项目.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB2564E51E25D24100A9B857 /* 新项目.rtf */; };
-		FB2564ED1E25D24100A9B857 /* 新项目.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB2564E71E25D24100A9B857 /* 新项目.rtf */; };
-		FB2564EE1E25D24100A9B857 /* 新项目.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB2564E91E25D24100A9B857 /* 新项目.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,11 +55,6 @@
 		FB2564BC1E24A6AD00A9B857 /* MobileSalesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileSalesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB2564C01E24A6AD00A9B857 /* MobileSalesUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobileSalesUITests.m; sourceTree = "<group>"; };
 		FB2564C21E24A6AD00A9B857 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FB2564E11E25D24100A9B857 /* 新项目.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "新项目.rtf"; sourceTree = "<group>"; };
-		FB2564E31E25D24100A9B857 /* 新项目.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "新项目.rtf"; sourceTree = "<group>"; };
-		FB2564E51E25D24100A9B857 /* 新项目.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "新项目.rtf"; sourceTree = "<group>"; };
-		FB2564E71E25D24100A9B857 /* 新项目.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "新项目.rtf"; sourceTree = "<group>"; };
-		FB2564E91E25D24100A9B857 /* 新项目.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "新项目.rtf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,7 +236,6 @@
 		FB2564E01E25D24100A9B857 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				FB2564E11E25D24100A9B857 /* 新项目.rtf */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -254,7 +243,6 @@
 		FB2564E21E25D24100A9B857 /* CRM */ = {
 			isa = PBXGroup;
 			children = (
-				FB2564E31E25D24100A9B857 /* 新项目.rtf */,
 			);
 			path = CRM;
 			sourceTree = "<group>";
@@ -262,7 +250,6 @@
 		FB2564E41E25D24100A9B857 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				FB2564E51E25D24100A9B857 /* 新项目.rtf */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -270,7 +257,6 @@
 		FB2564E61E25D24100A9B857 /* MyInfomation */ = {
 			isa = PBXGroup;
 			children = (
-				FB2564E71E25D24100A9B857 /* 新项目.rtf */,
 			);
 			path = MyInfomation;
 			sourceTree = "<group>";
@@ -278,7 +264,6 @@
 		FB2564E81E25D24100A9B857 /* Office */ = {
 			isa = PBXGroup;
 			children = (
-				FB2564E91E25D24100A9B857 /* 新项目.rtf */,
 			);
 			path = Office;
 			sourceTree = "<group>";
@@ -396,13 +381,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB2564EE1E25D24100A9B857 /* 新项目.rtf in Resources */,
-				FB2564EC1E25D24100A9B857 /* 新项目.rtf in Resources */,
-				FB2564EA1E25D24100A9B857 /* 新项目.rtf in Resources */,
-				FB2564ED1E25D24100A9B857 /* 新项目.rtf in Resources */,
 				FB2564AB1E24A6AD00A9B857 /* LaunchScreen.storyboard in Resources */,
 				FB2564A81E24A6AD00A9B857 /* Assets.xcassets in Resources */,
-				FB2564EB1E25D24100A9B857 /* 新项目.rtf in Resources */,
 				FB2564A61E24A6AD00A9B857 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
