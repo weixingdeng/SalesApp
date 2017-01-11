@@ -333,6 +333,7 @@
 		FB2564901E24A6AD00A9B857 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = MS;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = wxdeng;
 				TargetAttributes = {
