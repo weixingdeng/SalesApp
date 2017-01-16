@@ -20,8 +20,8 @@
     // Override point for customization after application launch.
     
     EHLoginViewController *loginCtrl = [[EHLoginViewController alloc] init];
-    UINavigationController *rootCtrl = [[UINavigationController alloc] initWithRootViewController:loginCtrl];
-    self.window.rootViewController = rootCtrl;
+    
+    self.window.rootViewController = loginCtrl;
     
     return YES;
 }
