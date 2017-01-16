@@ -10,6 +10,7 @@
 		5C6E9C601E263E880092425C /* EHLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E9C5F1E263E880092425C /* EHLoginViewController.m */; };
 		5C6E9C671E263E980092425C /* EHMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E9C631E263E980092425C /* EHMineViewController.m */; };
 		5C6E9C681E263E980092425C /* EHMineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E9C661E263E980092425C /* EHMineHeaderView.m */; };
+		5C70F3DC1E2C7B3A00E20321 /* EHLoginContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C70F3DB1E2C7B3A00E20321 /* EHLoginContentView.m */; };
 		AC306C9B95FE8E79D7E1020A /* libPods-MobileSales.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 085593713B4FFC660683E189 /* libPods-MobileSales.a */; };
 		FB25649D1E24A6AD00A9B857 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB25649C1E24A6AD00A9B857 /* main.m */; };
 		FB2564A01E24A6AD00A9B857 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB25649F1E24A6AD00A9B857 /* AppDelegate.m */; };
@@ -54,6 +55,8 @@
 		5C6E9C631E263E980092425C /* EHMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHMineViewController.m; sourceTree = "<group>"; };
 		5C6E9C651E263E980092425C /* EHMineHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHMineHeaderView.h; sourceTree = "<group>"; };
 		5C6E9C661E263E980092425C /* EHMineHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHMineHeaderView.m; sourceTree = "<group>"; };
+		5C70F3DA1E2C7B3A00E20321 /* EHLoginContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHLoginContentView.h; sourceTree = "<group>"; };
+		5C70F3DB1E2C7B3A00E20321 /* EHLoginContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHLoginContentView.m; sourceTree = "<group>"; };
 		6761FB462D2B42CFD819AECF /* Pods-MobileSales.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileSales.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileSales/Pods-MobileSales.debug.xcconfig"; sourceTree = "<group>"; };
 		FB2564981E24A6AD00A9B857 /* MobileSales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileSales.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB25649C1E24A6AD00A9B857 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -149,6 +152,15 @@
 			children = (
 				5C6E9C651E263E980092425C /* EHMineHeaderView.h */,
 				5C6E9C661E263E980092425C /* EHMineHeaderView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5C70F3D91E2C7B1500E20321 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5C70F3DA1E2C7B3A00E20321 /* EHLoginContentView.h */,
+				5C70F3DB1E2C7B3A00E20321 /* EHLoginContentView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -310,6 +322,7 @@
 		FB2564E41E25D24100A9B857 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				5C70F3D91E2C7B1500E20321 /* View */,
 				5C6E9C5D1E263E880092425C /* Controller */,
 				FB2564E51E25D24100A9B857 /* 新项目.rtf */,
 			);
@@ -534,6 +547,7 @@
 				FB25649D1E24A6AD00A9B857 /* main.m in Sources */,
 				5C6E9C601E263E880092425C /* EHLoginViewController.m in Sources */,
 				5C6E9C671E263E980092425C /* EHMineViewController.m in Sources */,
+				5C70F3DC1E2C7B3A00E20321 /* EHLoginContentView.m in Sources */,
 				5C6E9C681E263E980092425C /* EHMineHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
