@@ -9,6 +9,7 @@
 #import "EHIAppDelegate.h"
 #import <AFNetworking.h>
 #import "EHLoginViewController.h"
+#import "EHIRootViewController.h"
 
 
 @interface EHIAppDelegate ()
@@ -21,9 +22,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    EHLoginViewController *loginCtrl = [[EHLoginViewController alloc] init];
+//    EHLoginViewController *loginCtrl = [[EHLoginViewController alloc] init];
+//    
+//    self.window.rootViewController = loginCtrl;
     
-    self.window.rootViewController = loginCtrl;
+    [self initRootViewController];
     
     return YES;
 }
@@ -41,7 +44,14 @@
 //初始化视图
 - (void)initRootViewController
 {
-    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    EHIRootViewController *rootVC = [EHIRootViewController sharedRootViewController];
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window setRootViewController:rootVC];
+    [self.window addSubview:rootVC.view];
+    [self.window makeKeyAndVisible];
+
 }
 
 

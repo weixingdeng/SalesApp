@@ -10,4 +10,6 @@
 
 @interface EHIRootViewController : UITabBarController
 
++ (EHIRootViewController *) sharedRootViewController;
+
 @end

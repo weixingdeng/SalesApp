@@ -54,7 +54,7 @@ typedef void(^MSOnFailureBlock)(id error);
 
 #define HEXCOLOR(COLOR) [UIColor colorWithHexString:COLOR]
 
-#define HEXCOLOR_EB5C00 HEXCOLOR(@"")
+#define HEXCOLOR_718BBE HEXCOLOR(@"#718dde") //tabbar选中颜色
 
 #pragma mark --方法
 

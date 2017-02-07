@@ -27,6 +27,8 @@
 		FB2564F21E25D8B800A9B857 /* EHICommonUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2564F11E25D8B800A9B857 /* EHICommonUtils.m */; };
 		FB2564F51E25ECF000A9B857 /* UIColor+ColorWithHex.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2564F41E25ECF000A9B857 /* UIColor+ColorWithHex.m */; };
 		FB309AA41E49C11500CE91C9 /* EHIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB309AA31E49C11500CE91C9 /* EHIViewController.m */; };
+		FB309AA71E49C60D00CE91C9 /* EHINavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB309AA61E49C60D00CE91C9 /* EHINavigationController.m */; };
+		FB309AAB1E49CAD800CE91C9 /* CommonImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB309AAA1E49CAD800CE91C9 /* CommonImages.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,9 @@
 		FB2564F41E25ECF000A9B857 /* UIColor+ColorWithHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ColorWithHex.m"; sourceTree = "<group>"; };
 		FB309AA21E49C11500CE91C9 /* EHIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIViewController.h; sourceTree = "<group>"; };
 		FB309AA31E49C11500CE91C9 /* EHIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIViewController.m; sourceTree = "<group>"; };
+		FB309AA51E49C60D00CE91C9 /* EHINavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHINavigationController.h; sourceTree = "<group>"; };
+		FB309AA61E49C60D00CE91C9 /* EHINavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHINavigationController.m; sourceTree = "<group>"; };
+		FB309AAA1E49CAD800CE91C9 /* CommonImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CommonImages.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -337,6 +342,7 @@
 		FB309A9F1E49C07200CE91C9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FB309AA81E49C8FD00CE91C9 /* Images */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -353,8 +359,18 @@
 			children = (
 				FB309AA21E49C11500CE91C9 /* EHIViewController.h */,
 				FB309AA31E49C11500CE91C9 /* EHIViewController.m */,
+				FB309AA51E49C60D00CE91C9 /* EHINavigationController.h */,
+				FB309AA61E49C60D00CE91C9 /* EHINavigationController.m */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		FB309AA81E49C8FD00CE91C9 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				FB309AAA1E49CAD800CE91C9 /* CommonImages.xcassets */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -470,6 +486,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB309AAB1E49CAD800CE91C9 /* CommonImages.xcassets in Resources */,
 				FB2564AB1E24A6AD00A9B857 /* LaunchScreen.storyboard in Resources */,
 				FB2564A81E24A6AD00A9B857 /* Assets.xcassets in Resources */,
 				FB2564A61E24A6AD00A9B857 /* Main.storyboard in Resources */,
@@ -547,6 +564,7 @@
 			files = (
 				FB2564F21E25D8B800A9B857 /* EHICommonUtils.m in Sources */,
 				FB2564A31E24A6AD00A9B857 /* ViewController.m in Sources */,
+				FB309AA71E49C60D00CE91C9 /* EHINavigationController.m in Sources */,
 				FB2564A01E24A6AD00A9B857 /* EHIAppDelegate.m in Sources */,
 				FB309AA41E49C11500CE91C9 /* EHIViewController.m in Sources */,
 				FB11B25A1E49AD8A00074D2D /* EHIOfficeViewController.m in Sources */,
