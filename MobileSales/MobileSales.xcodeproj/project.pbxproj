@@ -29,6 +29,7 @@
 		FB309AA41E49C11500CE91C9 /* EHIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB309AA31E49C11500CE91C9 /* EHIViewController.m */; };
 		FB309AA71E49C60D00CE91C9 /* EHINavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB309AA61E49C60D00CE91C9 /* EHINavigationController.m */; };
 		FB309AAB1E49CAD800CE91C9 /* CommonImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB309AAA1E49CAD800CE91C9 /* CommonImages.xcassets */; };
+		FB5A5D381E49DB2F00810253 /* UITabBar+EHIBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5A5D371E49DB2F00810253 /* UITabBar+EHIBadge.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,8 @@
 		FB309AA51E49C60D00CE91C9 /* EHINavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHINavigationController.h; sourceTree = "<group>"; };
 		FB309AA61E49C60D00CE91C9 /* EHINavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHINavigationController.m; sourceTree = "<group>"; };
 		FB309AAA1E49CAD800CE91C9 /* CommonImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CommonImages.xcassets; sourceTree = "<group>"; };
+		FB5A5D361E49DB2F00810253 /* UITabBar+EHIBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+EHIBadge.h"; sourceTree = "<group>"; };
+		FB5A5D371E49DB2F00810253 /* UITabBar+EHIBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+EHIBadge.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +270,8 @@
 			children = (
 				FB2564F31E25ECF000A9B857 /* UIColor+ColorWithHex.h */,
 				FB2564F41E25ECF000A9B857 /* UIColor+ColorWithHex.m */,
+				FB5A5D361E49DB2F00810253 /* UITabBar+EHIBadge.h */,
+				FB5A5D371E49DB2F00810253 /* UITabBar+EHIBadge.m */,
 			);
 			path = Thirds;
 			sourceTree = "<group>";
@@ -574,6 +579,7 @@
 				FB11B2571E49AD5C00074D2D /* EHIChatViewController.m in Sources */,
 				5C6E9C671E263E980092425C /* EHIMyInfomationViewController.m in Sources */,
 				FB11B25D1E49ADEF00074D2D /* EHICRMViewController.m in Sources */,
+				FB5A5D381E49DB2F00810253 /* UITabBar+EHIBadge.m in Sources */,
 				5C70F3DC1E2C7B3A00E20321 /* EHLoginContentView.m in Sources */,
 				5C6E9C681E263E980092425C /* EHMineHeaderView.m in Sources */,
 				FB11B2511E49AC4000074D2D /* EHIRootViewController.m in Sources */,

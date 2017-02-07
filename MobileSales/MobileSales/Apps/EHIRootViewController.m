@@ -12,6 +12,7 @@
 #import "EHIOfficeViewController.h"
 #import "EHIMyInfomationViewController.h"
 #import "EHINavigationController.h"
+#import "UITabBar+EHIBadge.h"
 
 static EHIRootViewController *rootVC = nil;
 
@@ -42,6 +43,7 @@ static EHIRootViewController *rootVC = nil;
     [super viewDidLoad];
     [self.tabBar setBackgroundColor:[UIColor redColor]];
     [self.tabBar setTintColor:HEXCOLOR_718BBE];
+    [self.tabBar showBadgeOnItemIndex:0];
     self.delegate = self;
     [self setViewControllers:self.childVCArray];
 }
