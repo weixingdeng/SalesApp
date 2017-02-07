@@ -6,14 +6,16 @@
 //  Copyright © 2017年 wxdeng. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "EHIAppDelegate.h"
+#import <AFNetworking.h>
 #import "EHLoginViewController.h"
 
-@interface AppDelegate ()
+
+@interface EHIAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation EHIAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -24,6 +26,22 @@
     self.window.rootViewController = loginCtrl;
     
     return YES;
+}
+
+#pragma mark initThirt
+//初始化第三方sdk
+- (void)initThirdSDK
+{
+    [MobClick startWithConfigure:nil];
+    
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    
+}
+
+//初始化视图
+- (void)initRootViewController
+{
+    
 }
 
 

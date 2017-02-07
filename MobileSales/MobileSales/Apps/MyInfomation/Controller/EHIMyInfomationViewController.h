@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EHMineViewController : UIViewController
+@interface EHIMyInfomationViewController : UIViewController
 
 @end

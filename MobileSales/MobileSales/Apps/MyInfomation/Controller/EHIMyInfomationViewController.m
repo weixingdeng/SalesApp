@@ -6,11 +6,11 @@
 //  Copyright © 2017年 wxdeng. All rights reserved.
 //
 
-#import "EHMineViewController.h"
+#import "EHIMyInfomationViewController.h"
 #import "EHMineHeaderView.h"
 #import <Masonry.h>
 
-@interface EHMineViewController ()
+@interface EHIMyInfomationViewController ()
 
 /** 头部视图 */
 @property (strong ,nonatomic) EHMineHeaderView *headerView;
@@ -20,7 +20,7 @@
 
 @end
 
-@implementation EHMineViewController
+@implementation EHIMyInfomationViewController
 
 #pragma  mark - ViewController Life Cycle
 - (void)viewDidLoad {

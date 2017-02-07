@@ -8,25 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		5C6E9C601E263E880092425C /* EHLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E9C5F1E263E880092425C /* EHLoginViewController.m */; };
-		5C6E9C671E263E980092425C /* EHMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E9C631E263E980092425C /* EHMineViewController.m */; };
+		5C6E9C671E263E980092425C /* EHIMyInfomationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E9C631E263E980092425C /* EHIMyInfomationViewController.m */; };
 		5C6E9C681E263E980092425C /* EHMineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E9C661E263E980092425C /* EHMineHeaderView.m */; };
 		5C70F3DC1E2C7B3A00E20321 /* EHLoginContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C70F3DB1E2C7B3A00E20321 /* EHLoginContentView.m */; };
 		AC306C9B95FE8E79D7E1020A /* libPods-MobileSales.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 085593713B4FFC660683E189 /* libPods-MobileSales.a */; };
+		FB11B2511E49AC4000074D2D /* EHIRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB11B2501E49AC4000074D2D /* EHIRootViewController.m */; };
+		FB11B2571E49AD5C00074D2D /* EHIChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB11B2561E49AD5C00074D2D /* EHIChatViewController.m */; };
+		FB11B25A1E49AD8A00074D2D /* EHIOfficeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB11B2591E49AD8A00074D2D /* EHIOfficeViewController.m */; };
+		FB11B25D1E49ADEF00074D2D /* EHICRMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB11B25C1E49ADEF00074D2D /* EHICRMViewController.m */; };
 		FB25649D1E24A6AD00A9B857 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB25649C1E24A6AD00A9B857 /* main.m */; };
-		FB2564A01E24A6AD00A9B857 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB25649F1E24A6AD00A9B857 /* AppDelegate.m */; };
+		FB2564A01E24A6AD00A9B857 /* EHIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB25649F1E24A6AD00A9B857 /* EHIAppDelegate.m */; };
 		FB2564A31E24A6AD00A9B857 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2564A21E24A6AD00A9B857 /* ViewController.m */; };
 		FB2564A61E24A6AD00A9B857 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB2564A41E24A6AD00A9B857 /* Main.storyboard */; };
 		FB2564A81E24A6AD00A9B857 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB2564A71E24A6AD00A9B857 /* Assets.xcassets */; };
 		FB2564AB1E24A6AD00A9B857 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB2564A91E24A6AD00A9B857 /* LaunchScreen.storyboard */; };
 		FB2564B61E24A6AD00A9B857 /* MobileSalesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2564B51E24A6AD00A9B857 /* MobileSalesTests.m */; };
 		FB2564C11E24A6AD00A9B857 /* MobileSalesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2564C01E24A6AD00A9B857 /* MobileSalesUITests.m */; };
-		FB2564EA1E25D24100A9B857 /* 新项目.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB2564E11E25D24100A9B857 /* 新项目.rtf */; };
-		FB2564EB1E25D24100A9B857 /* 新项目.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB2564E31E25D24100A9B857 /* 新项目.rtf */; };
-		FB2564EC1E25D24100A9B857 /* 新项目.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB2564E51E25D24100A9B857 /* 新项目.rtf */; };
-		FB2564ED1E25D24100A9B857 /* 新项目.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB2564E71E25D24100A9B857 /* 新项目.rtf */; };
-		FB2564EE1E25D24100A9B857 /* 新项目.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB2564E91E25D24100A9B857 /* 新项目.rtf */; };
-		FB2564F21E25D8B800A9B857 /* MSCommonUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2564F11E25D8B800A9B857 /* MSCommonUtils.m */; };
+		FB2564F21E25D8B800A9B857 /* EHICommonUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2564F11E25D8B800A9B857 /* EHICommonUtils.m */; };
 		FB2564F51E25ECF000A9B857 /* UIColor+ColorWithHex.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2564F41E25ECF000A9B857 /* UIColor+ColorWithHex.m */; };
+		FB309AA41E49C11500CE91C9 /* EHIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB309AA31E49C11500CE91C9 /* EHIViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,17 +51,25 @@
 		085593713B4FFC660683E189 /* libPods-MobileSales.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MobileSales.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C6E9C5E1E263E880092425C /* EHLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHLoginViewController.h; sourceTree = "<group>"; };
 		5C6E9C5F1E263E880092425C /* EHLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHLoginViewController.m; sourceTree = "<group>"; };
-		5C6E9C621E263E980092425C /* EHMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHMineViewController.h; sourceTree = "<group>"; };
-		5C6E9C631E263E980092425C /* EHMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHMineViewController.m; sourceTree = "<group>"; };
+		5C6E9C621E263E980092425C /* EHIMyInfomationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIMyInfomationViewController.h; sourceTree = "<group>"; };
+		5C6E9C631E263E980092425C /* EHIMyInfomationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIMyInfomationViewController.m; sourceTree = "<group>"; };
 		5C6E9C651E263E980092425C /* EHMineHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHMineHeaderView.h; sourceTree = "<group>"; };
 		5C6E9C661E263E980092425C /* EHMineHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHMineHeaderView.m; sourceTree = "<group>"; };
 		5C70F3DA1E2C7B3A00E20321 /* EHLoginContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHLoginContentView.h; sourceTree = "<group>"; };
 		5C70F3DB1E2C7B3A00E20321 /* EHLoginContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHLoginContentView.m; sourceTree = "<group>"; };
 		6761FB462D2B42CFD819AECF /* Pods-MobileSales.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileSales.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileSales/Pods-MobileSales.debug.xcconfig"; sourceTree = "<group>"; };
+		FB11B24F1E49AC4000074D2D /* EHIRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIRootViewController.h; sourceTree = "<group>"; };
+		FB11B2501E49AC4000074D2D /* EHIRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIRootViewController.m; sourceTree = "<group>"; };
+		FB11B2551E49AD5C00074D2D /* EHIChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIChatViewController.h; sourceTree = "<group>"; };
+		FB11B2561E49AD5C00074D2D /* EHIChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIChatViewController.m; sourceTree = "<group>"; };
+		FB11B2581E49AD8A00074D2D /* EHIOfficeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIOfficeViewController.h; sourceTree = "<group>"; };
+		FB11B2591E49AD8A00074D2D /* EHIOfficeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIOfficeViewController.m; sourceTree = "<group>"; };
+		FB11B25B1E49ADEF00074D2D /* EHICRMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHICRMViewController.h; sourceTree = "<group>"; };
+		FB11B25C1E49ADEF00074D2D /* EHICRMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHICRMViewController.m; sourceTree = "<group>"; };
 		FB2564981E24A6AD00A9B857 /* MobileSales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileSales.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB25649C1E24A6AD00A9B857 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FB25649E1E24A6AD00A9B857 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		FB25649F1E24A6AD00A9B857 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FB25649E1E24A6AD00A9B857 /* EHIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHIAppDelegate.h; sourceTree = "<group>"; };
+		FB25649F1E24A6AD00A9B857 /* EHIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHIAppDelegate.m; sourceTree = "<group>"; };
 		FB2564A11E24A6AD00A9B857 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		FB2564A21E24A6AD00A9B857 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FB2564A51E24A6AD00A9B857 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,16 +82,13 @@
 		FB2564BC1E24A6AD00A9B857 /* MobileSalesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileSalesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB2564C01E24A6AD00A9B857 /* MobileSalesUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobileSalesUITests.m; sourceTree = "<group>"; };
 		FB2564C21E24A6AD00A9B857 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FB2564E11E25D24100A9B857 /* 新项目.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "新项目.rtf"; sourceTree = "<group>"; };
-		FB2564E31E25D24100A9B857 /* 新项目.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "新项目.rtf"; sourceTree = "<group>"; };
-		FB2564E51E25D24100A9B857 /* 新项目.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "新项目.rtf"; sourceTree = "<group>"; };
-		FB2564E71E25D24100A9B857 /* 新项目.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "新项目.rtf"; sourceTree = "<group>"; };
-		FB2564E91E25D24100A9B857 /* 新项目.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "新项目.rtf"; sourceTree = "<group>"; };
 		FB2564EF1E25D3E400A9B857 /* MSPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPrefixHeader.pch; sourceTree = "<group>"; };
-		FB2564F01E25D8B800A9B857 /* MSCommonUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCommonUtils.h; sourceTree = "<group>"; };
-		FB2564F11E25D8B800A9B857 /* MSCommonUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCommonUtils.m; sourceTree = "<group>"; };
+		FB2564F01E25D8B800A9B857 /* EHICommonUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHICommonUtils.h; sourceTree = "<group>"; };
+		FB2564F11E25D8B800A9B857 /* EHICommonUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHICommonUtils.m; sourceTree = "<group>"; };
 		FB2564F31E25ECF000A9B857 /* UIColor+ColorWithHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ColorWithHex.h"; sourceTree = "<group>"; };
 		FB2564F41E25ECF000A9B857 /* UIColor+ColorWithHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ColorWithHex.m"; sourceTree = "<group>"; };
+		FB309AA21E49C11500CE91C9 /* EHIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIViewController.h; sourceTree = "<group>"; };
+		FB309AA31E49C11500CE91C9 /* EHIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,8 +146,8 @@
 		5C6E9C611E263E980092425C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5C6E9C621E263E980092425C /* EHMineViewController.h */,
-				5C6E9C631E263E980092425C /* EHMineViewController.m */,
+				5C6E9C621E263E980092425C /* EHIMyInfomationViewController.h */,
+				5C6E9C631E263E980092425C /* EHIMyInfomationViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -190,15 +195,15 @@
 		FB25649A1E24A6AD00A9B857 /* MobileSales */ = {
 			isa = PBXGroup;
 			children = (
-				FB25649E1E24A6AD00A9B857 /* AppDelegate.h */,
-				FB25649F1E24A6AD00A9B857 /* AppDelegate.m */,
+				FB25649E1E24A6AD00A9B857 /* EHIAppDelegate.h */,
+				FB25649F1E24A6AD00A9B857 /* EHIAppDelegate.m */,
 				FB2564DA1E24A6C700A9B857 /* Utils */,
 				FB2564CE1E24A6C700A9B857 /* Apps */,
-				FB2564D41E24A6C700A9B857 /* CommonUI */,
-				FB2564D51E24A6C700A9B857 /* Frameworks */,
-				FB2564D61E24A6C700A9B857 /* Launcher */,
-				FB2564D71E24A6C700A9B857 /* Resources */,
-				FB2564D81E24A6C700A9B857 /* Services */,
+				FB309AA11E49C0B700CE91C9 /* Common */,
+				FB309A9D1E49C04100CE91C9 /* Frameworks */,
+				FB309A9E1E49C06000CE91C9 /* Launcher */,
+				FB309A9F1E49C07200CE91C9 /* Resources */,
+				FB309AA01E49C08200CE91C9 /* Services */,
 				FB2564D91E24A6C700A9B857 /* Thirds */,
 				FB2564A11E24A6AD00A9B857 /* ViewController.h */,
 				FB2564A21E24A6AD00A9B857 /* ViewController.m */,
@@ -241,6 +246,8 @@
 		FB2564CE1E24A6C700A9B857 /* Apps */ = {
 			isa = PBXGroup;
 			children = (
+				FB11B24F1E49AC4000074D2D /* EHIRootViewController.h */,
+				FB11B2501E49AC4000074D2D /* EHIRootViewController.m */,
 				FB2564E01E25D24100A9B857 /* Chat */,
 				FB2564E21E25D24100A9B857 /* CRM */,
 				FB2564E41E25D24100A9B857 /* Login */,
@@ -248,41 +255,6 @@
 				FB2564E81E25D24100A9B857 /* Office */,
 			);
 			path = Apps;
-			sourceTree = "<group>";
-		};
-		FB2564D41E24A6C700A9B857 /* CommonUI */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CommonUI;
-			sourceTree = "<group>";
-		};
-		FB2564D51E24A6C700A9B857 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Frameworks;
-			sourceTree = "<group>";
-		};
-		FB2564D61E24A6C700A9B857 /* Launcher */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Launcher;
-			sourceTree = "<group>";
-		};
-		FB2564D71E24A6C700A9B857 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		FB2564D81E24A6C700A9B857 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		FB2564D91E24A6C700A9B857 /* Thirds */ = {
@@ -297,8 +269,8 @@
 		FB2564DA1E24A6C700A9B857 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				FB2564F01E25D8B800A9B857 /* MSCommonUtils.h */,
-				FB2564F11E25D8B800A9B857 /* MSCommonUtils.m */,
+				FB2564F01E25D8B800A9B857 /* EHICommonUtils.h */,
+				FB2564F11E25D8B800A9B857 /* EHICommonUtils.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -306,7 +278,8 @@
 		FB2564E01E25D24100A9B857 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				FB2564E11E25D24100A9B857 /* 新项目.rtf */,
+				FB11B2551E49AD5C00074D2D /* EHIChatViewController.h */,
+				FB11B2561E49AD5C00074D2D /* EHIChatViewController.m */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -314,7 +287,8 @@
 		FB2564E21E25D24100A9B857 /* CRM */ = {
 			isa = PBXGroup;
 			children = (
-				FB2564E31E25D24100A9B857 /* 新项目.rtf */,
+				FB11B25B1E49ADEF00074D2D /* EHICRMViewController.h */,
+				FB11B25C1E49ADEF00074D2D /* EHICRMViewController.m */,
 			);
 			path = CRM;
 			sourceTree = "<group>";
@@ -324,7 +298,6 @@
 			children = (
 				5C70F3D91E2C7B1500E20321 /* View */,
 				5C6E9C5D1E263E880092425C /* Controller */,
-				FB2564E51E25D24100A9B857 /* 新项目.rtf */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -334,7 +307,6 @@
 			children = (
 				5C6E9C611E263E980092425C /* Controller */,
 				5C6E9C641E263E980092425C /* View */,
-				FB2564E71E25D24100A9B857 /* 新项目.rtf */,
 			);
 			path = MyInfomation;
 			sourceTree = "<group>";
@@ -342,9 +314,47 @@
 		FB2564E81E25D24100A9B857 /* Office */ = {
 			isa = PBXGroup;
 			children = (
-				FB2564E91E25D24100A9B857 /* 新项目.rtf */,
+				FB11B2581E49AD8A00074D2D /* EHIOfficeViewController.h */,
+				FB11B2591E49AD8A00074D2D /* EHIOfficeViewController.m */,
 			);
 			path = Office;
+			sourceTree = "<group>";
+		};
+		FB309A9D1E49C04100CE91C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		FB309A9E1E49C06000CE91C9 /* Launcher */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Launcher;
+			sourceTree = "<group>";
+		};
+		FB309A9F1E49C07200CE91C9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FB309AA01E49C08200CE91C9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FB309AA11E49C0B700CE91C9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				FB309AA21E49C11500CE91C9 /* EHIViewController.h */,
+				FB309AA31E49C11500CE91C9 /* EHIViewController.m */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,7 +422,7 @@
 		FB2564901E24A6AD00A9B857 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = MS;
+				CLASSPREFIX = EHI;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = wxdeng;
 				TargetAttributes = {
@@ -460,13 +470,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB2564EE1E25D24100A9B857 /* 新项目.rtf in Resources */,
-				FB2564EC1E25D24100A9B857 /* 新项目.rtf in Resources */,
-				FB2564EA1E25D24100A9B857 /* 新项目.rtf in Resources */,
-				FB2564ED1E25D24100A9B857 /* 新项目.rtf in Resources */,
 				FB2564AB1E24A6AD00A9B857 /* LaunchScreen.storyboard in Resources */,
 				FB2564A81E24A6AD00A9B857 /* Assets.xcassets in Resources */,
-				FB2564EB1E25D24100A9B857 /* 新项目.rtf in Resources */,
 				FB2564A61E24A6AD00A9B857 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -540,15 +545,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB2564F21E25D8B800A9B857 /* MSCommonUtils.m in Sources */,
+				FB2564F21E25D8B800A9B857 /* EHICommonUtils.m in Sources */,
 				FB2564A31E24A6AD00A9B857 /* ViewController.m in Sources */,
-				FB2564A01E24A6AD00A9B857 /* AppDelegate.m in Sources */,
+				FB2564A01E24A6AD00A9B857 /* EHIAppDelegate.m in Sources */,
+				FB309AA41E49C11500CE91C9 /* EHIViewController.m in Sources */,
+				FB11B25A1E49AD8A00074D2D /* EHIOfficeViewController.m in Sources */,
 				FB2564F51E25ECF000A9B857 /* UIColor+ColorWithHex.m in Sources */,
 				FB25649D1E24A6AD00A9B857 /* main.m in Sources */,
 				5C6E9C601E263E880092425C /* EHLoginViewController.m in Sources */,
-				5C6E9C671E263E980092425C /* EHMineViewController.m in Sources */,
+				FB11B2571E49AD5C00074D2D /* EHIChatViewController.m in Sources */,
+				5C6E9C671E263E980092425C /* EHIMyInfomationViewController.m in Sources */,
+				FB11B25D1E49ADEF00074D2D /* EHICRMViewController.m in Sources */,
 				5C70F3DC1E2C7B3A00E20321 /* EHLoginContentView.m in Sources */,
 				5C6E9C681E263E980092425C /* EHMineHeaderView.m in Sources */,
+				FB11B2511E49AC4000074D2D /* EHIRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,8 +6,8 @@
 //  Copyright © 2017年 wxdeng. All rights reserved.
 //
 
-#import "MSCommonUtils.h"
+#import "EHICommonUtils.h"
 
-@implementation MSCommonUtils
+@implementation EHICommonUtils
 
 @end

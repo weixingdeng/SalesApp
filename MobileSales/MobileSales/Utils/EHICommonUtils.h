@@ -65,7 +65,7 @@ typedef void(^MSOnFailureBlock)(id error);
 #define STRONGSELF(_instance) __strong typeof(weak##_instance) _instance = weak##_instance
 
 
-@interface MSCommonUtils : NSObject
+@interface EHICommonUtils : NSObject
 
 
 @end
