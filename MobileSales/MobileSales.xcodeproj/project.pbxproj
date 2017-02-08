@@ -18,19 +18,18 @@
 		FB11B25D1E49ADEF00074D2D /* EHICRMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB11B25C1E49ADEF00074D2D /* EHICRMViewController.m */; };
 		FB25649D1E24A6AD00A9B857 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB25649C1E24A6AD00A9B857 /* main.m */; };
 		FB2564A01E24A6AD00A9B857 /* EHIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB25649F1E24A6AD00A9B857 /* EHIAppDelegate.m */; };
-		FB2564A31E24A6AD00A9B857 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2564A21E24A6AD00A9B857 /* ViewController.m */; };
-		FB2564A61E24A6AD00A9B857 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB2564A41E24A6AD00A9B857 /* Main.storyboard */; };
-		FB2564A81E24A6AD00A9B857 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB2564A71E24A6AD00A9B857 /* Assets.xcassets */; };
-		FB2564AB1E24A6AD00A9B857 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB2564A91E24A6AD00A9B857 /* LaunchScreen.storyboard */; };
 		FB2564B61E24A6AD00A9B857 /* MobileSalesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2564B51E24A6AD00A9B857 /* MobileSalesTests.m */; };
 		FB2564C11E24A6AD00A9B857 /* MobileSalesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2564C01E24A6AD00A9B857 /* MobileSalesUITests.m */; };
 		FB2564F51E25ECF000A9B857 /* UIColor+ColorWithHex.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2564F41E25ECF000A9B857 /* UIColor+ColorWithHex.m */; };
 		FB309AA41E49C11500CE91C9 /* EHIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB309AA31E49C11500CE91C9 /* EHIViewController.m */; };
 		FB309AA71E49C60D00CE91C9 /* EHINavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB309AA61E49C60D00CE91C9 /* EHINavigationController.m */; };
-		FB309AAB1E49CAD800CE91C9 /* CommonImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB309AAA1E49CAD800CE91C9 /* CommonImages.xcassets */; };
+		FB309AAB1E49CAD800CE91C9 /* Launcher.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB309AAA1E49CAD800CE91C9 /* Launcher.xcassets */; };
 		FB5A5D381E49DB2F00810253 /* UITabBar+EHIBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5A5D371E49DB2F00810253 /* UITabBar+EHIBadge.m */; };
 		FB5A5D3B1E4AACF900810253 /* EHIHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5A5D3A1E4AACF900810253 /* EHIHttpRequest.m */; };
 		FB5A5D3E1E4AB20900810253 /* EHIBaseRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5A5D3D1E4AB20900810253 /* EHIBaseRequestModel.m */; };
+		FB73EA501E4B1777001F268E /* EHIMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB73EA4F1E4B1777001F268E /* EHIMovieViewController.m */; };
+		FB73EA541E4B1C46001F268E /* login_movie.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FB73EA521E4B1C46001F268E /* login_movie.mp4 */; };
+		FB73EA551E4B1C46001F268E /* normal_movie.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FB73EA531E4B1C46001F268E /* normal_movie.mp4 */; };
 		FB776EAF1E4AEE9A008763CE /* NSMutableDictionary+EHIDicSaveString.m in Sources */ = {isa = PBXBuildFile; fileRef = FB776EAE1E4AEE9A008763CE /* NSMutableDictionary+EHIDicSaveString.m */; };
 		FB776EB71E4AF065008763CE /* IPAddress.c in Sources */ = {isa = PBXBuildFile; fileRef = FB776EB11E4AF065008763CE /* IPAddress.c */; };
 		FB776EB81E4AF065008763CE /* NSString+MD5Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FB776EB41E4AF065008763CE /* NSString+MD5Addition.m */; };
@@ -80,11 +79,6 @@
 		FB25649C1E24A6AD00A9B857 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FB25649E1E24A6AD00A9B857 /* EHIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHIAppDelegate.h; sourceTree = "<group>"; };
 		FB25649F1E24A6AD00A9B857 /* EHIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHIAppDelegate.m; sourceTree = "<group>"; };
-		FB2564A11E24A6AD00A9B857 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FB2564A21E24A6AD00A9B857 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		FB2564A51E24A6AD00A9B857 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FB2564A71E24A6AD00A9B857 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FB2564AA1E24A6AD00A9B857 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB2564AC1E24A6AD00A9B857 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB2564B11E24A6AD00A9B857 /* MobileSalesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileSalesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB2564B51E24A6AD00A9B857 /* MobileSalesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobileSalesTests.m; sourceTree = "<group>"; };
@@ -100,13 +94,17 @@
 		FB309AA31E49C11500CE91C9 /* EHIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIViewController.m; sourceTree = "<group>"; };
 		FB309AA51E49C60D00CE91C9 /* EHINavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHINavigationController.h; sourceTree = "<group>"; };
 		FB309AA61E49C60D00CE91C9 /* EHINavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHINavigationController.m; sourceTree = "<group>"; };
-		FB309AAA1E49CAD800CE91C9 /* CommonImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CommonImages.xcassets; sourceTree = "<group>"; };
+		FB309AAA1E49CAD800CE91C9 /* Launcher.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Launcher.xcassets; sourceTree = "<group>"; };
 		FB5A5D361E49DB2F00810253 /* UITabBar+EHIBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+EHIBadge.h"; sourceTree = "<group>"; };
 		FB5A5D371E49DB2F00810253 /* UITabBar+EHIBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+EHIBadge.m"; sourceTree = "<group>"; };
 		FB5A5D391E4AACF900810253 /* EHIHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIHttpRequest.h; sourceTree = "<group>"; };
 		FB5A5D3A1E4AACF900810253 /* EHIHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIHttpRequest.m; sourceTree = "<group>"; };
 		FB5A5D3C1E4AB20900810253 /* EHIBaseRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIBaseRequestModel.h; sourceTree = "<group>"; };
 		FB5A5D3D1E4AB20900810253 /* EHIBaseRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIBaseRequestModel.m; sourceTree = "<group>"; };
+		FB73EA4E1E4B1777001F268E /* EHIMovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIMovieViewController.h; sourceTree = "<group>"; };
+		FB73EA4F1E4B1777001F268E /* EHIMovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIMovieViewController.m; sourceTree = "<group>"; };
+		FB73EA521E4B1C46001F268E /* login_movie.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = login_movie.mp4; sourceTree = "<group>"; };
+		FB73EA531E4B1C46001F268E /* normal_movie.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = normal_movie.mp4; sourceTree = "<group>"; };
 		FB776EAD1E4AEE9A008763CE /* NSMutableDictionary+EHIDicSaveString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+EHIDicSaveString.h"; sourceTree = "<group>"; };
 		FB776EAE1E4AEE9A008763CE /* NSMutableDictionary+EHIDicSaveString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+EHIDicSaveString.m"; sourceTree = "<group>"; };
 		FB776EB11E4AF065008763CE /* IPAddress.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IPAddress.c; sourceTree = "<group>"; };
@@ -236,8 +234,6 @@
 				FB309A9F1E49C07200CE91C9 /* Resources */,
 				FB309AA01E49C08200CE91C9 /* Services */,
 				FB2564D91E24A6C700A9B857 /* Thirds */,
-				FB2564A11E24A6AD00A9B857 /* ViewController.h */,
-				FB2564A21E24A6AD00A9B857 /* ViewController.m */,
 				FB25649B1E24A6AD00A9B857 /* Supporting Files */,
 			);
 			path = MobileSales;
@@ -246,9 +242,6 @@
 		FB25649B1E24A6AD00A9B857 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FB2564A41E24A6AD00A9B857 /* Main.storyboard */,
-				FB2564A71E24A6AD00A9B857 /* Assets.xcassets */,
-				FB2564A91E24A6AD00A9B857 /* LaunchScreen.storyboard */,
 				FB2564AC1E24A6AD00A9B857 /* Info.plist */,
 				FB25649C1E24A6AD00A9B857 /* main.m */,
 				FB2564EF1E25D3E400A9B857 /* MSPrefixHeader.pch */,
@@ -366,6 +359,8 @@
 		FB309A9E1E49C06000CE91C9 /* Launcher */ = {
 			isa = PBXGroup;
 			children = (
+				FB73EA4E1E4B1777001F268E /* EHIMovieViewController.h */,
+				FB73EA4F1E4B1777001F268E /* EHIMovieViewController.m */,
 			);
 			path = Launcher;
 			sourceTree = "<group>";
@@ -373,6 +368,7 @@
 		FB309A9F1E49C07200CE91C9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FB73EA511E4B1C22001F268E /* Videos */,
 				FB309AA81E49C8FD00CE91C9 /* Images */,
 			);
 			path = Resources;
@@ -407,9 +403,19 @@
 		FB309AA81E49C8FD00CE91C9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				FB309AAA1E49CAD800CE91C9 /* CommonImages.xcassets */,
+				FB309AAA1E49CAD800CE91C9 /* Launcher.xcassets */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		FB73EA511E4B1C22001F268E /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				FB73EA521E4B1C46001F268E /* login_movie.mp4 */,
+				FB73EA531E4B1C46001F268E /* normal_movie.mp4 */,
+			);
+			name = Videos;
+			path = Vidio;
 			sourceTree = "<group>";
 		};
 		FB776EB01E4AF05A008763CE /* Device */ = {
@@ -538,10 +544,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB309AAB1E49CAD800CE91C9 /* CommonImages.xcassets in Resources */,
-				FB2564AB1E24A6AD00A9B857 /* LaunchScreen.storyboard in Resources */,
-				FB2564A81E24A6AD00A9B857 /* Assets.xcassets in Resources */,
-				FB2564A61E24A6AD00A9B857 /* Main.storyboard in Resources */,
+				FB73EA541E4B1C46001F268E /* login_movie.mp4 in Resources */,
+				FB309AAB1E49CAD800CE91C9 /* Launcher.xcassets in Resources */,
+				FB73EA551E4B1C46001F268E /* normal_movie.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,7 +619,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB2564A31E24A6AD00A9B857 /* ViewController.m in Sources */,
 				FB309AA71E49C60D00CE91C9 /* EHINavigationController.m in Sources */,
 				FB5A5D3E1E4AB20900810253 /* EHIBaseRequestModel.m in Sources */,
 				FB2564A01E24A6AD00A9B857 /* EHIAppDelegate.m in Sources */,
@@ -624,6 +628,7 @@
 				FB11B25A1E49AD8A00074D2D /* EHIOfficeViewController.m in Sources */,
 				FB2564F51E25ECF000A9B857 /* UIColor+ColorWithHex.m in Sources */,
 				FB25649D1E24A6AD00A9B857 /* main.m in Sources */,
+				FB73EA501E4B1777001F268E /* EHIMovieViewController.m in Sources */,
 				5C6E9C601E263E880092425C /* EHLoginViewController.m in Sources */,
 				FB776EB81E4AF065008763CE /* NSString+MD5Addition.m in Sources */,
 				FB11B2571E49AD5C00074D2D /* EHIChatViewController.m in Sources */,
@@ -670,25 +675,6 @@
 			targetProxy = FB2564BD1E24A6AD00A9B857 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		FB2564A41E24A6AD00A9B857 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FB2564A51E24A6AD00A9B857 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		FB2564A91E24A6AD00A9B857 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FB2564AA1E24A6AD00A9B857 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		FB2564C31E24A6AD00A9B857 /* Debug */ = {
@@ -786,6 +772,7 @@
 			baseConfigurationReference = 6761FB462D2B42CFD819AECF /* Pods-MobileSales.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = WSJK7MN7ZH;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MobileSales/MSPrefixHeader.pch";
@@ -794,6 +781,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.yihai.MobileSales;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -802,6 +790,7 @@
 			baseConfigurationReference = 0179A64639E27837308FB472 /* Pods-MobileSales.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = WSJK7MN7ZH;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MobileSales/MSPrefixHeader.pch";
@@ -810,6 +799,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.yihai.MobileSales;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

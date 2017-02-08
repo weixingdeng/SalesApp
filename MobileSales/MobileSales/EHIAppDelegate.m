@@ -10,7 +10,7 @@
 #import <AFNetworking.h>
 #import "EHLoginViewController.h"
 #import "EHIRootViewController.h"
-
+#import "EHIMovieViewController.h"
 
 @interface EHIAppDelegate ()
 
@@ -21,9 +21,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+//    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
     SHARE_USER_CONTEXT.urlList.environment = ENVIRONMENT_DEMO;
-    
-    [self initRootViewController];
+
+    [self loadAnimationLaunch];
     
     return YES;
 }
@@ -41,13 +44,18 @@
 //初始化视图
 - (void)initRootViewController
 {
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     EHIRootViewController *rootVC = [EHIRootViewController sharedRootViewController];
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.backgroundColor = [UIColor whiteColor];
     [self.window setRootViewController:rootVC];
     [self.window addSubview:rootVC.view];
-    [self.window makeKeyAndVisible];
+}
+
+//加载启动动画
+- (void)loadAnimationLaunch
+{
+    EHIMovieViewController *movieVC = [[EHIMovieViewController alloc] init];
+    movieVC.movieURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"login_movie" ofType:@"mp4"]];
+    self.window.rootViewController = movieVC;
 
 }
 
