@@ -12,21 +12,27 @@
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
-#import <UMMobClick/MobClick.h>
 
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <UMMobClick/MobClick.h>
+#import "EHIMacros.h"
+#import "EHIHttpRequest.h"
+#import "EHIUserContext.h"
+
+#ifdef DEBUG
+#define NSLog(...) NSLog(@"%s [%d]\n%@\n\n",__func__,__LINE__,[NSString stringWithFormat:__VA_ARGS__])
+#else
+#define NSLog(...)
+#endif
+
+//存储全局需要的信息
+#define SHARE_USER_CONTEXT [EHIUserContext sharedUserDefault]
+
+#endif
 
 #endif /* MSPrefixHeader_pch */
 
 
-#ifdef __OBJC__
-    #import <UIKit/UIKit.h>
-    #import <Foundation/Foundation.h>
-    #import "EHICommonUtils.h"
 
-    #ifdef DEBUG
-        #define NSLog(...) NSLog(@"%s [%d] %@\n",__func__,__LINE__,[NSString stringWithFormat:__VA_ARGS__])
-    #else
-        #define NSLog(...)
-    #endif
-
-#endif

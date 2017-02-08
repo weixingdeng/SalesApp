@@ -18,4 +18,5 @@
 
 //总的tabbaritem数量 
 - (void)showBadgeOnItemIndex:(int)index totalItemCount:(int)count;
+
 @end

@@ -20,11 +20,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     
-//    EHLoginViewController *loginCtrl = [[EHLoginViewController alloc] init];
-//    
-//    self.window.rootViewController = loginCtrl;
+    SHARE_USER_CONTEXT.urlList.environment = ENVIRONMENT_DEMO;
     
     [self initRootViewController];
     

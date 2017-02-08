@@ -1,21 +1,21 @@
 //
-//  MSCommonUtils.h
+//  EHICommonUtils.h
 //  MobileSales
 //
 //  Created by dengwx on 17/1/11.
 //  Copyright © 2017年 wxdeng. All rights reserved.
-//
+//  宏定义
 
 #import <Foundation/Foundation.h>
 #import "UIColor+ColorWithHex.h"
 
-typedef void(^MSOnSuccessBlock)(id result);
-typedef void(^MSOnFailureBlock)(id error);
+typedef void(^EHIOnSuccessBlock)(id result);
+typedef void(^EHIOnFailureBlock)(id error);
 
-#define MS_LOAD_IMAGE(imageName) \
+#define EHI_LOAD_IMAGE(imageName) \
 [UIImage imageNamed:imageName]
 
-#pragma mark --系统
+//系统
 
 #define VERSION_EQUAL_OR_LATER(_version) \
 ( [[[UIDevice currentDevice] systemVersion] compare:(@#_version)] != NSOrderedAscending )
@@ -31,8 +31,8 @@ typedef void(^MSOnFailureBlock)(id error);
 //system version
 #define kSystemVersion [[UIDevice currentDevice] systemVersion]
 
-#pragma mark --适配
-#define MS_ONE_PIXEL 1.f/[UIScreen mainScreen].scale
+//适配
+#define EHI_ONE_PIXEL 1.f/[UIScreen mainScreen].scale
 
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
@@ -65,7 +65,7 @@ typedef void(^MSOnFailureBlock)(id error);
 #define STRONGSELF(_instance) __strong typeof(weak##_instance) _instance = weak##_instance
 
 
-@interface EHICommonUtils : NSObject
+@interface EHIMacros : NSObject
 
 
 @end

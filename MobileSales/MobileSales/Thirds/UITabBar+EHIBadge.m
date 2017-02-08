@@ -27,6 +27,7 @@
     CGFloat y = ceilf(0.1 * tabFrame.size.height);
     badgeView.frame = CGRectMake(x, y, 10, 10);//圆形大小为10
     [self addSubview:badgeView];
+    [self bringSubviewToFront:badgeView];
 
 }
 

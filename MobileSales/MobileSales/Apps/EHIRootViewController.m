@@ -48,6 +48,14 @@ static EHIRootViewController *rootVC = nil;
     [self setViewControllers:self.childVCArray];
 }
 
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+#pragma mark delegate
+//tabbar click delegate
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
 {
     if (viewController == self.childVCArray[1] || viewController == self.childVCArray[2]) {
@@ -58,13 +66,7 @@ static EHIRootViewController *rootVC = nil;
     return YES;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
-
 #pragma mark GET && SET
-
 - (EHIChatViewController *)chatVC
 {
 	if (!_chatVC){
