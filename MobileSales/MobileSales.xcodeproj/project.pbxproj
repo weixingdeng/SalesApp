@@ -16,6 +16,8 @@
 		FB11B2571E49AD5C00074D2D /* EHIChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB11B2561E49AD5C00074D2D /* EHIChatViewController.m */; };
 		FB11B25A1E49AD8A00074D2D /* EHIOfficeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB11B2591E49AD8A00074D2D /* EHIOfficeViewController.m */; };
 		FB11B25D1E49ADEF00074D2D /* EHICRMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB11B25C1E49ADEF00074D2D /* EHICRMViewController.m */; };
+		FB12DB2F1E4B4FC0006940A3 /* EHILauncherButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FB12DB2E1E4B4FC0006940A3 /* EHILauncherButton.m */; };
+		FB12DB311E4B5DFA006940A3 /* btnbg.png in Resources */ = {isa = PBXBuildFile; fileRef = FB12DB301E4B5DFA006940A3 /* btnbg.png */; };
 		FB25649D1E24A6AD00A9B857 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB25649C1E24A6AD00A9B857 /* main.m */; };
 		FB2564A01E24A6AD00A9B857 /* EHIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB25649F1E24A6AD00A9B857 /* EHIAppDelegate.m */; };
 		FB2564B61E24A6AD00A9B857 /* MobileSalesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2564B51E24A6AD00A9B857 /* MobileSalesTests.m */; };
@@ -75,6 +77,9 @@
 		FB11B2591E49AD8A00074D2D /* EHIOfficeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIOfficeViewController.m; sourceTree = "<group>"; };
 		FB11B25B1E49ADEF00074D2D /* EHICRMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHICRMViewController.h; sourceTree = "<group>"; };
 		FB11B25C1E49ADEF00074D2D /* EHICRMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHICRMViewController.m; sourceTree = "<group>"; };
+		FB12DB2D1E4B4FC0006940A3 /* EHILauncherButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHILauncherButton.h; sourceTree = "<group>"; };
+		FB12DB2E1E4B4FC0006940A3 /* EHILauncherButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHILauncherButton.m; sourceTree = "<group>"; };
+		FB12DB301E4B5DFA006940A3 /* btnbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnbg.png; sourceTree = "<group>"; };
 		FB2564981E24A6AD00A9B857 /* MobileSales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileSales.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB25649C1E24A6AD00A9B857 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FB25649E1E24A6AD00A9B857 /* EHIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHIAppDelegate.h; sourceTree = "<group>"; };
@@ -202,6 +207,7 @@
 		FB25648F1E24A6AD00A9B857 = {
 			isa = PBXGroup;
 			children = (
+				FB12DB301E4B5DFA006940A3 /* btnbg.png */,
 				FB25649A1E24A6AD00A9B857 /* MobileSales */,
 				FB2564B41E24A6AD00A9B857 /* MobileSalesTests */,
 				FB2564BF1E24A6AD00A9B857 /* MobileSalesUITests */,
@@ -361,6 +367,8 @@
 			children = (
 				FB73EA4E1E4B1777001F268E /* EHIMovieViewController.h */,
 				FB73EA4F1E4B1777001F268E /* EHIMovieViewController.m */,
+				FB12DB2D1E4B4FC0006940A3 /* EHILauncherButton.h */,
+				FB12DB2E1E4B4FC0006940A3 /* EHILauncherButton.m */,
 			);
 			path = Launcher;
 			sourceTree = "<group>";
@@ -545,6 +553,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB73EA541E4B1C46001F268E /* login_movie.mp4 in Resources */,
+				FB12DB311E4B5DFA006940A3 /* btnbg.png in Resources */,
 				FB309AAB1E49CAD800CE91C9 /* Launcher.xcassets in Resources */,
 				FB73EA551E4B1C46001F268E /* normal_movie.mp4 in Resources */,
 			);
@@ -629,6 +638,7 @@
 				FB2564F51E25ECF000A9B857 /* UIColor+ColorWithHex.m in Sources */,
 				FB25649D1E24A6AD00A9B857 /* main.m in Sources */,
 				FB73EA501E4B1777001F268E /* EHIMovieViewController.m in Sources */,
+				FB12DB2F1E4B4FC0006940A3 /* EHILauncherButton.m in Sources */,
 				5C6E9C601E263E880092425C /* EHLoginViewController.m in Sources */,
 				FB776EB81E4AF065008763CE /* NSString+MD5Addition.m in Sources */,
 				FB11B2571E49AD5C00074D2D /* EHIChatViewController.m in Sources */,

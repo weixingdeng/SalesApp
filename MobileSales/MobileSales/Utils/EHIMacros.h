@@ -11,6 +11,7 @@
 
 typedef void(^EHIOnSuccessBlock)(id result);
 typedef void(^EHIOnFailureBlock)(id error);
+typedef void(^EHISelectCallback)(NSInteger selectIndex);
 
 #define EHI_LOAD_IMAGE(imageName) \
 [UIImage imageNamed:imageName]

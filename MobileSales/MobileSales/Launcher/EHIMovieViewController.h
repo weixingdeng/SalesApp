@@ -17,4 +17,6 @@ typedef NS_ENUM(NSInteger, EHIMoviewShowStates) {
 
 @property (nonatomic , assign) EHIMoviewShowStates  movieShowState;
 
+@property (nonatomic , assign) EHISelectCallback selectCallback;
+
 @end

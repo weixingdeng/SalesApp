@@ -20,9 +20,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-//    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     SHARE_USER_CONTEXT.urlList.environment = ENVIRONMENT_DEMO;
 
@@ -44,7 +43,6 @@
 //初始化视图
 - (void)initRootViewController
 {
-//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     EHIRootViewController *rootVC = [EHIRootViewController sharedRootViewController];
     [self.window setRootViewController:rootVC];
     [self.window addSubview:rootVC.view];
@@ -55,7 +53,14 @@
 {
     EHIMovieViewController *movieVC = [[EHIMovieViewController alloc] init];
     movieVC.movieURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"login_movie" ofType:@"mp4"]];
+    movieVC.movieShowState = EHIAppFirstStart;
     self.window.rootViewController = movieVC;
+    
+    movieVC.selectCallback = ^(NSInteger selectIndex){
+        if (selectIndex == 0) {
+            [self initRootViewController];
+        }
+    };
 
 }
 

@@ -10,6 +10,8 @@
 #import <AVFoundation/AVFoundation.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVKit/AVKit.h>
+#import "EHILauncherButton.h"
+
 @interface EHIMovieViewController ()
 
 @property (strong , nonatomic) MPMoviePlayerController *player;
@@ -21,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupMoviePlayer];
+
 }
 
 - (void)setupMoviePlayer
@@ -36,41 +39,64 @@
         self.player.view.alpha = 1;
         [self.player prepareToPlay];
     }];
-}
-
-
-- (void)setMovieShowState:(EHIMoviewShowStates) movieShowState {
-    if (_movieShowState != movieShowState) {
-        _movieShowState = movieShowState;
-    }
-    switch (movieShowState) {
+    
+    switch (self.movieShowState) {
         case EHIAppFirstStart:
-            
+            [self addLoginButton];
             break;
         case EHIAppNormalStart:
-            
+            [self addSkipButton];
             break;
             
         default:
             break;
     }
+
 }
 
 //添加登录按钮
 - (void)addLoginButton
 {
+    EHILauncherButton *loginButton = [[EHILauncherButton alloc] initWithTitle:@"登录"];
+    loginButton.tag = 0;
+    loginButton.titleLabel.font = [UIFont systemFontOfSize:15];
+    [loginButton addTarget:self
+                    action:@selector(btnClickToNextPage:)
+           forControlEvents:UIControlEventTouchUpInside];
+    [self.player.view addSubview:loginButton];
+    
+    [loginButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_offset(100);
+        make.right.mas_offset(-100);
+        make.height.mas_equalTo(40);
+        make.bottom.mas_offset(-100);
+    }];
     
 }
 
 //添加跳过按钮
 - (void)addSkipButton
 {
+    EHILauncherButton *skipButton = [[EHILauncherButton alloc] initWithTitle:@"跳过"];
+    skipButton.tag = 1;
+    skipButton.titleLabel.font = [UIFont systemFontOfSize:12];
+    [skipButton addTarget:self
+                   action:@selector(btnClickToNextPage:)
+         forControlEvents:UIControlEventTouchUpInside];
+    [self.player.view addSubview:skipButton];
+    
+    [skipButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_offset(40);
+        make.right.mas_offset(-20);
+        make.height.mas_equalTo(30);
+        make.width.mas_equalTo(80);
+    }];
     
 }
 //登录或跳转事件
-- (void)btnClickToNextPage
+- (void)btnClickToNextPage:(EHILauncherButton *)btn
 {
-    
+    self.selectCallback(btn.tag);
 }
 
 - (void)didReceiveMemoryWarning {
