@@ -42,7 +42,7 @@ static EHIRootViewController *rootVC = nil;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.tabBar setBackgroundColor:[UIColor redColor]];
-    [self.tabBar setTintColor:HEXCOLOR_718BBE];
+    [self.tabBar setTintColor:HEXCOLOR_718DDE];
     [self.tabBar showBadgeOnItemIndex:0];
     self.delegate = self;
     [self setViewControllers:self.childVCArray];

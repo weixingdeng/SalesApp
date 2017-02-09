@@ -33,16 +33,18 @@ typedef void(^EHISelectCallback)(NSInteger selectIndex);
 #define kSystemVersion [[UIDevice currentDevice] systemVersion]
 
 //适配
+
+
 #define EHI_ONE_PIXEL 1.f/[UIScreen mainScreen].scale
 
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 #define SCREEN_MAX_LENGTH (MAX(SCREEN_WIDTH, SCREEN_HEIGHT))
 
-#define IS_IPHONE_4_OR_LESS (IS_IPHONE && SCREEN_MAX_LENGTH < 568.0)
-#define IS_IPHONE_5 (IS_IPHONE && SCREEN_MAX_LENGTH == 568.0)
-#define IS_IPHONE_6 (IS_IPHONE && SCREEN_MAX_LENGTH == 667.0)
-#define IS_IPHONE_6P (IS_IPHONE && SCREEN_MAX_LENGTH == 736.0)
+#define IS_IPHONE_4_OR_LESS  (SCREEN_MAX_LENGTH < 568.0)
+#define IS_IPHONE_5 (SCREEN_MAX_LENGTH == 568.0)
+#define IS_IPHONE_6 (SCREEN_MAX_LENGTH == 667.0)
+#define IS_IPHONE_6P (SCREEN_MAX_LENGTH == 736.0)
 
 #define autoSizeScaleX_IPhone6 (SCREEN_WIDTH/375)
 
@@ -51,11 +53,14 @@ typedef void(^EHISelectCallback)(NSInteger selectIndex);
 #define autoHeightOf6(HEIGHT) HEIGHT * autoSizeScaleH_iPhone6
 #define autoWidthOf6(WIDTH) WIDTH * autoSizeScaleX_iPhone6
 
+#define EHI_FONT(SIZE) [UIFont systemFontOfSize:SIZE]
+#define autoFont(SIZE) IS_IPHONE_6P ? EHI_FONT(SIZE * 1.1) :  EHI_FONT(SIZE)
+
 #pragma mark --颜色
 
 #define HEXCOLOR(COLOR) [UIColor colorWithHexString:COLOR]
 
-#define HEXCOLOR_718BBE HEXCOLOR(@"#718dde") //tabbar选中颜色
+#define HEXCOLOR_718DDE HEXCOLOR(@"#718dde") //tabbar选中颜色
 
 #pragma mark --方法
 

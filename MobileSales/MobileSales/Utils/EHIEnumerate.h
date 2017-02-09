@@ -9,5 +9,6 @@
 #ifndef EHIEnumerate_h
 #define EHIEnumerate_h
 
+static NSString* const n = @"";
 
 #endif /* EHIEnumerate_h */

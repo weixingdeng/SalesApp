@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C6E9C601E263E880092425C /* EHLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E9C5F1E263E880092425C /* EHLoginViewController.m */; };
+		5C6E9C601E263E880092425C /* EHILoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E9C5F1E263E880092425C /* EHILoginViewController.m */; };
 		5C6E9C671E263E980092425C /* EHIMyInfomationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E9C631E263E980092425C /* EHIMyInfomationViewController.m */; };
 		5C6E9C681E263E980092425C /* EHMineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E9C661E263E980092425C /* EHMineHeaderView.m */; };
-		5C70F3DC1E2C7B3A00E20321 /* EHLoginContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C70F3DB1E2C7B3A00E20321 /* EHLoginContentView.m */; };
+		5C70F3DC1E2C7B3A00E20321 /* EHILoginContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C70F3DB1E2C7B3A00E20321 /* EHILoginContentView.m */; };
 		AC306C9B95FE8E79D7E1020A /* libPods-MobileSales.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 085593713B4FFC660683E189 /* libPods-MobileSales.a */; };
 		FB11B2511E49AC4000074D2D /* EHIRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB11B2501E49AC4000074D2D /* EHIRootViewController.m */; };
 		FB11B2571E49AD5C00074D2D /* EHIChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB11B2561E49AD5C00074D2D /* EHIChatViewController.m */; };
@@ -32,6 +32,7 @@
 		FB73EA501E4B1777001F268E /* EHIMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB73EA4F1E4B1777001F268E /* EHIMovieViewController.m */; };
 		FB73EA541E4B1C46001F268E /* login_movie.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FB73EA521E4B1C46001F268E /* login_movie.mp4 */; };
 		FB73EA551E4B1C46001F268E /* normal_movie.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FB73EA531E4B1C46001F268E /* normal_movie.mp4 */; };
+		FB73EA571E4C0024001F268E /* Login.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB73EA561E4C0024001F268E /* Login.xcassets */; };
 		FB776EAF1E4AEE9A008763CE /* NSMutableDictionary+EHIDicSaveString.m in Sources */ = {isa = PBXBuildFile; fileRef = FB776EAE1E4AEE9A008763CE /* NSMutableDictionary+EHIDicSaveString.m */; };
 		FB776EB71E4AF065008763CE /* IPAddress.c in Sources */ = {isa = PBXBuildFile; fileRef = FB776EB11E4AF065008763CE /* IPAddress.c */; };
 		FB776EB81E4AF065008763CE /* NSString+MD5Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FB776EB41E4AF065008763CE /* NSString+MD5Addition.m */; };
@@ -60,14 +61,14 @@
 /* Begin PBXFileReference section */
 		0179A64639E27837308FB472 /* Pods-MobileSales.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileSales.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobileSales/Pods-MobileSales.release.xcconfig"; sourceTree = "<group>"; };
 		085593713B4FFC660683E189 /* libPods-MobileSales.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MobileSales.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5C6E9C5E1E263E880092425C /* EHLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHLoginViewController.h; sourceTree = "<group>"; };
-		5C6E9C5F1E263E880092425C /* EHLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHLoginViewController.m; sourceTree = "<group>"; };
+		5C6E9C5E1E263E880092425C /* EHILoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHILoginViewController.h; sourceTree = "<group>"; };
+		5C6E9C5F1E263E880092425C /* EHILoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHILoginViewController.m; sourceTree = "<group>"; };
 		5C6E9C621E263E980092425C /* EHIMyInfomationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIMyInfomationViewController.h; sourceTree = "<group>"; };
 		5C6E9C631E263E980092425C /* EHIMyInfomationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIMyInfomationViewController.m; sourceTree = "<group>"; };
 		5C6E9C651E263E980092425C /* EHMineHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHMineHeaderView.h; sourceTree = "<group>"; };
 		5C6E9C661E263E980092425C /* EHMineHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHMineHeaderView.m; sourceTree = "<group>"; };
-		5C70F3DA1E2C7B3A00E20321 /* EHLoginContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHLoginContentView.h; sourceTree = "<group>"; };
-		5C70F3DB1E2C7B3A00E20321 /* EHLoginContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHLoginContentView.m; sourceTree = "<group>"; };
+		5C70F3DA1E2C7B3A00E20321 /* EHILoginContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHILoginContentView.h; sourceTree = "<group>"; };
+		5C70F3DB1E2C7B3A00E20321 /* EHILoginContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHILoginContentView.m; sourceTree = "<group>"; };
 		6761FB462D2B42CFD819AECF /* Pods-MobileSales.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileSales.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileSales/Pods-MobileSales.debug.xcconfig"; sourceTree = "<group>"; };
 		FB11B24F1E49AC4000074D2D /* EHIRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIRootViewController.h; sourceTree = "<group>"; };
 		FB11B2501E49AC4000074D2D /* EHIRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIRootViewController.m; sourceTree = "<group>"; };
@@ -110,6 +111,8 @@
 		FB73EA4F1E4B1777001F268E /* EHIMovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIMovieViewController.m; sourceTree = "<group>"; };
 		FB73EA521E4B1C46001F268E /* login_movie.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = login_movie.mp4; sourceTree = "<group>"; };
 		FB73EA531E4B1C46001F268E /* normal_movie.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = normal_movie.mp4; sourceTree = "<group>"; };
+		FB73EA561E4C0024001F268E /* Login.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Login.xcassets; sourceTree = "<group>"; };
+		FB73EA5C1E4C1DFE001F268E /* EHIConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHIConstant.h; sourceTree = "<group>"; };
 		FB776EAD1E4AEE9A008763CE /* NSMutableDictionary+EHIDicSaveString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+EHIDicSaveString.h"; sourceTree = "<group>"; };
 		FB776EAE1E4AEE9A008763CE /* NSMutableDictionary+EHIDicSaveString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+EHIDicSaveString.m"; sourceTree = "<group>"; };
 		FB776EB11E4AF065008763CE /* IPAddress.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IPAddress.c; sourceTree = "<group>"; };
@@ -171,8 +174,8 @@
 		5C6E9C5D1E263E880092425C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5C6E9C5E1E263E880092425C /* EHLoginViewController.h */,
-				5C6E9C5F1E263E880092425C /* EHLoginViewController.m */,
+				5C6E9C5E1E263E880092425C /* EHILoginViewController.h */,
+				5C6E9C5F1E263E880092425C /* EHILoginViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -198,8 +201,8 @@
 		5C70F3D91E2C7B1500E20321 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5C70F3DA1E2C7B3A00E20321 /* EHLoginContentView.h */,
-				5C70F3DB1E2C7B3A00E20321 /* EHLoginContentView.m */,
+				5C70F3DA1E2C7B3A00E20321 /* EHILoginContentView.h */,
+				5C70F3DB1E2C7B3A00E20321 /* EHILoginContentView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 			children = (
 				FB2564F01E25D8B800A9B857 /* EHIMacros.h */,
 				FB776EBA1E4AFB2A008763CE /* EHIEnumerate.h */,
+				FB73EA5C1E4C1DFE001F268E /* EHIConstant.h */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -412,6 +416,7 @@
 			isa = PBXGroup;
 			children = (
 				FB309AAA1E49CAD800CE91C9 /* Launcher.xcassets */,
+				FB73EA561E4C0024001F268E /* Login.xcassets */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -553,6 +558,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB73EA541E4B1C46001F268E /* login_movie.mp4 in Resources */,
+				FB73EA571E4C0024001F268E /* Login.xcassets in Resources */,
 				FB12DB311E4B5DFA006940A3 /* btnbg.png in Resources */,
 				FB309AAB1E49CAD800CE91C9 /* Launcher.xcassets in Resources */,
 				FB73EA551E4B1C46001F268E /* normal_movie.mp4 in Resources */,
@@ -639,14 +645,14 @@
 				FB25649D1E24A6AD00A9B857 /* main.m in Sources */,
 				FB73EA501E4B1777001F268E /* EHIMovieViewController.m in Sources */,
 				FB12DB2F1E4B4FC0006940A3 /* EHILauncherButton.m in Sources */,
-				5C6E9C601E263E880092425C /* EHLoginViewController.m in Sources */,
+				5C6E9C601E263E880092425C /* EHILoginViewController.m in Sources */,
 				FB776EB81E4AF065008763CE /* NSString+MD5Addition.m in Sources */,
 				FB11B2571E49AD5C00074D2D /* EHIChatViewController.m in Sources */,
 				5C6E9C671E263E980092425C /* EHIMyInfomationViewController.m in Sources */,
 				FB11B25D1E49ADEF00074D2D /* EHICRMViewController.m in Sources */,
 				FB5A5D381E49DB2F00810253 /* UITabBar+EHIBadge.m in Sources */,
 				FB776EB71E4AF065008763CE /* IPAddress.c in Sources */,
-				5C70F3DC1E2C7B3A00E20321 /* EHLoginContentView.m in Sources */,
+				5C70F3DC1E2C7B3A00E20321 /* EHILoginContentView.m in Sources */,
 				FB776EBD1E4AFB98008763CE /* EHIUserContext.m in Sources */,
 				5C6E9C681E263E980092425C /* EHMineHeaderView.m in Sources */,
 				FB776EC01E4AFBD6008763CE /* EHIUrlList.m in Sources */,

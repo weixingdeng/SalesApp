@@ -32,7 +32,6 @@
     [self.view addSubview:self.player.view];
     self.player.shouldAutoplay = YES;
     [self.player setControlStyle:MPMovieControlStyleNone];
-    self.player.repeatMode = MPMovieRepeatModeOne;
     [self.player.view setFrame:self.view.bounds];
     self.player.view.alpha = 0;
     [UIView animateWithDuration:3 animations:^{
@@ -51,25 +50,35 @@
         default:
             break;
     }
+    
+    //添加播放完成事件
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(autoToNextPageWhenMovieEnd) name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
 
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 //添加登录按钮
 - (void)addLoginButton
 {
+    self.player.repeatMode = MPMovieRepeatModeOne;
+  
     EHILauncherButton *loginButton = [[EHILauncherButton alloc] initWithTitle:@"登录"];
     loginButton.tag = 0;
-    loginButton.titleLabel.font = [UIFont systemFontOfSize:15];
+    loginButton.titleLabel.font = autoFont(15);
     [loginButton addTarget:self
                     action:@selector(btnClickToNextPage:)
            forControlEvents:UIControlEventTouchUpInside];
     [self.player.view addSubview:loginButton];
     
     [loginButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_offset(100);
-        make.right.mas_offset(-100);
-        make.height.mas_equalTo(40);
-        make.bottom.mas_offset(-100);
+        make.centerX.mas_equalTo(self.player.view.mas_centerX);
+        make.width.mas_equalTo(93);
+        make.height.mas_equalTo(27);
+        make.bottom.mas_offset(-102);
     }];
     
 }
@@ -77,25 +86,36 @@
 //添加跳过按钮
 - (void)addSkipButton
 {
+    self.player.repeatMode = MPMovieRepeatModeNone;
     EHILauncherButton *skipButton = [[EHILauncherButton alloc] initWithTitle:@"跳过"];
     skipButton.tag = 1;
     skipButton.titleLabel.font = [UIFont systemFontOfSize:12];
     [skipButton addTarget:self
                    action:@selector(btnClickToNextPage:)
          forControlEvents:UIControlEventTouchUpInside];
-    [self.player.view addSubview:skipButton];
+    [self.view addSubview:skipButton];
     
     [skipButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_offset(40);
         make.right.mas_offset(-20);
-        make.height.mas_equalTo(30);
-        make.width.mas_equalTo(80);
+        make.height.mas_equalTo(20);
+        make.width.mas_equalTo(66);
     }];
     
 }
+
+//视屏播放完自动跳转
+- (void)autoToNextPageWhenMovieEnd
+{
+    EHILauncherButton *btn = [[EHILauncherButton alloc] init];
+    btn.tag = 1;
+    [self btnClickToNextPage:btn];
+}
+
 //登录或跳转事件
 - (void)btnClickToNextPage:(EHILauncherButton *)btn
 {
+    [self.player stop];
     self.selectCallback(btn.tag);
 }
 

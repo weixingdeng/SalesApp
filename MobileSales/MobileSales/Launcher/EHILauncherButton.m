@@ -16,7 +16,7 @@
     if (self) {
         self.layer.borderColor = [UIColor whiteColor].CGColor;
         self.layer.borderWidth = 1;
-        self.layer.cornerRadius = 5;
+        self.layer.cornerRadius = 8;
         self.clipsToBounds = YES;
         
         [self setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];

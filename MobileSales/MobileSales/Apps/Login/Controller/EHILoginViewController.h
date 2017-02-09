@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EHIViewController.h"
 
-@interface EHILoginViewController : UIViewController
+@interface EHILoginViewController : EHIViewController
 
 @end

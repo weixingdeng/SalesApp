@@ -10,5 +10,16 @@
 
 @interface EHILoginContentView : UIView
 
+/** “输入工号文字框” */
+@property (strong ,nonatomic) UITextField *userIdTextField;
+
+/** “输入密码文字框” */
+@property (strong ,nonatomic) UITextField *userPassWordTextField;
+
+/** 是否自动登录按钮 */
+@property (strong ,nonatomic) UIButton *autoLoginButton;
+
+/** 登录按钮 */
+@property (strong ,nonatomic) UIButton *loginButton;
 
 @end

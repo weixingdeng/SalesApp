@@ -6,15 +6,9 @@
 //  Copyright © 2017年 wxdeng. All rights reserved.
 //
 
-#warning 设计稿暂时没出，布局用了很多magic number。后期可能会单独拆出去
 
 #import "EHILoginViewController.h"
-#import "EHLoginContentView.h"
-#import <Masonry.h>
-
-
-#define ScreenHeight ([UIScreen mainScreen].bounds.size.height)
-#define ScreenWidth ([UIScreen mainScreen].bounds.size.width)
+#import "EHILoginContentView.h"
 
 @interface EHILoginViewController () <UITextFieldDelegate>
 
@@ -25,7 +19,7 @@
 @property (strong ,nonatomic) UIImageView *logoImageView;
 
 /** 登录内容 */
-@property (strong ,nonatomic) UIView *loginContentView;
+@property (strong ,nonatomic) EHILoginContentView *loginContentView;
 
 @end
 
@@ -36,7 +30,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     [self updateUI];
 }
 
@@ -50,7 +43,12 @@
 //是否自动登录
 - (void) clickAutoLoginButton:(UIButton *) button
 {
+    button.selected = !button.selected;
+}
 
+- (void)autoLogin:(UIButton *)btn
+{
+    
 }
 
 #pragma  mark - Delegate
@@ -67,16 +65,16 @@
     
     [self.logoImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.backgroundImageView.mas_top).offset(120);
-        make.left.equalTo(self.backgroundImageView.mas_left).offset(100);
-        make.right.equalTo(self.backgroundImageView.mas_right).offset(-100);
-        make.height.equalTo(@(60));
+        make.left.equalTo(self.backgroundImageView.mas_left).offset(0);
+        make.right.equalTo(self.backgroundImageView.mas_right).offset(0);
+        make.height.equalTo(@(45));
     }];
     
     [self.loginContentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.logoImageView.mas_bottom).offset(100);
+        make.top.equalTo(self.logoImageView.mas_bottom).offset(80);
         make.left.equalTo(self.backgroundImageView.mas_left).offset(padding);
         make.right.equalTo(self.backgroundImageView.mas_right).offset(-padding);
-        make.height.equalTo(@(200));
+        make.bottom.equalTo(@(0));
     }];
 }
 
@@ -90,7 +88,7 @@
 {
     if (!_backgroundImageView) {
         _backgroundImageView = [[UIImageView alloc] init];
-        _backgroundImageView.backgroundColor = [UIColor greenColor];
+        _backgroundImageView.image = EHI_LOAD_IMAGE(@"login_bg");
         _backgroundImageView.frame = self.view.bounds;
         _backgroundImageView.userInteractionEnabled = YES;
         [self.view addSubview:_backgroundImageView];
@@ -102,20 +100,26 @@
 {
     if (!_logoImageView) {
         _logoImageView = [[UIImageView alloc] init];
-        _logoImageView.backgroundColor = [UIColor redColor];
+        _logoImageView.image = EHI_LOAD_IMAGE(@"login_logo_icon");
+        _logoImageView.contentMode = UIViewContentModeScaleAspectFit;
         [self.backgroundImageView addSubview:_logoImageView];
     }
     return _logoImageView;
 }
 
-- (UIView *) loginContentView
+- (EHILoginContentView *) loginContentView
 {
     if (!_loginContentView) {
-        EHLoginContentView *contentView = [[EHLoginContentView alloc] init];
-        contentView.backgroundColor = [UIColor orangeColor];
-        _loginContentView = contentView;
-        _loginContentView.userInteractionEnabled = YES;
+        _loginContentView = [[EHILoginContentView alloc] init];
         [self.backgroundImageView addSubview:_loginContentView];
+        
+        [_loginContentView.loginButton addTarget:self
+                                          action:@selector(clickLoginButton:)
+                                forControlEvents:UIControlEventTouchUpInside];
+        
+        [_loginContentView.autoLoginButton addTarget:self
+                                              action:@selector(clickAutoLoginButton:)
+                                    forControlEvents:UIControlEventTouchUpInside];
     }
     return _loginContentView;
 }

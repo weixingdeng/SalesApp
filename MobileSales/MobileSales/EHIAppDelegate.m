@@ -8,7 +8,7 @@
 
 #import "EHIAppDelegate.h"
 #import <AFNetworking.h>
-#import "EHLoginViewController.h"
+#import "EHILoginViewController.h"
 #import "EHIRootViewController.h"
 #import "EHIMovieViewController.h"
 
@@ -39,26 +39,43 @@
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     
 }
+//初始化登录页
+- (void)initLoginViewController
+{
+    EHILoginViewController *loginVC = [[EHILoginViewController alloc] init];
+     [self.window setRootViewController:loginVC];
+}
 
-//初始化视图
-- (void)initRootViewController
+//初始化主页
+- (void)initHomeViewController
 {
     EHIRootViewController *rootVC = [EHIRootViewController sharedRootViewController];
     [self.window setRootViewController:rootVC];
-    [self.window addSubview:rootVC.view];
+//    [self.window addSubview:rootVC.view];
 }
 
 //加载启动动画
 - (void)loadAnimationLaunch
 {
     EHIMovieViewController *movieVC = [[EHIMovieViewController alloc] init];
-    movieVC.movieURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"login_movie" ofType:@"mp4"]];
-    movieVC.movieShowState = EHIAppFirstStart;
+    if ([[[NSUserDefaults standardUserDefaults] objectForKey:ISFIRSTSTARTAPP_KEY] isEqualToString:ISFIRSTSTARTAPP_FALSE]) {
+        movieVC.movieURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"normal_movie" ofType:@"mp4"]];
+        movieVC.movieShowState = EHIAppNormalStart;
+         [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:ISFIRSTSTARTAPP_KEY];
+    }else
+    {
+        movieVC.movieURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"login_movie" ofType:@"mp4"]];
+        movieVC.movieShowState = EHIAppFirstStart;
+        [[NSUserDefaults standardUserDefaults] setObject:ISFIRSTSTARTAPP_FALSE forKey:ISFIRSTSTARTAPP_KEY];
+    }
+   
     self.window.rootViewController = movieVC;
     
     movieVC.selectCallback = ^(NSInteger selectIndex){
         if (selectIndex == 0) {
-            [self initRootViewController];
+            [self initLoginViewController];
+        }else if (selectIndex == 1){
+            [self initHomeViewController];
         }
     };
 

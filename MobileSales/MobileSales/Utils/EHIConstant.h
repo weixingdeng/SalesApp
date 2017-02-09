@@ -9,5 +9,7 @@
 #ifndef EHIConstant_h
 #define EHIConstant_h
 
+static NSString* const ISFIRSTSTARTAPP_KEY = @"isFirstStartApp";
+static NSString* const ISFIRSTSTARTAPP_FALSE = @"notfirststart";
 
 #endif /* EHIConstant_h */

@@ -21,6 +21,7 @@
 #import "EHIMacros.h"
 #import "EHIHttpRequest.h"
 #import "EHIUserContext.h"
+#import "EHIConstant.h"
 
 #ifdef DEBUG
 #define NSLog(...) NSLog(@"%s [%d]\n%@\n\n",__func__,__LINE__,[NSString stringWithFormat:__VA_ARGS__])
