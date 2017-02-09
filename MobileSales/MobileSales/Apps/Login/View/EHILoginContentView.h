@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EHLoginContentView : UIView
+@interface EHILoginContentView : UIView
 
 
 @end

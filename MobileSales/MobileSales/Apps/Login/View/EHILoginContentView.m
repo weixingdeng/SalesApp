@@ -6,10 +6,10 @@
 //  Copyright © 2017年 wxdeng. All rights reserved.
 //
 
-#import "EHLoginContentView.h"
+#import "EHILoginContentView.h"
 #import <Masonry.h>
 
-@interface EHLoginContentView () <UITextFieldDelegate>
+@interface EHILoginContentView () <UITextFieldDelegate>
 
 /** 工号图标 */
 @property (strong ,nonatomic) UIImageView *idImageView;
@@ -40,7 +40,7 @@
 
 @end
 
-@implementation EHLoginContentView
+@implementation EHILoginContentView
 
 - (instancetype) init
 {

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EHLoginViewController : UIViewController
+@interface EHILoginViewController : UIViewController
 
 @end

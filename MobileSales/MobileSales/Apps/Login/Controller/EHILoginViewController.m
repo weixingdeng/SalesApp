@@ -8,7 +8,7 @@
 
 #warning 设计稿暂时没出，布局用了很多magic number。后期可能会单独拆出去
 
-#import "EHLoginViewController.h"
+#import "EHILoginViewController.h"
 #import "EHLoginContentView.h"
 #import <Masonry.h>
 
@@ -16,7 +16,7 @@
 #define ScreenHeight ([UIScreen mainScreen].bounds.size.height)
 #define ScreenWidth ([UIScreen mainScreen].bounds.size.width)
 
-@interface EHLoginViewController () <UITextFieldDelegate>
+@interface EHILoginViewController () <UITextFieldDelegate>
 
 /** 背景图 */
 @property (strong ,nonatomic) UIImageView *backgroundImageView;
@@ -29,7 +29,7 @@
 
 @end
 
-@implementation EHLoginViewController
+@implementation EHILoginViewController
 
 #pragma  mark - ViewController Life Cycle
 
