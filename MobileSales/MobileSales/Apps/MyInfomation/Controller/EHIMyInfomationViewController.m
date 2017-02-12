@@ -27,8 +27,8 @@
     [super viewDidLoad];
     self.title = @"我的资料";
     self.view.backgroundColor = [UIColor whiteColor];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    [self updateUI];
+//    self.edgesForExtendedLayout = UIRectEdgeNone;
+//    [self updateUI];
 }
 
 

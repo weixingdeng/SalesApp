@@ -20,6 +20,13 @@ typedef void (^RequestSuccessCallBack)(id object);
                   SuccessCallBack:(RequestSuccessCallBack)successCallBack;
 
 
-+ (void)test;
-+ (void)getChatSetInfo;
+//获取聊天框架信息
++ (void)getChatFramesInfoWithNodeId:(NSInteger)nodeId
+                     FailedCallback:(RequestFailedCallBack)failedCallback
+                        SuccessCallBack:(RequestSuccessCallBack)successCallBack;
+
+//登录
++ (void)loginWithUserNo:(NSString *)userNo withPassword:(NSString *)password
+         FailedCallback:(RequestFailedCallBack)failedCallback
+        SuccessCallBack:(RequestSuccessCallBack)successCallBack;
 @end

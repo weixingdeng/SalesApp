@@ -17,4 +17,8 @@
 /** 请求参数 */
 @property(nonatomic,strong)id requestBody;
 
+/** 是否自定义user_id 主要用于登录时候 */
+@property(nonatomic,strong)NSString *user_id;
+
+
 @end

@@ -8,11 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "EHIUrlList.h"
+#import "EHIUserModel.h"
 
 @interface EHIUserContext : NSObject
 
 +(instancetype)sharedUserDefault;
 
 @property (nonatomic , strong) EHIUrlList  *urlList;
+
+@property (nonatomic , strong) EHIUserModel  *user;
 
 @end

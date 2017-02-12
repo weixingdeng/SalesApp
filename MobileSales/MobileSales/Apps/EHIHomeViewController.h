@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EHIRootViewController : UITabBarController
+@interface EHIHomeViewController : UITabBarController
 
-+ (EHIRootViewController *) sharedRootViewController;
++ (EHIHomeViewController *) sharedRootViewController;
 
 @end

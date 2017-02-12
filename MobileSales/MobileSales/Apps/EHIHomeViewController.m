@@ -6,7 +6,7 @@
 //  Copyright © 2017年 wxdeng. All rights reserved.
 //
 
-#import "EHIRootViewController.h"
+#import "EHIHomeViewController.h"
 #import "EHIChatViewController.h"
 #import "EHICRMViewController.h"
 #import "EHIOfficeViewController.h"
@@ -14,9 +14,9 @@
 #import "EHINavigationController.h"
 #import "UITabBar+EHIBadge.h"
 
-static EHIRootViewController *rootVC = nil;
+static EHIHomeViewController *rootVC = nil;
 
-@interface EHIRootViewController ()<UITabBarControllerDelegate>
+@interface EHIHomeViewController ()<UITabBarControllerDelegate>
 
 @property (nonatomic, strong) NSArray *childVCArray;
 
@@ -27,13 +27,13 @@ static EHIRootViewController *rootVC = nil;
 
 @end
 
-@implementation EHIRootViewController
+@implementation EHIHomeViewController
 
-+ (EHIRootViewController *) sharedRootViewController
++ (EHIHomeViewController *) sharedRootViewController
 {
     static dispatch_once_t once;
     dispatch_once(&once, ^{
-        rootVC = [[EHIRootViewController alloc] init];
+        rootVC = [[EHIHomeViewController alloc] init];
     });
     return rootVC;
 }

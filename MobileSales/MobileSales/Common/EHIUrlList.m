@@ -11,6 +11,7 @@
 @implementation EHIUrlList
 
 
+
 - (void)setEnvironment:(enum ENVIRONMENT) environment {
     if (_environment != environment) {
         _environment = environment;
@@ -22,9 +23,14 @@
             self.BASE_HOST = @"";
             break;
         }
-        case ENVIRONMENT_DEMO:
+        case ENVIRONMENT_DEVELOPMENT:
         {
             self.BASE_HOST = @"http://192.168.5.185:8032";
+            break;
+        }
+        case ENVIRONMENT_DEMO:
+        {
+            self.BASE_HOST = @"http://demo5.1hai.cn/SalesAppAPI";
             break;
         }
             
@@ -33,5 +39,6 @@
             break;
     }
 }
+
 
 @end

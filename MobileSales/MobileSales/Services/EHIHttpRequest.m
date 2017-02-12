@@ -22,13 +22,16 @@ static NSString* const HTTP_DELETE = @"DELETE";
                    FailedCallback:(RequestFailedCallBack)failedCallback
                   SuccessCallBack:(RequestSuccessCallBack)successCallBack
 {
-     NSString* bodyString = @"";
+    NSString *bodyString = @"";
+    NSString *user_id = baseRequest.user_id ? baseRequest.user_id : SHARE_USER_CONTEXT.user.user_id;
     if (![baseRequest.requestMethod isEqualToString:HTTP_GET]){
         if (!baseRequest.requestBody) {
             baseRequest.requestBody = [NSMutableDictionary dictionary];
         }
         NSMutableDictionary* MobileContextDic = [NSMutableDictionary dictionary];
         [MobileContextDic setObject:baseRequest.requestBody forKey:@"Data"];
+        [MobileContextDic saveString:user_id forKey:@"UserNo"];
+        //公共参数
         [MobileContextDic setObject:@"IPhone" forKey:@"Source"];
         [MobileContextDic saveString:kAppVersion forKey:@"Version"];
         [MobileContextDic setObject:@([kAppVersion integerValue]) forKey:@"VersionCode"];
@@ -40,26 +43,29 @@ static NSString* const HTTP_DELETE = @"DELETE";
         [MobileContextDic saveString:kSystemVersion forKey:@"PhoneSys"];
         [MobileContextDic setObject:@(0) forKey:@"Latitude"];
         [MobileContextDic setObject:@(0) forKey:@"Longitude"];
-        [MobileContextDic saveString:@"" forKey:@"UserNo"];
         bodyString = [self dataToJsonString:MobileContextDic];
 #ifdef DEBUG
         NSLog(@"请求地址:%@",baseRequest.requestUrl);
         printf("请求参数:%s", [bodyString UTF8String]);
 #endif
     }
-    else
-    {
-        
-    }
     NSURL* url = [NSURL URLWithString:[baseRequest.requestUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSMutableURLRequest* urlRequest = [NSMutableURLRequest requestWithURL:url];
     [urlRequest setHTTPMethod:baseRequest.requestMethod];
     [urlRequest setHTTPBody:[bodyString dataUsingEncoding:NSUTF8StringEncoding]];
+    [urlRequest addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:urlRequest completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
-        NSLog(@"success:%@",responseObject);
-        NSLog(@"error:%@",error);
-        successCallBack(responseObject);
+        //如果错误 返回错误信息
+        if (error) {
+            if (failedCallback) {
+                failedCallback(error);
+                return ;
+            }
+        }
+        
+        
+//        successCallBack(responseObject);
     }];
     [dataTask resume];
 }
@@ -72,6 +78,7 @@ static NSString* const HTTP_DELETE = @"DELETE";
     
     NSData* jsonData = [NSJSONSerialization dataWithJSONObject:object options:NSJSONWritingPrettyPrinted error:&error];
     
+        
     if (!jsonData) {
         NSLog(@"Got an error: %@", error);
     }
@@ -81,35 +88,45 @@ static NSString* const HTTP_DELETE = @"DELETE";
     return jsonString;
 }
 
-//获取聊天人员配置信息
-+ (void)getChatSetInfo
+
+// ===================================请求方法============================================
+
+//获取聊天架构信息
++ (void)getChatFramesInfoWithNodeId:(NSInteger)nodeId
+                     FailedCallback:(RequestFailedCallBack)failedCallback
+                    SuccessCallBack:(RequestSuccessCallBack)successCallBack
 {
-    NSString* urlString = @"http://192.168.5.185:8032/api/Frame/GetFrameInfo";
+    NSMutableDictionary *paramDic = [NSMutableDictionary dictionary];
+    [paramDic setObject:@(nodeId) forKey:@"NodeId"];
+    NSString* urlString = [NSString stringWithFormat:@"%@/api/Frame/GetFrameInfo",SHARE_USER_CONTEXT.urlList.BASE_HOST];
+    
     EHIBaseRequestModel* baseRequest = [[EHIBaseRequestModel alloc] init];
     baseRequest.requestUrl = urlString;
     baseRequest.requestMethod = @"POST";
-    [self startRequestByBaseRequest:baseRequest FailedCallback:^(id object) {
-        
-    } SuccessCallBack:^(id object) {
-        //        NSLog(@"success");
-    }];
+    baseRequest.requestBody = paramDic;
+    
+    [self startRequestByBaseRequest:baseRequest FailedCallback:failedCallback SuccessCallBack:successCallBack];
 
 }
-
 
 //登录
-//+ (void)loginWith
-
-+ (void)test {
-    NSString* urlString = @"https://app.1hai.cn/Car/BatchStoreStockList";
++ (void)loginWithUserNo:(NSString *)userNo withPassword:(NSString *)password
+         FailedCallback:(RequestFailedCallBack)failedCallback
+        SuccessCallBack:(RequestSuccessCallBack)successCallBack
+{
+    NSMutableDictionary *paramDic = [NSMutableDictionary dictionary];
+    [paramDic saveString:password forKey:@"PassWord"];
+    NSString* urlString = [NSString stringWithFormat:@"%@/api/User/Login",SHARE_USER_CONTEXT.urlList.BASE_HOST];
+    
     EHIBaseRequestModel* baseRequest = [[EHIBaseRequestModel alloc] init];
     baseRequest.requestUrl = urlString;
     baseRequest.requestMethod = @"POST";
-    [self startRequestByBaseRequest:baseRequest FailedCallback:^(id object) {
-        
-    } SuccessCallBack:^(id object) {
-//        NSLog(@"success");
-    }];
-
+    baseRequest.requestBody = paramDic;
+    baseRequest.user_id = userNo;
+    
+    [self startRequestByBaseRequest:baseRequest FailedCallback:failedCallback SuccessCallBack:successCallBack];
 }
+
+
+
 @end

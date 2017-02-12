@@ -12,4 +12,6 @@
 static NSString* const ISFIRSTSTARTAPP_KEY = @"isFirstStartApp";
 static NSString* const ISFIRSTSTARTAPP_FALSE = @"notfirststart";
 
+static NSString* const USER_ID_KEY = @"user_id";
+
 #endif /* EHIConstant_h */

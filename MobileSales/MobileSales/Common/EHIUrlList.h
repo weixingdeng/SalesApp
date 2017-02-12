@@ -8,15 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-enum ENVIRONMENT{
+typedef NS_ENUM(NSInteger, ENVIRONMENT) {
     ENVIRONMENT_PRODUCTION,
+    ENVIRONMENT_DEVELOPMENT,
     ENVIRONMENT_DEMO,
-} ;
+};
 
 @interface EHIUrlList : NSObject
 
-@property(assign,nonatomic)enum ENVIRONMENT environment;
+@property(assign,nonatomic) ENVIRONMENT environment;
 
-@property(strong,nonatomic)NSString *BASE_HOST;
+@property(strong,nonatomic) NSString *BASE_HOST;
 
 @end

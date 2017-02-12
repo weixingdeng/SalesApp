@@ -20,7 +20,20 @@
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    [EHIHttpRequest getChatSetInfo];
+    [EHIHttpRequest getChatFramesInfoWithNodeId:0 FailedCallback:^(id object) {
+        
+    } SuccessCallBack:^(id object) {
+        
+    }];
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [EHIHttpRequest loginWithUserNo:@"1234" withPassword:@"1234" FailedCallback:^(id object) {
+        
+    } SuccessCallBack:^(id object) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

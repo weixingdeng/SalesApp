@@ -9,6 +9,7 @@
 
 #import "EHILoginViewController.h"
 #import "EHILoginContentView.h"
+#import "EHIHomeViewController.h"
 
 @interface EHILoginViewController () <UITextFieldDelegate>
 
@@ -37,7 +38,21 @@
 //登录
 - (void) clickLoginButton:(UIButton *) button
 {
-    
+    BOOL isSuccess = [self isLocalCheckedSuccess];
+    //本地验证成功 发起登录请求
+    if (isSuccess) {
+      [EHIHttpRequest loginWithUserNo:self.loginContentView.userIdTextField.text
+                         withPassword:self.loginContentView.userPassWordTextField.text
+                       FailedCallback:^(id object) {
+                           
+                           [self showLoginErrorMessage:object];
+                           
+                       } SuccessCallBack:^(id object) {
+                           
+                           [self initHomeViewController];
+                           
+                       }];
+    }
 }
 
 //是否自动登录
@@ -46,10 +61,49 @@
     button.selected = !button.selected;
 }
 
-- (void)autoLogin:(UIButton *)btn
+//初始化主页
+- (void)initHomeViewController
+{
+    EHIHomeViewController *rootVC = [EHIHomeViewController sharedRootViewController];
+    [self.window setRootViewController:rootVC];
+}
+
+#pragma error tips
+//本地登录信息非空验证是否通过
+- (BOOL)isLocalCheckedSuccess
+{
+    //账号为空
+    if (!self.loginContentView.userIdTextField.text.length) {
+        [EHISingleAlertController showSingleAlertOnViewController:self
+                                                        withTitle:nil
+                                                      withMessage:@"请输入账号!"
+                                                  withActionTitle:@"确认"
+                                                          handler:nil];
+        return NO;
+    }
+    
+    //密码为空
+    if (!self.loginContentView.userPassWordTextField.text.length) {
+        [EHISingleAlertController showSingleAlertOnViewController:self
+                                                        withTitle:nil
+                                                      withMessage:@"请输入密码!"
+                                                  withActionTitle:@"确认"
+                                                          handler:nil];
+        return NO;
+    }
+    
+    return YES;
+    
+}
+
+//展示登录错误信息
+- (void)showLoginErrorMessage:(NSString *)message
 {
     
 }
+
+
+
 
 #pragma  mark - Delegate
 
@@ -60,6 +114,9 @@
 #pragma  mark - Private Method
 - (void) updateUI
 {
+    [self.view addSubview:self.backgroundImageView];
+     [self.view addSubview:self.logoImageView];
+    [self.view addSubview:self.loginContentView];
     //登录内容与屏幕左右边距
     CGFloat padding = 20;
     
@@ -90,8 +147,6 @@
         _backgroundImageView = [[UIImageView alloc] init];
         _backgroundImageView.image = EHI_LOAD_IMAGE(@"login_bg");
         _backgroundImageView.frame = self.view.bounds;
-        _backgroundImageView.userInteractionEnabled = YES;
-        [self.view addSubview:_backgroundImageView];
     }
     return _backgroundImageView;
 }
@@ -102,7 +157,6 @@
         _logoImageView = [[UIImageView alloc] init];
         _logoImageView.image = EHI_LOAD_IMAGE(@"login_logo_icon");
         _logoImageView.contentMode = UIViewContentModeScaleAspectFit;
-        [self.backgroundImageView addSubview:_logoImageView];
     }
     return _logoImageView;
 }
@@ -111,7 +165,6 @@
 {
     if (!_loginContentView) {
         _loginContentView = [[EHILoginContentView alloc] init];
-        [self.backgroundImageView addSubview:_loginContentView];
         
         [_loginContentView.loginButton addTarget:self
                                           action:@selector(clickLoginButton:)

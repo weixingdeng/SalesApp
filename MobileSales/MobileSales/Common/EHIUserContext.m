@@ -20,4 +20,12 @@
     return userDefault;
 }
 
+- (EHIUrlList *)urlList
+{
+    if (!_urlList) {
+        _urlList = [[EHIUrlList alloc] init];
+    }
+    return _urlList;
+}
+
 @end

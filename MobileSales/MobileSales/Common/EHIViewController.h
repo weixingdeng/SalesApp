@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EHIAppDelegate.h"
 
 @interface EHIViewController : UIViewController
+
+@property (nonatomic , strong) EHIAppDelegate *delegate;
+
+@property (nonatomic , strong) UIWindow *window;
 
 @end

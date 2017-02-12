@@ -46,9 +46,9 @@ typedef void(^EHISelectCallback)(NSInteger selectIndex);
 #define IS_IPHONE_6 (SCREEN_MAX_LENGTH == 667.0)
 #define IS_IPHONE_6P (SCREEN_MAX_LENGTH == 736.0)
 
-#define autoSizeScaleX_IPhone6 (SCREEN_WIDTH/375)
+#define autoSizeScaleX_iPhone6 (SCREEN_WIDTH/375)
 
-#define autoSizeScaleH_IPhone6 (SCREEN_HEIGHT/667)
+#define autoSizeScaleH_iPhone6 (SCREEN_HEIGHT/667)
 //autoscale with iPhone6
 #define autoHeightOf6(HEIGHT) HEIGHT * autoSizeScaleH_iPhone6
 #define autoWidthOf6(WIDTH) WIDTH * autoSizeScaleX_iPhone6
