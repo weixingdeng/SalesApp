@@ -170,7 +170,7 @@
     return _passWordLineView;
 }
 
-#warning 这个方法应当单独抽出作为类方法
+
 - (UIView *) lineView:(UIColor *) color
 {
     UIView *lineView = [[UIView alloc] init];

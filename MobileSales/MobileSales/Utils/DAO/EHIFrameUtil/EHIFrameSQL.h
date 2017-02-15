@@ -24,7 +24,7 @@
 
 #define SQL_SELECT_ALL_FRAME @"SELECT * FROM %@"
 
-#define SQL_SELECT_FRAME @"SELECT * FROM %@ WHERE NodeId = %@"
+#define SQL_SELECT_FRAME @"SELECT * FROM %@ WHERE NodeId = %d"
 
 //创建框架表下的子表(子类)
 #define     FRAME_CHILDREN_TABLE_NAME       @"chat_frame_children"
@@ -39,7 +39,7 @@
                                                     Comment TEXT,\
                                                     PRIMARY KEY(SuperNodeId,NodeId))"
 
-#define SQL_SELECT_FRAME @"SELECT * FROM %@ WHERE SuperNodeId = %@"
+#define SQL_SELECT_FRAME @"SELECT * FROM %@ WHERE SuperNodeId = %d"
 
 //聊天框架表下的字表(每个框架下的人员)
 #define     FRAME_CONTACTS_TABLE_NAME       @"chat_frame_contacts"
@@ -53,8 +53,8 @@
 
 
 
-#define     SQL_SELECT_FRAME             @"SELECT * FROM %@ WHERE uid = %@"
+#define     SQL_SELECT_FRAME             @"SELECT * FROM %@ WHERE SuperNodeId = %@"
 
-#define     SQL_DELETE_FRAME             @"DELETE FROM %@ WHERE uid = '%@' and fid = '%@'"
+#define     SQL_DELETE_FRAME             @"DELETE FROM %@ WHERE SuperNodeId = '%@' and NodeId = '%@'"
 
 #endif /* EHIFrameSQL_h */

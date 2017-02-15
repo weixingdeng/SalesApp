@@ -10,4 +10,5 @@
 
 @interface EHIDBFrameDAO : NSObject
 
+
 @end
