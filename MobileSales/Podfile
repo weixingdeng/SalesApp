@@ -5,4 +5,5 @@ pod 'MJRefresh'
 pod 'IQKeyboardManager'
 pod 'Masonry'
 pod 'UMengAnalytics'
+pod 'FMDB'
 end

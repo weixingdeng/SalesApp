@@ -21,9 +21,6 @@ typedef void(^EHISelectCallback)(NSInteger selectIndex);
 #define VERSION_EQUAL_OR_LATER(_version) \
 ( [[[UIDevice currentDevice] systemVersion] compare:(@#_version)] != NSOrderedAscending )
 
-//util for empty string
-#define INCASE_EMPTY(str, replace) \
-( ([(str) length]==0)?(replace):(str) )
 
 
 //app version
@@ -39,6 +36,7 @@ typedef void(^EHISelectCallback)(NSInteger selectIndex);
 
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+
 #define SCREEN_MAX_LENGTH (MAX(SCREEN_WIDTH, SCREEN_HEIGHT))
 
 #define IS_IPHONE_4_OR_LESS  (SCREEN_MAX_LENGTH < 568.0)
@@ -62,14 +60,13 @@ typedef void(^EHISelectCallback)(NSInteger selectIndex);
 
 #define HEXCOLOR_718DDE HEXCOLOR(@"#718dde") //tabbar选中颜色
 
-#pragma mark --方法
+#pragma mark - # Methods
 
-//create __weak point of an object, use outside the block, with `strongself`
+#define     EHIURL(urlString)    [NSURL URLWithString:urlString]
+#define     EHINoNilString(str)  (str.length > 0 ? str : @"")
+
 #define WEAKSELF(_instance)  __weak typeof(_instance) weak##_instance = _instance;
-
-//create __strong point of a weak object, use inside the block, with `weakself`
 #define STRONGSELF(_instance) __strong typeof(weak##_instance) _instance = weak##_instance
-
 
 @interface EHIMacros : NSObject
 
