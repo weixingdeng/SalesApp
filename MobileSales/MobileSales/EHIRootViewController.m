@@ -24,7 +24,8 @@
     [self initThirdSDK];
     
     //加载动画
-    [self loadAnimationLaunch];
+//    [self loadAnimationLaunch];
+    [self initHomeViewController];
 }
 
 - (void)didReceiveMemoryWarning {

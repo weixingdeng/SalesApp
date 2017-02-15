@@ -28,7 +28,7 @@
                                                 ext5 TEXT,\
                                                 PRIMARY KEY(userid, msgid, nodeid))"
 
-#define     SQL_ADD_MESSAGE                 @"REPLACE INTO %@ ( msgid, userid, nodeid, date, own_type, msg_type, content, send_status, received_status, ext1, ext2, ext3, ext4, ext5) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+#define     SQL_ADD_MESSAGE                 @"REPLACE INTO %@ ( msgid, userid, nodeid, date, own_type, msg_type, content,           send_status, received_status, ext1, ext2, ext3, ext4, ext5) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?)"
 
 #define     SQL_SELECT_MESSAGES_PAGE        @"SELECT * FROM %@ WHERE nodeid = '%@' and date < '%@' order by date desc LIMIT '%ld'"
 
