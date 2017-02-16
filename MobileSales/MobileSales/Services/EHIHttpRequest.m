@@ -58,14 +58,25 @@ static NSString* const HTTP_DELETE = @"DELETE";
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:urlRequest completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
         //如果错误 返回错误信息
         if (error) {
+            NSLog(@"❌请求失败\n:%@",error);
             if (failedCallback) {
                 failedCallback(error);
-                return ;
+            }
+            return ;
+        }
+        printf("请求成功:\n%s",[[responseObject mj_JSONString] UTF8String]);
+        //如果请求成功了 处理结果
+        EHIResponseModel *responseModel = [EHIResponseModel mj_objectWithKeyValues:responseObject];
+        if (responseModel.IsSuccess) {
+            if (successCallBack) {
+                successCallBack(responseModel);
+            }
+        }else
+        {
+            if (failedCallback) {
+                  failedCallback(responseModel);
             }
         }
-        
-        
-        successCallBack(responseObject);
     }];
     [dataTask resume];
 }
@@ -102,7 +113,7 @@ static NSString* const HTTP_DELETE = @"DELETE";
     
     EHIBaseRequestModel* baseRequest = [[EHIBaseRequestModel alloc] init];
     baseRequest.requestUrl = urlString;
-    baseRequest.requestMethod = @"POST";
+    baseRequest.requestMethod = HTTP_POST;
     baseRequest.requestBody = paramDic;
     
     [self startRequestByBaseRequest:baseRequest FailedCallback:failedCallback SuccessCallBack:successCallBack];
@@ -120,7 +131,7 @@ static NSString* const HTTP_DELETE = @"DELETE";
     
     EHIBaseRequestModel* baseRequest = [[EHIBaseRequestModel alloc] init];
     baseRequest.requestUrl = urlString;
-    baseRequest.requestMethod = @"POST";
+    baseRequest.requestMethod = HTTP_POST;
     baseRequest.requestBody = paramDic;
     baseRequest.user_id = userNo;
     

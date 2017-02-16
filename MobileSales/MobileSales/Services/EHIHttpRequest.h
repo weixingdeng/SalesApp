@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <AFNetworking.h>
 #import "EHIBaseRequestModel.h"
+#import "EHIResponseModel.h"
 
 typedef void (^RequestFailedCallBack)(id object);
 typedef void (^RequestSuccessCallBack)(id object);

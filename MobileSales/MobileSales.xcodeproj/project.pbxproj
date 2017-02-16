@@ -13,7 +13,6 @@
 		5C70F3DC1E2C7B3A00E20321 /* EHILoginContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C70F3DB1E2C7B3A00E20321 /* EHILoginContentView.m */; };
 		AC306C9B95FE8E79D7E1020A /* libPods-MobileSales.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 085593713B4FFC660683E189 /* libPods-MobileSales.a */; };
 		FB11B2511E49AC4000074D2D /* EHIHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB11B2501E49AC4000074D2D /* EHIHomeViewController.m */; };
-		FB11B2571E49AD5C00074D2D /* EHIChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB11B2561E49AD5C00074D2D /* EHIChatViewController.m */; };
 		FB11B25A1E49AD8A00074D2D /* EHIOfficeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB11B2591E49AD8A00074D2D /* EHIOfficeViewController.m */; };
 		FB11B25D1E49ADEF00074D2D /* EHICRMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB11B25C1E49ADEF00074D2D /* EHICRMViewController.m */; };
 		FB12DB2F1E4B4FC0006940A3 /* EHILauncherButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FB12DB2E1E4B4FC0006940A3 /* EHILauncherButton.m */; };
@@ -25,7 +24,6 @@
 		FB309AA41E49C11500CE91C9 /* EHIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB309AA31E49C11500CE91C9 /* EHIViewController.m */; };
 		FB309AA71E49C60D00CE91C9 /* EHINavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB309AA61E49C60D00CE91C9 /* EHINavigationController.m */; };
 		FB309AAB1E49CAD800CE91C9 /* Launcher.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB309AAA1E49CAD800CE91C9 /* Launcher.xcassets */; };
-		FB516A501E548FB500208AF4 /* EHISegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = FB516A4F1E548FB500208AF4 /* EHISegmentedControl.m */; };
 		FB5A5D381E49DB2F00810253 /* UITabBar+EHIBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5A5D371E49DB2F00810253 /* UITabBar+EHIBadge.m */; };
 		FB5A5D3B1E4AACF900810253 /* EHIHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5A5D3A1E4AACF900810253 /* EHIHttpRequest.m */; };
 		FB5A5D3E1E4AB20900810253 /* EHIBaseRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5A5D3D1E4AB20900810253 /* EHIBaseRequestModel.m */; };
@@ -49,6 +47,18 @@
 		FB94D1EB1E53FB7A00BC86E5 /* EHIDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB94D1E91E53FB7A00BC86E5 /* EHIDBManager.m */; };
 		FB94D1EF1E53FB8200BC86E5 /* EHIDBChatDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = FB94D1EE1E53FB8200BC86E5 /* EHIDBChatDAO.m */; };
 		FB94D1F31E53FB8A00BC86E5 /* EHIDBFrameDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = FB94D1F11E53FB8A00BC86E5 /* EHIDBFrameDAO.m */; };
+		FB94D2051E55451D00BC86E5 /* EHIChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB94D2021E55451D00BC86E5 /* EHIChatViewController.m */; };
+		FB94D2061E55451D00BC86E5 /* EHISegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = FB94D2041E55451D00BC86E5 /* EHISegmentedControl.m */; };
+		FB94D20C1E55456100BC86E5 /* EHIChatListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB94D20B1E55456100BC86E5 /* EHIChatListTableViewCell.m */; };
+		FB94D20F1E55460700BC86E5 /* EHIChatListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FB94D20E1E55460700BC86E5 /* EHIChatListModel.m */; };
+		FB94D2121E55469F00BC86E5 /* EHIContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FB94D2111E55469F00BC86E5 /* EHIContactModel.m */; };
+		FB94D2161E55546800BC86E5 /* EHIChatViewController+Delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB94D2151E55546800BC86E5 /* EHIChatViewController+Delegate.m */; };
+		FB94D2191E556B9000BC86E5 /* EHIResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FB94D2181E556B9000BC86E5 /* EHIResponseModel.m */; };
+		FB94D21C1E558D3F00BC86E5 /* EHIChatDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB94D21B1E558D3F00BC86E5 /* EHIChatDetailViewController.m */; };
+		FB94D21E1E559A9B00BC86E5 /* Chat.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB94D21D1E559A9B00BC86E5 /* Chat.xcassets */; };
+		FB94D2211E55A02B00BC86E5 /* EHIChatDetailViewController+Delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB94D2201E55A02B00BC86E5 /* EHIChatDetailViewController+Delegate.m */; };
+		FB94D2241E55A74800BC86E5 /* EHIChatBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FB94D2231E55A74800BC86E5 /* EHIChatBar.m */; };
+		FB94D2271E55AEDF00BC86E5 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = FB94D2261E55AEDF00BC86E5 /* UIView+Frame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,8 +92,6 @@
 		6761FB462D2B42CFD819AECF /* Pods-MobileSales.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileSales.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileSales/Pods-MobileSales.debug.xcconfig"; sourceTree = "<group>"; };
 		FB11B24F1E49AC4000074D2D /* EHIHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIHomeViewController.h; sourceTree = "<group>"; };
 		FB11B2501E49AC4000074D2D /* EHIHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIHomeViewController.m; sourceTree = "<group>"; };
-		FB11B2551E49AD5C00074D2D /* EHIChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIChatViewController.h; sourceTree = "<group>"; };
-		FB11B2561E49AD5C00074D2D /* EHIChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIChatViewController.m; sourceTree = "<group>"; };
 		FB11B2581E49AD8A00074D2D /* EHIOfficeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIOfficeViewController.h; sourceTree = "<group>"; };
 		FB11B2591E49AD8A00074D2D /* EHIOfficeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIOfficeViewController.m; sourceTree = "<group>"; };
 		FB11B25B1E49ADEF00074D2D /* EHICRMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHICRMViewController.h; sourceTree = "<group>"; };
@@ -110,8 +118,6 @@
 		FB309AA51E49C60D00CE91C9 /* EHINavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHINavigationController.h; sourceTree = "<group>"; };
 		FB309AA61E49C60D00CE91C9 /* EHINavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHINavigationController.m; sourceTree = "<group>"; };
 		FB309AAA1E49CAD800CE91C9 /* Launcher.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Launcher.xcassets; sourceTree = "<group>"; };
-		FB516A4E1E548FB500208AF4 /* EHISegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHISegmentedControl.h; sourceTree = "<group>"; };
-		FB516A4F1E548FB500208AF4 /* EHISegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHISegmentedControl.m; sourceTree = "<group>"; };
 		FB5A5D361E49DB2F00810253 /* UITabBar+EHIBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+EHIBadge.h"; sourceTree = "<group>"; };
 		FB5A5D371E49DB2F00810253 /* UITabBar+EHIBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+EHIBadge.m"; sourceTree = "<group>"; };
 		FB5A5D391E4AACF900810253 /* EHIHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIHttpRequest.h; sourceTree = "<group>"; };
@@ -159,6 +165,29 @@
 		FB94D1F01E53FB8A00BC86E5 /* EHIDBFrameDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIDBFrameDAO.h; sourceTree = "<group>"; };
 		FB94D1F11E53FB8A00BC86E5 /* EHIDBFrameDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIDBFrameDAO.m; sourceTree = "<group>"; };
 		FB94D1F21E53FB8A00BC86E5 /* EHIFrameSQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIFrameSQL.h; sourceTree = "<group>"; };
+		FB94D2011E55451D00BC86E5 /* EHIChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIChatViewController.h; sourceTree = "<group>"; };
+		FB94D2021E55451D00BC86E5 /* EHIChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIChatViewController.m; sourceTree = "<group>"; };
+		FB94D2031E55451D00BC86E5 /* EHISegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHISegmentedControl.h; sourceTree = "<group>"; };
+		FB94D2041E55451D00BC86E5 /* EHISegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHISegmentedControl.m; sourceTree = "<group>"; };
+		FB94D20A1E55456100BC86E5 /* EHIChatListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIChatListTableViewCell.h; sourceTree = "<group>"; };
+		FB94D20B1E55456100BC86E5 /* EHIChatListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIChatListTableViewCell.m; sourceTree = "<group>"; };
+		FB94D20D1E55460700BC86E5 /* EHIChatListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIChatListModel.h; sourceTree = "<group>"; };
+		FB94D20E1E55460700BC86E5 /* EHIChatListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIChatListModel.m; sourceTree = "<group>"; };
+		FB94D2101E55469F00BC86E5 /* EHIContactModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIContactModel.h; sourceTree = "<group>"; };
+		FB94D2111E55469F00BC86E5 /* EHIContactModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIContactModel.m; sourceTree = "<group>"; };
+		FB94D2141E55546800BC86E5 /* EHIChatViewController+Delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EHIChatViewController+Delegate.h"; sourceTree = "<group>"; };
+		FB94D2151E55546800BC86E5 /* EHIChatViewController+Delegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EHIChatViewController+Delegate.m"; sourceTree = "<group>"; };
+		FB94D2171E556B9000BC86E5 /* EHIResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIResponseModel.h; sourceTree = "<group>"; };
+		FB94D2181E556B9000BC86E5 /* EHIResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIResponseModel.m; sourceTree = "<group>"; };
+		FB94D21A1E558D3F00BC86E5 /* EHIChatDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIChatDetailViewController.h; sourceTree = "<group>"; };
+		FB94D21B1E558D3F00BC86E5 /* EHIChatDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIChatDetailViewController.m; sourceTree = "<group>"; };
+		FB94D21D1E559A9B00BC86E5 /* Chat.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Chat.xcassets; sourceTree = "<group>"; };
+		FB94D21F1E55A02B00BC86E5 /* EHIChatDetailViewController+Delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EHIChatDetailViewController+Delegate.h"; sourceTree = "<group>"; };
+		FB94D2201E55A02B00BC86E5 /* EHIChatDetailViewController+Delegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EHIChatDetailViewController+Delegate.m"; sourceTree = "<group>"; };
+		FB94D2221E55A74800BC86E5 /* EHIChatBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIChatBar.h; sourceTree = "<group>"; };
+		FB94D2231E55A74800BC86E5 /* EHIChatBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIChatBar.m; sourceTree = "<group>"; };
+		FB94D2251E55AEDF00BC86E5 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		FB94D2261E55AEDF00BC86E5 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -342,6 +371,8 @@
 				FB94D1DF1E53F2E700BC86E5 /* NSFileManager+Paths.m */,
 				FB94D1DB1E53F28700BC86E5 /* NSFileManager+EHIChat.h */,
 				FB94D1DC1E53F28700BC86E5 /* NSFileManager+EHIChat.m */,
+				FB94D2251E55AEDF00BC86E5 /* UIView+Frame.h */,
+				FB94D2261E55AEDF00BC86E5 /* UIView+Frame.m */,
 			);
 			name = Extends;
 			path = Thirds;
@@ -361,10 +392,8 @@
 		FB2564E01E25D24100A9B857 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				FB11B2551E49AD5C00074D2D /* EHIChatViewController.h */,
-				FB11B2561E49AD5C00074D2D /* EHIChatViewController.m */,
-				FB516A4E1E548FB500208AF4 /* EHISegmentedControl.h */,
-				FB516A4F1E548FB500208AF4 /* EHISegmentedControl.m */,
+				FB94D2001E5544F600BC86E5 /* ChatDetial */,
+				FB94D1FF1E5544F100BC86E5 /* ChatList */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -440,6 +469,8 @@
 				FB5A5D3A1E4AACF900810253 /* EHIHttpRequest.m */,
 				FB5A5D3C1E4AB20900810253 /* EHIBaseRequestModel.h */,
 				FB5A5D3D1E4AB20900810253 /* EHIBaseRequestModel.m */,
+				FB94D2171E556B9000BC86E5 /* EHIResponseModel.h */,
+				FB94D2181E556B9000BC86E5 /* EHIResponseModel.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -464,6 +495,7 @@
 			children = (
 				FB309AAA1E49CAD800CE91C9 /* Launcher.xcassets */,
 				FB73EA561E4C0024001F268E /* Login.xcassets */,
+				FB94D21D1E559A9B00BC86E5 /* Chat.xcassets */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -542,6 +574,62 @@
 				FB94D1E91E53FB7A00BC86E5 /* EHIDBManager.m */,
 			);
 			path = EHIDBBaseUtils;
+			sourceTree = "<group>";
+		};
+		FB94D1FF1E5544F100BC86E5 /* ChatList */ = {
+			isa = PBXGroup;
+			children = (
+				FB94D2091E55452F00BC86E5 /* Models */,
+				FB94D2081E55452C00BC86E5 /* Views */,
+				FB94D2071E55452900BC86E5 /* Controllers */,
+			);
+			path = ChatList;
+			sourceTree = "<group>";
+		};
+		FB94D2001E5544F600BC86E5 /* ChatDetial */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ChatDetial;
+			sourceTree = "<group>";
+		};
+		FB94D2071E55452900BC86E5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FB94D2011E55451D00BC86E5 /* EHIChatViewController.h */,
+				FB94D2021E55451D00BC86E5 /* EHIChatViewController.m */,
+				FB94D2141E55546800BC86E5 /* EHIChatViewController+Delegate.h */,
+				FB94D2151E55546800BC86E5 /* EHIChatViewController+Delegate.m */,
+				FB94D21A1E558D3F00BC86E5 /* EHIChatDetailViewController.h */,
+				FB94D21B1E558D3F00BC86E5 /* EHIChatDetailViewController.m */,
+				FB94D21F1E55A02B00BC86E5 /* EHIChatDetailViewController+Delegate.h */,
+				FB94D2201E55A02B00BC86E5 /* EHIChatDetailViewController+Delegate.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		FB94D2081E55452C00BC86E5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FB94D2031E55451D00BC86E5 /* EHISegmentedControl.h */,
+				FB94D2041E55451D00BC86E5 /* EHISegmentedControl.m */,
+				FB94D20A1E55456100BC86E5 /* EHIChatListTableViewCell.h */,
+				FB94D20B1E55456100BC86E5 /* EHIChatListTableViewCell.m */,
+				FB94D2221E55A74800BC86E5 /* EHIChatBar.h */,
+				FB94D2231E55A74800BC86E5 /* EHIChatBar.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		FB94D2091E55452F00BC86E5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FB94D20D1E55460700BC86E5 /* EHIChatListModel.h */,
+				FB94D20E1E55460700BC86E5 /* EHIChatListModel.m */,
+				FB94D2101E55469F00BC86E5 /* EHIContactModel.h */,
+				FB94D2111E55469F00BC86E5 /* EHIContactModel.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -661,6 +749,7 @@
 				FB73EA571E4C0024001F268E /* Login.xcassets in Resources */,
 				FB309AAB1E49CAD800CE91C9 /* Launcher.xcassets in Resources */,
 				FB73EAD11E4D9571001F268E /* normal_movie.mp4 in Resources */,
+				FB94D21E1E559A9B00BC86E5 /* Chat.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -734,36 +823,45 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB94D1EB1E53FB7A00BC86E5 /* EHIDBManager.m in Sources */,
+				FB94D2051E55451D00BC86E5 /* EHIChatViewController.m in Sources */,
 				FB309AA71E49C60D00CE91C9 /* EHINavigationController.m in Sources */,
 				FB5A5D3E1E4AB20900810253 /* EHIBaseRequestModel.m in Sources */,
 				FB2564A01E24A6AD00A9B857 /* EHIAppDelegate.m in Sources */,
+				FB94D2121E55469F00BC86E5 /* EHIContactModel.m in Sources */,
 				FB5A5D3B1E4AACF900810253 /* EHIHttpRequest.m in Sources */,
 				FB776EB91E4AF065008763CE /* UIDevice+IdentifierAddition.m in Sources */,
 				FB309AA41E49C11500CE91C9 /* EHIViewController.m in Sources */,
+				FB94D21C1E558D3F00BC86E5 /* EHIChatDetailViewController.m in Sources */,
 				FB11B25A1E49AD8A00074D2D /* EHIOfficeViewController.m in Sources */,
 				FB73EADB1E4DB4FC001F268E /* WXAlertController.m in Sources */,
+				FB94D2161E55546800BC86E5 /* EHIChatViewController+Delegate.m in Sources */,
 				FB2564F51E25ECF000A9B857 /* UIColor+ColorWithHex.m in Sources */,
+				FB94D2241E55A74800BC86E5 /* EHIChatBar.m in Sources */,
 				FB25649D1E24A6AD00A9B857 /* main.m in Sources */,
 				FB73EA501E4B1777001F268E /* EHIMovieViewController.m in Sources */,
 				FB12DB2F1E4B4FC0006940A3 /* EHILauncherButton.m in Sources */,
+				FB94D20C1E55456100BC86E5 /* EHIChatListTableViewCell.m in Sources */,
 				FB94D1EF1E53FB8200BC86E5 /* EHIDBChatDAO.m in Sources */,
 				FB94D1DD1E53F28700BC86E5 /* NSFileManager+EHIChat.m in Sources */,
+				FB94D2191E556B9000BC86E5 /* EHIResponseModel.m in Sources */,
 				FB73EAD81E4DA0BF001F268E /* EHIRootViewController.m in Sources */,
 				FB73EAD51E4D98D6001F268E /* EHIUserModel.m in Sources */,
+				FB94D2211E55A02B00BC86E5 /* EHIChatDetailViewController+Delegate.m in Sources */,
 				5C6E9C601E263E880092425C /* EHILoginViewController.m in Sources */,
 				FB776EB81E4AF065008763CE /* NSString+MD5Addition.m in Sources */,
 				FB94D1E01E53F2E700BC86E5 /* NSFileManager+Paths.m in Sources */,
-				FB11B2571E49AD5C00074D2D /* EHIChatViewController.m in Sources */,
 				5C6E9C671E263E980092425C /* EHIMyInfomationViewController.m in Sources */,
 				FB73EADE1E4DB585001F268E /* EHISingleAlertController.m in Sources */,
 				FB11B25D1E49ADEF00074D2D /* EHICRMViewController.m in Sources */,
+				FB94D20F1E55460700BC86E5 /* EHIChatListModel.m in Sources */,
+				FB94D2271E55AEDF00BC86E5 /* UIView+Frame.m in Sources */,
 				FB5A5D381E49DB2F00810253 /* UITabBar+EHIBadge.m in Sources */,
 				FB776EB71E4AF065008763CE /* IPAddress.c in Sources */,
 				5C70F3DC1E2C7B3A00E20321 /* EHILoginContentView.m in Sources */,
 				FB94D1F31E53FB8A00BC86E5 /* EHIDBFrameDAO.m in Sources */,
 				FB94D1EA1E53FB7A00BC86E5 /* EHIDBBaseDAO.m in Sources */,
 				FB776EBD1E4AFB98008763CE /* EHIUserContext.m in Sources */,
-				FB516A501E548FB500208AF4 /* EHISegmentedControl.m in Sources */,
+				FB94D2061E55451D00BC86E5 /* EHISegmentedControl.m in Sources */,
 				5C6E9C681E263E980092425C /* EHMineHeaderView.m in Sources */,
 				FB776EC01E4AFBD6008763CE /* EHIUrlList.m in Sources */,
 				FB11B2511E49AC4000074D2D /* EHIHomeViewController.m in Sources */,

@@ -24,6 +24,8 @@
 #import "EHIConstant.h"
 #import "WXAlertController.h"
 #import "EHISingleAlertController.h"
+#import <MJExtension.h>
+#import "UIView+Frame.h"
 
 #ifdef DEBUG
 #define NSLog(...) NSLog(@"%s [%d]\n%@\n\n",__func__,__LINE__,[NSString stringWithFormat:__VA_ARGS__])

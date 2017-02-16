@@ -14,4 +14,6 @@ static NSString* const ISFIRSTSTARTAPP_FALSE = @"notfirststart";
 
 static NSString* const USER_ID_KEY = @"user_id";
 
+static NSString* const REQUEST_FAILED = @"网络请求失败,请稍后重试!";
+
 #endif /* EHIConstant_h */

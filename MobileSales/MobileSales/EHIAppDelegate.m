@@ -23,7 +23,7 @@
     [self.window setRootViewController:rootVC];
     [self.window makeKeyAndVisible];
     
-    SHARE_USER_CONTEXT.urlList.environment = ENVIRONMENT_DEVELOPMENT;
+    SHARE_USER_CONTEXT.urlList.environment = ENVIRONMENT_DEMO;
     
     return YES;
 }
