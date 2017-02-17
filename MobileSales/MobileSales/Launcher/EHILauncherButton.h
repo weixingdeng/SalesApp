@@ -10,6 +10,6 @@
 
 @interface EHILauncherButton : UIButton
 
-- (instancetype)initWithTitle:(NSString *)title;
+- (instancetype)initWithTitle:(NSString *)title withCornerRadius:(CGFloat)radius;
 
 @end

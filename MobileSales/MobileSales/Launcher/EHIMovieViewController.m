@@ -66,9 +66,9 @@
 {
     self.player.repeatMode = MPMovieRepeatModeOne;
   
-    EHILauncherButton *loginButton = [[EHILauncherButton alloc] initWithTitle:@"登录"];
+    EHILauncherButton *loginButton = [[EHILauncherButton alloc] initWithTitle:@"登录" withCornerRadius:autoHeightOf6(36)*12/36+2];
     loginButton.tag = 0;
-    loginButton.titleLabel.font = autoFont(15);
+    loginButton.titleLabel.font = autoFont(16);
     [loginButton addTarget:self
                     action:@selector(btnClickToNextPage:)
            forControlEvents:UIControlEventTouchUpInside];
@@ -76,9 +76,9 @@
     
     [loginButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self.player.view.mas_centerX);
-        make.width.mas_equalTo(93);
-        make.height.mas_equalTo(27);
-        make.bottom.mas_offset(-102);
+        make.width.mas_equalTo(autoWidthOf6(176));
+        make.height.mas_equalTo(autoWidthOf6(36));
+        make.bottom.mas_offset(-autoHeightOf6(94));
     }];
     
 }
@@ -87,7 +87,7 @@
 - (void)addSkipButton
 {
     self.player.repeatMode = MPMovieRepeatModeNone;
-    EHILauncherButton *skipButton = [[EHILauncherButton alloc] initWithTitle:@"跳过"];
+    EHILauncherButton *skipButton = [[EHILauncherButton alloc] initWithTitle:@"跳过" withCornerRadius:8];
     skipButton.tag = 1;
     skipButton.titleLabel.font = [UIFont systemFontOfSize:12];
     [skipButton addTarget:self

@@ -1,16 +1,14 @@
 //
-//  EHIChatDetailViewController+Delegate.m
+//  EHIChatMessageDisplayView+Delegate.m
 //  MobileSales
 //
-//  Created by dengwx on 17/2/16.
+//  Created by dengwx on 17/2/17.
 //  Copyright © 2017年 wxdeng. All rights reserved.
 //
 
-#import "EHIChatDetailViewController+Delegate.h"
+#import "EHIChatMessageDisplayView+Delegate.h"
 
-@implementation EHIChatDetailViewController (Delegate)
-
-#pragma mark tableView代理
+@implementation EHIChatMessageDisplayView (Delegate)
 
 //tableView每组的单元格数量
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -28,5 +26,12 @@
     cell.textLabel.text = @"hello";
     return cell;
 }
+
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    [self.window endEditing:YES];
+}
+
 
 @end

@@ -58,7 +58,7 @@
     
     EHIChatDetailViewController *detailVC = [[EHIChatDetailViewController alloc] init];
     detailVC.listModel = subModel;
-      self.hidesBottomBarWhenPushed=YES;
+    self.hidesBottomBarWhenPushed=YES;
     [self.navigationController pushViewController:detailVC animated:YES];
     self.hidesBottomBarWhenPushed=NO;
 }

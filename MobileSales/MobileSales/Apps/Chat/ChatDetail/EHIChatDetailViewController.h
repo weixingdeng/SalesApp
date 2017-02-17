@@ -8,13 +8,15 @@
 
 #import "EHIViewController.h"
 #import "EHIChatListModel.h"
+#import "EHIChatMessageDisplayView.h"
 #import "EHIChatBar.h"
 
 @interface EHIChatDetailViewController : EHIViewController
 
 @property (nonatomic , strong) EHIChatListModel *listModel;
 
-@property (nonatomic , strong) UITableView *chatDetailTable;
+//信息展示视图
+@property (nonatomic , strong) EHIChatMessageDisplayView *messageView;
 
 /// 聊天输入栏
 @property (nonatomic, strong) EHIChatBar *chatBar;

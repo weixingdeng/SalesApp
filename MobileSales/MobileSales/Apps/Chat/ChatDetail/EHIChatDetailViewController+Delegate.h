@@ -8,7 +8,7 @@
 
 #import "EHIChatDetailViewController.h"
 
-@interface EHIChatDetailViewController (Delegate)<UITableViewDataSource,UITableViewDelegate>
+@interface EHIChatDetailViewController (Delegate)
 
 //- (void)registerCellClassForTableView:(UITableView *)tableView;
 

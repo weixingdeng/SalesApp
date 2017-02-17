@@ -8,6 +8,9 @@
 
 #import "EHIChatBar.h"
 
+#define     HEIGHT_CHATBAR_TEXTVIEW         36.0f
+#define     HEIGHT_MAX_CHATBAR_TEXTVIEW     111.5f
+
 @interface EHIChatBar()<UITextViewDelegate>
 
 @property (nonatomic, strong) UITextView *textView;
@@ -38,12 +41,13 @@
         make.bottom.offset(-6);
         make.left.offset(14);
         make.right.equalTo(self.sendBtn.mas_left).offset(-6);
+        make.height.mas_equalTo(36);
     }];
     
     [self.sendBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(self.textView);
+        make.height.mas_equalTo(36);
         make.right.offset(-14);
-        make.centerY.mas_equalTo(self);
+        make.bottom.mas_equalTo(-6);
         make.width.mas_equalTo(50);
     }];
 }
@@ -52,8 +56,8 @@
 - (void)p_reloadTextViewWithAnimation:(BOOL)animation
 {
     CGFloat textHeight = [self.textView sizeThatFits:CGSizeMake(self.textView.width, MAXFLOAT)].height;
-    CGFloat height = textHeight > 36 ? textHeight : 36;
-    height = (textHeight <= 111.5 ? textHeight : 111.5);
+    CGFloat height = textHeight > HEIGHT_CHATBAR_TEXTVIEW ? textHeight : HEIGHT_CHATBAR_TEXTVIEW;
+    height = (textHeight <= HEIGHT_MAX_CHATBAR_TEXTVIEW ? textHeight : HEIGHT_MAX_CHATBAR_TEXTVIEW);
     [self.textView setScrollEnabled:textHeight > height];
     if (height != self.textView.height) {
         if (animation) {
@@ -64,9 +68,15 @@
                 if (self.superview) {
                     [self.superview layoutIfNeeded];
                 }
+                if (self.delegate && [self.delegate respondsToSelector:@selector(chatBar:didChangeTextViewHeight:)]) {
+                    [self.delegate chatBar:self didChangeTextViewHeight:self.textView.height];
+                }
             } completion:^(BOOL finished) {
                 if (textHeight > height) {
                     [self.textView setContentOffset:CGPointMake(0, textHeight - height) animated:YES];
+                }
+                if (self.delegate && [self.delegate respondsToSelector:@selector(chatBar:didChangeTextViewHeight:)]) {
+                    [self.delegate chatBar:self didChangeTextViewHeight:height];
                 }
             }];
         }
@@ -76,6 +86,9 @@
             }];
             if (self.superview) {
                 [self.superview layoutIfNeeded];
+            }
+            if (self.delegate && [self.delegate respondsToSelector:@selector(chatBar:didChangeTextViewHeight:)]) {
+                [self.delegate chatBar:self didChangeTextViewHeight:height];
             }
             if (textHeight > height) {
                 [self.textView setContentOffset:CGPointMake(0, textHeight - height) animated:YES];
@@ -95,32 +108,33 @@
     }
 }
 
-- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+- (void)layoutSubviews
 {
-    if ([text isEqualToString:@"\n"]){
-        NSLog(@"发送");
-        return NO;
-    }
-    else if (textView.text.length > 0 && [text isEqualToString:@""]) {       // delete
-        if ([textView.text characterAtIndex:range.location] == ']') {
-            NSUInteger location = range.location;
-            NSUInteger length = range.length;
-            while (location != 0) {
-                location --;
-                length ++ ;
-                char c = [textView.text characterAtIndex:location];
-                if (c == '[') {
-                    textView.text = [textView.text stringByReplacingCharactersInRange:NSMakeRange(location, length) withString:@""];
-                    [self p_reloadTextViewWithAnimation:YES];
-                    return NO;
-                }
-                else if (c == ']') {
-                    return YES;
-                }
-            }
+    [super layoutSubviews];
+    [self setNeedsDisplay];
+}
+
+#pragma mark - Public Methods
+- (void)sendCurrentText
+{
+    if (self.textView.text.length > 0) {     // send Text
+        if (_delegate && [_delegate respondsToSelector:@selector(chatBar:sendText:)]) {
+            [_delegate chatBar:self sendText:self.textView.text];
         }
     }
-    
+    [self.textView setText:@""];
+    [self p_reloadTextViewWithAnimation:YES];
+}
+
+#pragma mark - Delegate -
+//MARK: UITextViewDelegate
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    //回车发送信息
+    if ([text isEqualToString:@"\n"]){
+        [self sendCurrentText];
+        return NO;
+    }
     return YES;
 }
 

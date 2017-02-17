@@ -53,7 +53,6 @@
     if (isNotFirstOpen) {
         
         movieVC.movieURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"normal_movie" ofType:@"mp4"]];
-        
         movieVC.movieShowState = EHIAppNormalStart;
         
     }else
