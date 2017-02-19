@@ -23,7 +23,7 @@
 /**
  *  发送消息（在列表展示）
  */
-- (void)addMessage:(NSString *)message;
+- (void)addMessage:(EHIMessage *)message;
 
 /**
  *  滚动到底部

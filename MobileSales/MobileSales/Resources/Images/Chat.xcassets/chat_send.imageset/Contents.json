@@ -1,0 +1,49 @@
+{
+  "images" : [
+    {
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "stretch",
+          "width" : 1,
+          "height" : 1
+        },
+        "cap-insets" : {
+          "bottom" : 39,
+          "top" : 66,
+          "right" : 75,
+          "left" : 53
+        }
+      },
+      "idiom" : "universal",
+      "filename" : "chat_send@2x.png",
+      "scale" : "2x"
+    },
+    {
+       "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "tile",
+          "width" : 1,
+          "height" : 1
+        },
+        "cap-insets" : {
+          "bottom" : 65,
+          "top" : 96,
+          "right" : 106,
+          "left" : 91
+        }
+      },
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

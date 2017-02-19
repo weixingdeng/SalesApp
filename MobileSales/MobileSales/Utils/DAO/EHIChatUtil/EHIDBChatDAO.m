@@ -51,7 +51,7 @@
                         message.nodeID,
                         [message.content mj_JSONString],
                         EHITimeStamp(message.date),
-                        @"",@"", @"", @"", @"",
+                        @"",message.sendName, @"", @"", @(message.ownerTyper),
                         @"", @"", @"", @"", @"",
                         @"", @"", @"", @"",nil];
     BOOL ok = [self excuteSQL:sqlString withArrParameter:arrPara];
@@ -100,6 +100,7 @@
     
 //    message.friendID = [retSet stringForColumn:@"fid"];
     message.nodeID = [retSet stringForColumn:@"nodeID"];
+    message.sendName = [retSet stringForColumn:@"sender_name"];
     
     NSString *dateString = [retSet stringForColumn:@"date"];
     message.date = [NSDate dateWithTimeIntervalSince1970:dateString.doubleValue];

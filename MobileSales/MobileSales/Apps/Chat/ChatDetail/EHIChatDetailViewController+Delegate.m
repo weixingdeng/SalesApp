@@ -56,8 +56,9 @@
 
 #pragma mark EHIChatMessageDisplayViewDelegate
 //发送message
-- (void)addToShowMessage:(NSString *)message
+- (void)addToShowMessage:(EHIMessage *)message
 {
+    message.showTime = [self needShowTime:message.date];
     [self.messageView addMessage:message];
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.messageView scrollToBottomWithAnimation:YES];
@@ -91,11 +92,15 @@
 
 - (void)sendMessage:(EHIMessage *)message
 {
+    static int i = 0 ;
+    i ++;
     message.ownerTyper = EHIMessageOwnerTypeSelf;
     message.date = [NSDate date];
     message.nodeID = self.listModel.NodeId;
     message.messageID = [NSString stringWithFormat:@"%f",[[NSDate date] timeIntervalSince1970]*10000];
-    
+    message.ownerTyper = i%2 +1;
+    message.showName = message.ownerTyper == 1 ? NO : YES;
+    message.sendName = message.ownerTyper == 1 ? @"我" : @"赵丽颖";
     [self addToShowMessage:message];    // 添加到列表
     
     [[EHIChatManager sharedInstance] sendMessage:message progress:^(EHIMessage * message, CGFloat pregress) {
@@ -106,6 +111,20 @@
         NSLog(@"send failure");
     }];
 }
+
+#pragma mark - # Private Methods
+static NSTimeInterval lastDateInterval = 0;
+static NSInteger msgAccumulate = 0;
+- (BOOL)needShowTime:(NSDate *)date
+{
+    if (++msgAccumulate > MAX_SHOWTIME_MSG_COUNT || lastDateInterval == 0 || date.timeIntervalSince1970 - lastDateInterval > MAX_SHOWTIME_MSG_SECOND) {
+        lastDateInterval = date.timeIntervalSince1970;
+        msgAccumulate = 0;
+        return YES;
+    }
+    return NO;
+}
+
 
 
 @end

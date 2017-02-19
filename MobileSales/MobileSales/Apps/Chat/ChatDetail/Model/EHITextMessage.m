@@ -19,7 +19,7 @@ static UILabel *textLabel = nil;
         [self setMessageType:EHIMessageTypeText];
         if (textLabel == nil) {
             textLabel = [[UILabel alloc] init];
-            [textLabel setFont:[UIFont systemFontOfSize:15]];
+            [textLabel setFont:[UIFont systemFontOfSize:14]];
             [textLabel setNumberOfLines:0];
         }
     }

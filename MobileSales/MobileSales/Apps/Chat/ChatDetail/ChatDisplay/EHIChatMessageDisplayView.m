@@ -27,7 +27,9 @@
 - (id)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
+        self.backgroundColor = HEXCOLOR_F5F7FE;
         [self addSubview:self.chatDetailTable];
+        [self registerCellClassForTableView:self.chatDetailTable];
        
         [self.chatDetailTable mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.mas_equalTo(0);

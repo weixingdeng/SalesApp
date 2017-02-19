@@ -63,7 +63,7 @@ typedef void(^EHISelectCallback)(NSInteger selectIndex);
 #define HEXCOLOR_F7F7F7 HEXCOLOR(@"#f7f7f7") //主背景色
 #define HEXCOLOR_D4D4D4 HEXCOLOR(@"#d4d4d4") //分割线颜色
 #define HEXCOLOR_B6B6B6 HEXCOLOR(@"#b6b6b6") //淡灰色(副标题文字)
-
+#define HEXCOLOR_F5F7FE HEXCOLOR(@"#f5f7fe") //聊天背景色
 
 #pragma mark - # Methods
 

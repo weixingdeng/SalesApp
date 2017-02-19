@@ -10,6 +10,13 @@
 
 @implementation EHIChatMessageDisplayView (Delegate)
 
+#pragma mark - # Public Methods
+- (void)registerCellClassForTableView:(UITableView *)tableView
+{
+    [tableView registerClass:[EHITextMessageCell class] forCellReuseIdentifier:@"EHITextMessageCell"];
+    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"EmptyCell"];
+}
+
 //tableView每组的单元格数量
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -19,20 +26,27 @@
 //具体单元格
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+    EHIMessage * message = self.data[indexPath.row];
+    if (message.messageType == EHIMessageTypeText) {
+        EHITextMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EHITextMessageCell"];
+        [cell setMessage:message];
+        return cell;
     }
-    EHITextMessage *manager = self.data[indexPath.row];
-    cell.textLabel.text = manager.text;
-    return cell;
+    
+    return [tableView dequeueReusableCellWithIdentifier:@"EmptyCell"];
 }
 
-
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+//MARK: UITableViewDelegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath
 {
-    [self.window endEditing:YES];
+    EHIMessage * message = self.data[indexPath.row];
+    return message.messageFrame.height;
 }
+
+//- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+//{
+//    [self.window endEditing:YES];
+//}
 
 
 @end

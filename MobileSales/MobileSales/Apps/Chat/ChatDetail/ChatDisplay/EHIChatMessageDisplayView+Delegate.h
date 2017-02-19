@@ -7,7 +7,10 @@
 //
 
 #import "EHIChatMessageDisplayView.h"
+#import "EHITextMessageCell.h"
 
-@interface EHIChatMessageDisplayView (Delegate)
+@interface EHIChatMessageDisplayView (Delegate)<UITableViewDelegate,UITableViewDataSource>
+
+- (void)registerCellClassForTableView:(UITableView *)tableView;
 
 @end

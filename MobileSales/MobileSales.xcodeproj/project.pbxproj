@@ -21,6 +21,11 @@
 		FB2564B61E24A6AD00A9B857 /* MobileSalesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2564B51E24A6AD00A9B857 /* MobileSalesTests.m */; };
 		FB2564C11E24A6AD00A9B857 /* MobileSalesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2564C01E24A6AD00A9B857 /* MobileSalesUITests.m */; };
 		FB2564F51E25ECF000A9B857 /* UIColor+ColorWithHex.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2564F41E25ECF000A9B857 /* UIColor+ColorWithHex.m */; };
+		FB2EC8671E59DD270066FBF3 /* EHIMessageBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2EC8661E59DD270066FBF3 /* EHIMessageBaseCell.m */; };
+		FB2EC86A1E59E1470066FBF3 /* NSDate+EHIChatFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2EC8691E59E1470066FBF3 /* NSDate+EHIChatFormat.m */; };
+		FB2EC86F1E59E19C0066FBF3 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2EC86C1E59E19C0066FBF3 /* NSDate+Extension.m */; };
+		FB2EC8701E59E19C0066FBF3 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2EC86E1E59E19C0066FBF3 /* NSDate+Utilities.m */; };
+		FB2EC8731E59E2970066FBF3 /* EHITextMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2EC8721E59E2970066FBF3 /* EHITextMessageCell.m */; };
 		FB309AA41E49C11500CE91C9 /* EHIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB309AA31E49C11500CE91C9 /* EHIViewController.m */; };
 		FB309AA71E49C60D00CE91C9 /* EHINavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB309AA61E49C60D00CE91C9 /* EHINavigationController.m */; };
 		FB309AAB1E49CAD800CE91C9 /* Launcher.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB309AAA1E49CAD800CE91C9 /* Launcher.xcassets */; };
@@ -121,6 +126,16 @@
 		FB2564F01E25D8B800A9B857 /* EHIMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIMacros.h; sourceTree = "<group>"; };
 		FB2564F31E25ECF000A9B857 /* UIColor+ColorWithHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ColorWithHex.h"; sourceTree = "<group>"; };
 		FB2564F41E25ECF000A9B857 /* UIColor+ColorWithHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ColorWithHex.m"; sourceTree = "<group>"; };
+		FB2EC8651E59DD270066FBF3 /* EHIMessageBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIMessageBaseCell.h; sourceTree = "<group>"; };
+		FB2EC8661E59DD270066FBF3 /* EHIMessageBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIMessageBaseCell.m; sourceTree = "<group>"; };
+		FB2EC8681E59E1470066FBF3 /* NSDate+EHIChatFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+EHIChatFormat.h"; sourceTree = "<group>"; };
+		FB2EC8691E59E1470066FBF3 /* NSDate+EHIChatFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+EHIChatFormat.m"; sourceTree = "<group>"; };
+		FB2EC86B1E59E19C0066FBF3 /* NSDate+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
+		FB2EC86C1E59E19C0066FBF3 /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
+		FB2EC86D1E59E19C0066FBF3 /* NSDate+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
+		FB2EC86E1E59E19C0066FBF3 /* NSDate+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utilities.m"; sourceTree = "<group>"; };
+		FB2EC8711E59E2970066FBF3 /* EHITextMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHITextMessageCell.h; sourceTree = "<group>"; };
+		FB2EC8721E59E2970066FBF3 /* EHITextMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHITextMessageCell.m; sourceTree = "<group>"; };
 		FB309AA21E49C11500CE91C9 /* EHIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIViewController.h; sourceTree = "<group>"; };
 		FB309AA31E49C11500CE91C9 /* EHIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIViewController.m; sourceTree = "<group>"; };
 		FB309AA51E49C60D00CE91C9 /* EHINavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHINavigationController.h; sourceTree = "<group>"; };
@@ -402,6 +417,12 @@
 				FB94D2261E55AEDF00BC86E5 /* UIView+Frame.m */,
 				FB682BB51E57025D007BE819 /* UITableView+TLChat.h */,
 				FB682BB61E57025D007BE819 /* UITableView+TLChat.m */,
+				FB2EC8681E59E1470066FBF3 /* NSDate+EHIChatFormat.h */,
+				FB2EC8691E59E1470066FBF3 /* NSDate+EHIChatFormat.m */,
+				FB2EC86B1E59E19C0066FBF3 /* NSDate+Extension.h */,
+				FB2EC86C1E59E19C0066FBF3 /* NSDate+Extension.m */,
+				FB2EC86D1E59E19C0066FBF3 /* NSDate+Utilities.h */,
+				FB2EC86E1E59E19C0066FBF3 /* NSDate+Utilities.m */,
 			);
 			name = Extends;
 			path = Thirds;
@@ -464,6 +485,17 @@
 				FB11B2591E49AD8A00074D2D /* EHIOfficeViewController.m */,
 			);
 			path = Office;
+			sourceTree = "<group>";
+		};
+		FB2EC8641E59DCD70066FBF3 /* ChatCells */ = {
+			isa = PBXGroup;
+			children = (
+				FB2EC8651E59DD270066FBF3 /* EHIMessageBaseCell.h */,
+				FB2EC8661E59DD270066FBF3 /* EHIMessageBaseCell.m */,
+				FB2EC8711E59E2970066FBF3 /* EHITextMessageCell.h */,
+				FB2EC8721E59E2970066FBF3 /* EHITextMessageCell.m */,
+			);
+			path = ChatCells;
 			sourceTree = "<group>";
 		};
 		FB309A9D1E49C04100CE91C9 /* Frameworks */ = {
@@ -584,6 +616,7 @@
 		FB682B901E56EF58007BE819 /* ChatDisplay */ = {
 			isa = PBXGroup;
 			children = (
+				FB2EC8641E59DCD70066FBF3 /* ChatCells */,
 				FB682BB11E56FBE1007BE819 /* EHIChatMessageDisplayViewDelegate.h */,
 				FB682BAE1E56FBC4007BE819 /* EHIChatMessageDisplayView.h */,
 				FB682BAF1E56FBC4007BE819 /* EHIChatMessageDisplayView.m */,
@@ -927,6 +960,7 @@
 				FB682BC01E5983EE007BE819 /* EHIChatManager.m in Sources */,
 				FB94D1DD1E53F28700BC86E5 /* NSFileManager+EHIChat.m in Sources */,
 				FB94D2191E556B9000BC86E5 /* EHIResponseModel.m in Sources */,
+				FB2EC8701E59E19C0066FBF3 /* NSDate+Utilities.m in Sources */,
 				FB682BC61E598D65007BE819 /* EHIMessageFrame.m in Sources */,
 				FB682BA71E56F00D007BE819 /* EHIChatBar.m in Sources */,
 				FB73EAD81E4DA0BF001F268E /* EHIRootViewController.m in Sources */,
@@ -937,13 +971,17 @@
 				FB94D1E01E53F2E700BC86E5 /* NSFileManager+Paths.m in Sources */,
 				5C6E9C671E263E980092425C /* EHIMyInfomationViewController.m in Sources */,
 				FB73EADE1E4DB585001F268E /* EHISingleAlertController.m in Sources */,
+				FB2EC8731E59E2970066FBF3 /* EHITextMessageCell.m in Sources */,
 				FB11B25D1E49ADEF00074D2D /* EHICRMViewController.m in Sources */,
 				FB94D20F1E55460700BC86E5 /* EHIChatListModel.m in Sources */,
 				FB94D2271E55AEDF00BC86E5 /* UIView+Frame.m in Sources */,
+				FB2EC86A1E59E1470066FBF3 /* NSDate+EHIChatFormat.m in Sources */,
 				FB682BA41E56F003007BE819 /* EHIChatDetailViewController+Delegate.m in Sources */,
+				FB2EC8671E59DD270066FBF3 /* EHIMessageBaseCell.m in Sources */,
 				FB5A5D381E49DB2F00810253 /* UITabBar+EHIBadge.m in Sources */,
 				FB776EB71E4AF065008763CE /* IPAddress.c in Sources */,
 				5C70F3DC1E2C7B3A00E20321 /* EHILoginContentView.m in Sources */,
+				FB2EC86F1E59E19C0066FBF3 /* NSDate+Extension.m in Sources */,
 				FB94D1F31E53FB8A00BC86E5 /* EHIDBFrameDAO.m in Sources */,
 				FB94D1EA1E53FB7A00BC86E5 /* EHIDBBaseDAO.m in Sources */,
 				FB682BC31E598D15007BE819 /* EHIMessage.m in Sources */,
