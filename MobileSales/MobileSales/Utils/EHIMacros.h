@@ -69,6 +69,7 @@ typedef void(^EHISelectCallback)(NSInteger selectIndex);
 
 #define     EHIURL(urlString)    [NSURL URLWithString:urlString]
 #define     EHINoNilString(str)  (str.length > 0 ? str : @"")
+#define     EHITimeStamp(date)   ([NSString stringWithFormat:@"%lf", [date timeIntervalSince1970]])
 
 #define WEAKSELF(_instance)  __weak typeof(_instance) weak##_instance = _instance;
 #define STRONGSELF(_instance) __strong typeof(weak##_instance) _instance = weak##_instance

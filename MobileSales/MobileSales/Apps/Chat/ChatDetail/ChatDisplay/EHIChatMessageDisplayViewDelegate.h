@@ -16,4 +16,17 @@
  */
 - (void)chatMessageDisplayViewDidTouched:(EHIChatMessageDisplayView *)chatTVC;
 
+/**
+ *  下拉刷新，获取某个时间段的聊天记录（异步）
+ *
+ *  @param chatTVC   chatTVC
+ *  @param date      开始时间
+ *  @param count     条数
+ *  @param completed 结果Blcok
+ */
+- (void)chatMessageDisplayView:(EHIChatMessageDisplayView *)chatTVC
+            getRecordsFromDate:(NSDate *)date
+                         count:(NSUInteger)count
+                     completed:(void (^)(NSDate *, NSArray *, BOOL))completed;
+
 @end

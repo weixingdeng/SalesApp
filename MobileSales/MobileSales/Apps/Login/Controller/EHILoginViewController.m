@@ -177,4 +177,11 @@
     return _loginContentView;
 }
 
+//释放键盘
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.window endEditing:YES];
+}
+
+
 @end

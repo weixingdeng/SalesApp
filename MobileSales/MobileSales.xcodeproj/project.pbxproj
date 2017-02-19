@@ -38,6 +38,10 @@
 		FB682BB01E56FBC4007BE819 /* EHIChatMessageDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB682BAF1E56FBC4007BE819 /* EHIChatMessageDisplayView.m */; };
 		FB682BB71E57025D007BE819 /* UITableView+TLChat.m in Sources */ = {isa = PBXBuildFile; fileRef = FB682BB61E57025D007BE819 /* UITableView+TLChat.m */; };
 		FB682BBA1E570459007BE819 /* EHIChatMessageDisplayView+Delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB682BB91E570459007BE819 /* EHIChatMessageDisplayView+Delegate.m */; };
+		FB682BC01E5983EE007BE819 /* EHIChatManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB682BBF1E5983EE007BE819 /* EHIChatManager.m */; };
+		FB682BC31E598D15007BE819 /* EHIMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = FB682BC21E598D15007BE819 /* EHIMessage.m */; };
+		FB682BC61E598D65007BE819 /* EHIMessageFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = FB682BC51E598D65007BE819 /* EHIMessageFrame.m */; };
+		FB682BCC1E598F24007BE819 /* EHITextMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = FB682BCB1E598F24007BE819 /* EHITextMessage.m */; };
 		FB73EA501E4B1777001F268E /* EHIMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB73EA4F1E4B1777001F268E /* EHIMovieViewController.m */; };
 		FB73EA571E4C0024001F268E /* Login.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB73EA561E4C0024001F268E /* Login.xcassets */; };
 		FB73EAD01E4D9571001F268E /* login_movie.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FB73EACE1E4D9571001F268E /* login_movie.mp4 */; };
@@ -153,6 +157,14 @@
 		FB682BB61E57025D007BE819 /* UITableView+TLChat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+TLChat.m"; sourceTree = "<group>"; };
 		FB682BB81E570459007BE819 /* EHIChatMessageDisplayView+Delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EHIChatMessageDisplayView+Delegate.h"; sourceTree = "<group>"; };
 		FB682BB91E570459007BE819 /* EHIChatMessageDisplayView+Delegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EHIChatMessageDisplayView+Delegate.m"; sourceTree = "<group>"; };
+		FB682BBE1E5983EE007BE819 /* EHIChatManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIChatManager.h; sourceTree = "<group>"; };
+		FB682BBF1E5983EE007BE819 /* EHIChatManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIChatManager.m; sourceTree = "<group>"; };
+		FB682BC11E598D15007BE819 /* EHIMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIMessage.h; sourceTree = "<group>"; };
+		FB682BC21E598D15007BE819 /* EHIMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIMessage.m; sourceTree = "<group>"; };
+		FB682BC41E598D65007BE819 /* EHIMessageFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIMessageFrame.h; sourceTree = "<group>"; };
+		FB682BC51E598D65007BE819 /* EHIMessageFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIMessageFrame.m; sourceTree = "<group>"; };
+		FB682BCA1E598F24007BE819 /* EHITextMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHITextMessage.h; sourceTree = "<group>"; };
+		FB682BCB1E598F24007BE819 /* EHITextMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHITextMessage.m; sourceTree = "<group>"; };
 		FB73EA4E1E4B1777001F268E /* EHIMovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIMovieViewController.h; sourceTree = "<group>"; };
 		FB73EA4F1E4B1777001F268E /* EHIMovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIMovieViewController.m; sourceTree = "<group>"; };
 		FB73EA561E4C0024001F268E /* Login.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Login.xcassets; sourceTree = "<group>"; };
@@ -409,6 +421,8 @@
 		FB2564E01E25D24100A9B857 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				FB682BBE1E5983EE007BE819 /* EHIChatManager.h */,
+				FB682BBF1E5983EE007BE819 /* EHIChatManager.m */,
 				FB682B8C1E56EECA007BE819 /* ChatDetail */,
 				FB94D1FF1E5544F100BC86E5 /* ChatList */,
 			);
@@ -557,6 +571,12 @@
 		FB682B8F1E56EF4F007BE819 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FB682BC11E598D15007BE819 /* EHIMessage.h */,
+				FB682BC21E598D15007BE819 /* EHIMessage.m */,
+				FB682BC41E598D65007BE819 /* EHIMessageFrame.h */,
+				FB682BC51E598D65007BE819 /* EHIMessageFrame.m */,
+				FB682BCA1E598F24007BE819 /* EHITextMessage.h */,
+				FB682BCB1E598F24007BE819 /* EHITextMessage.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -899,12 +919,15 @@
 				FB73EADB1E4DB4FC001F268E /* WXAlertController.m in Sources */,
 				FB682B981E56EFCF007BE819 /* EHIChatViewController+Delegate.m in Sources */,
 				FB2564F51E25ECF000A9B857 /* UIColor+ColorWithHex.m in Sources */,
+				FB682BCC1E598F24007BE819 /* EHITextMessage.m in Sources */,
 				FB25649D1E24A6AD00A9B857 /* main.m in Sources */,
 				FB73EA501E4B1777001F268E /* EHIMovieViewController.m in Sources */,
 				FB12DB2F1E4B4FC0006940A3 /* EHILauncherButton.m in Sources */,
 				FB94D1EF1E53FB8200BC86E5 /* EHIDBChatDAO.m in Sources */,
+				FB682BC01E5983EE007BE819 /* EHIChatManager.m in Sources */,
 				FB94D1DD1E53F28700BC86E5 /* NSFileManager+EHIChat.m in Sources */,
 				FB94D2191E556B9000BC86E5 /* EHIResponseModel.m in Sources */,
+				FB682BC61E598D65007BE819 /* EHIMessageFrame.m in Sources */,
 				FB682BA71E56F00D007BE819 /* EHIChatBar.m in Sources */,
 				FB73EAD81E4DA0BF001F268E /* EHIRootViewController.m in Sources */,
 				FB682BAD1E56FAAB007BE819 /* EHIKeyboard.m in Sources */,
@@ -923,6 +946,7 @@
 				5C70F3DC1E2C7B3A00E20321 /* EHILoginContentView.m in Sources */,
 				FB94D1F31E53FB8A00BC86E5 /* EHIDBFrameDAO.m in Sources */,
 				FB94D1EA1E53FB7A00BC86E5 /* EHIDBBaseDAO.m in Sources */,
+				FB682BC31E598D15007BE819 /* EHIMessage.m in Sources */,
 				FB776EBD1E4AFB98008763CE /* EHIUserContext.m in Sources */,
 				5C6E9C681E263E980092425C /* EHMineHeaderView.m in Sources */,
 				FB776EC01E4AFBD6008763CE /* EHIUrlList.m in Sources */,

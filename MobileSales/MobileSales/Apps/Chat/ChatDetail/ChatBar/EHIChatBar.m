@@ -13,8 +13,6 @@
 
 @interface EHIChatBar()<UITextViewDelegate>
 
-@property (nonatomic, strong) UITextView *textView;
-
 @property (nonatomic, strong) UIButton *sendBtn;
 
 @end
@@ -170,6 +168,7 @@
         [_sendBtn setBackgroundColor:HEXCOLOR_718DDE];
         [_sendBtn setTitle:@"发送" forState:UIControlStateNormal];
         [_sendBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_sendBtn addTarget:self action:@selector(sendCurrentText) forControlEvents:UIControlEventTouchUpInside];
         [_sendBtn.layer setCornerRadius:4.0f];
 	}
 	return _sendBtn;

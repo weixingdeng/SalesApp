@@ -29,7 +29,7 @@
     return [self createTable:MESSAGE_TABLE_NAME withSQL:sqlString];
 }
 
-- (BOOL)addMessage:(NSString *)message
+- (BOOL)addMessage:(EHIMessage *)message
 {
 //    if (message == nil || message.messageID == nil || message.userID == nil || (message.friendID == nil && message.groupID == nil)) {
 //        return NO;
@@ -37,7 +37,7 @@
     
 //    NSString *fid = @"";
 //    NSString *subfid;
-//    if (message.partnerType == TLPartnerTypeUser) {
+//    if (message.partnerType == EHIPartnerTypeUser) {
 //        fid = message.friendID;
 //    }
 //    else {
@@ -46,23 +46,71 @@
 //    }
     
     NSString *sqlString = [NSString stringWithFormat:SQL_ADD_MESSAGE, MESSAGE_TABLE_NAME];
-//    NSArray *arrPara = [NSArray arrayWithObjects:
-//                        message.messageID,
-//                        message.userID,
-//                        fid,
-//                        TLNoNilString(subfid),
-//                        TLTimeStamp(message.date),
-//                        [NSNumber numberWithInteger:message.partnerType],
-//                        [NSNumber numberWithInteger:message.ownerTyper],
-//                        [NSNumber numberWithInteger:message.messageType],
-//                        [message.content mj_JSONString],
-//                        [NSNumber numberWithInteger:message.sendState],
-//                        [NSNumber numberWithInteger:message.readState],
-//                        @"", @"", @"", @"", @"", nil];
-//    BOOL ok = [self excuteSQL:sqlString withArrParameter:arrPara];
-    BOOL ok = [self excuteSQL:sqlString withArrParameter:nil];
+    NSArray *arrPara = [NSArray arrayWithObjects:
+                        message.messageID,
+                        message.nodeID,
+                        [message.content mj_JSONString],
+                        EHITimeStamp(message.date),
+                        @"",@"", @"", @"", @"",
+                        @"", @"", @"", @"", @"",
+                        @"", @"", @"", @"",nil];
+    BOOL ok = [self excuteSQL:sqlString withArrParameter:arrPara];
     return ok;
 }
+
+/**
+ *  获取与某个好友的聊天记录
+ */
+- (void)messagesByNodeID:(NSString *)nodeID
+                fromDate:(NSDate *)date
+                   count:(NSUInteger)count
+                complete:(void (^)(NSArray *data, BOOL hasMore))complete
+{
+    __block NSMutableArray *data = [[NSMutableArray alloc] init];
+    NSString *sqlString = [NSString stringWithFormat:SQL_SELECT_MESSAGES_PAGE,
+                           MESSAGE_TABLE_NAME,
+                           nodeID,
+                           [NSString stringWithFormat:@"%lf", date.timeIntervalSince1970],
+                           (long)(count + 1)];
+    
+    [self excuteQuerySQL:sqlString resultBlock:^(FMResultSet *retSet) {
+        while ([retSet next]) {
+            EHIMessage *message = [self createDBMessageByFMResultSet:retSet];
+            [data insertObject:message atIndex:0];
+        }
+        [retSet close];
+    }];
+    
+    BOOL hasMore = NO;
+    if (data.count == count + 1) {
+        hasMore = YES;
+        [data removeObjectAtIndex:0];
+    }
+    complete(data, hasMore);
+
+}
+
+#pragma mark - Private Methods -
+- (EHIMessage *)createDBMessageByFMResultSet:(FMResultSet *)retSet
+{
+//    EHIMessageType type = [retSet intForColumn:@"msg_type"];
+    EHIMessage * message = [EHIMessage createMessageByType:1];
+    message.messageID = [retSet stringForColumn:@"msgid"];
+//    message.userID = [retSet stringForColumn:@"uid"];
+    
+//    message.friendID = [retSet stringForColumn:@"fid"];
+    message.nodeID = [retSet stringForColumn:@"nodeID"];
+    
+    NSString *dateString = [retSet stringForColumn:@"date"];
+    message.date = [NSDate dateWithTimeIntervalSince1970:dateString.doubleValue];
+    message.ownerTyper = [retSet intForColumn:@"own_type"];
+    NSString *content = [retSet stringForColumn:@"content"];
+    message.content = [[NSMutableDictionary alloc] initWithDictionary:[content mj_JSONObject]];
+    message.sendState = [retSet intForColumn:@"send_status"];
+    message.readState = [retSet intForColumn:@"received_status"];
+    return message;
+}
+
 
 
 @end

@@ -20,6 +20,7 @@
     [super loadView];
     
     [self.view addSubview:self.messageView];
+    [self.messageView resetMessageView];
     [self.view addSubview:self.chatBar];
     
     [self addMasonry];
@@ -94,6 +95,7 @@
 {
     if (!_chatBar) {
         _chatBar = [[EHIChatBar alloc] init];
+        [_chatBar setDelegate:self];
     }
     return _chatBar;
 }

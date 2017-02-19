@@ -13,7 +13,7 @@
 //tableView每组的单元格数量
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return self.data.count;
 }
 
 //具体单元格
@@ -23,7 +23,8 @@
     if (!cell) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
-    cell.textLabel.text = @"hello";
+    EHITextMessage *manager = self.data[indexPath.row];
+    cell.textLabel.text = manager.text;
     return cell;
 }
 

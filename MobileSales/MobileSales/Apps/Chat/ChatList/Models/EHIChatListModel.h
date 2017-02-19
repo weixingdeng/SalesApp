@@ -21,7 +21,7 @@
 @property (nonatomic, copy) NSString *ShortName;
 
 //nodeid
-@property (nonatomic, assign) NSInteger NodeId;
+@property (nonatomic, copy) NSString *NodeId;
 
 //下级目录(里面也是chatlistmodel)
 @property (nonatomic, strong) NSArray *Children;
@@ -31,6 +31,16 @@
 
 //说明
 @property (nonatomic, copy) NSString *Comment;
+
+#pragma mark 扩展字段 非后台返回 用于方便界面标示更多信息
+//最后一条信息时间
+@property (nonatomic, strong) NSDate *date;
+
+//最后一条信息内容
+@property (nonatomic, strong) NSString *content;
+
+//是否已读
+@property (nonatomic, assign, readonly) BOOL isRead;
 
 
 @end

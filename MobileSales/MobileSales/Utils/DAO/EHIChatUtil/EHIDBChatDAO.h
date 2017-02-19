@@ -8,19 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import "EHIDBBaseDAO.h"
+#import "EHIMessage.h"
 
 @interface EHIDBChatDAO : EHIDBBaseDAO
 
 /**
  *  添加消息记录
  */
-- (BOOL)addMessage:(NSString *)message;
+- (BOOL)addMessage:(EHIMessage *)message;
 
 /**
  *  获取与某个好友的聊天记录
  */
-- (void)messagesByUserID:(NSString *)userID
-                  nodeID:(NSString *)nodeID
+- (void)messagesByNodeID:(NSString *)nodeID
                 fromDate:(NSDate *)date
                    count:(NSUInteger)count
                 complete:(void (^)(NSArray *data, BOOL hasMore))complete;

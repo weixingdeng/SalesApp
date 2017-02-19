@@ -13,6 +13,8 @@
 
 @property (nonatomic, assign) id<EHIChatBarDelegate> delegate;
 
+@property (nonatomic, strong) UITextView *textView;
+
 /**
  *  发送文字消息
  */

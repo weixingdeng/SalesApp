@@ -8,8 +8,33 @@
 
 #import "EHIChatDetailViewController.h"
 
-@interface EHIChatDetailViewController (Delegate)
+#define     MAX_SHOWTIME_MSG_COUNT      10
+#define     MAX_SHOWTIME_MSG_SECOND     30
+
+@interface EHIChatDetailViewController (Delegate)<EHIChatMessageDisplayViewDelegate,EHIChatBarDelegate>
 
 //- (void)registerCellClassForTableView:(UITableView *)tableView;
+
+#pragma mark keyboad Delegate
+- (void)keyboardWillShow:(NSNotification *)notification;
+- (void)keyboardDidShow:(NSNotification *)notification;
+- (void)keyboardWillHide:(NSNotification *)notification;
+- (void)keyboardFrameWillChange:(NSNotification *)notification;
+
+#pragma mark messageDisplay delegate
+
+- (void)addToShowMessage:(EHIMessage *)message;
+
+
+/**
+ *  发送消息
+ */
+- (void)sendMessage:(EHIMessage *)message;
+
+
+/**
+ *  接收到消息
+ */
+- (void)receivedMessage:(EHIMessage *)message;
 
 @end
