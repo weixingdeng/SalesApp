@@ -24,7 +24,7 @@
     self.view.backgroundColor = HEXCOLOR_F7F7F7;
     [self addSegmentViewAndTableView];
     [self registerCellClass];
-    [self requestFrameData];
+//    [self requestFrameData];
 }
 
 #pragma mark 界面视图

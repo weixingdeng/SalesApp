@@ -75,6 +75,9 @@
 		FB94D2191E556B9000BC86E5 /* EHIResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FB94D2181E556B9000BC86E5 /* EHIResponseModel.m */; };
 		FB94D21E1E559A9B00BC86E5 /* Chat.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB94D21D1E559A9B00BC86E5 /* Chat.xcassets */; };
 		FB94D2271E55AEDF00BC86E5 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = FB94D2261E55AEDF00BC86E5 /* UIView+Frame.m */; };
+		FBDEBB051E5B2D0B0053CCF8 /* EHIShowInfoLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDEBB041E5B2D0B0053CCF8 /* EHIShowInfoLabel.m */; };
+		FBDEBB081E5B2E350053CCF8 /* EHISexSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDEBB071E5B2E350053CCF8 /* EHISexSelectView.m */; };
+		FBDEBB0A1E5B34070053CCF8 /* MyInfomation.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBDEBB091E5B34070053CCF8 /* MyInfomation.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -240,6 +243,11 @@
 		FB94D21D1E559A9B00BC86E5 /* Chat.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Chat.xcassets; sourceTree = "<group>"; };
 		FB94D2251E55AEDF00BC86E5 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		FB94D2261E55AEDF00BC86E5 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		FBDEBB031E5B2D0B0053CCF8 /* EHIShowInfoLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIShowInfoLabel.h; sourceTree = "<group>"; };
+		FBDEBB041E5B2D0B0053CCF8 /* EHIShowInfoLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIShowInfoLabel.m; sourceTree = "<group>"; };
+		FBDEBB061E5B2E350053CCF8 /* EHISexSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHISexSelectView.h; sourceTree = "<group>"; };
+		FBDEBB071E5B2E350053CCF8 /* EHISexSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHISexSelectView.m; sourceTree = "<group>"; };
+		FBDEBB091E5B34070053CCF8 /* MyInfomation.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MyInfomation.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -488,6 +496,10 @@
 			children = (
 				5C6E9C611E263E980092425C /* Controller */,
 				5C6E9C641E263E980092425C /* View */,
+				FBDEBB031E5B2D0B0053CCF8 /* EHIShowInfoLabel.h */,
+				FBDEBB041E5B2D0B0053CCF8 /* EHIShowInfoLabel.m */,
+				FBDEBB061E5B2E350053CCF8 /* EHISexSelectView.h */,
+				FBDEBB071E5B2E350053CCF8 /* EHISexSelectView.m */,
 			);
 			path = MyInfomation;
 			sourceTree = "<group>";
@@ -576,6 +588,7 @@
 				FB309AAA1E49CAD800CE91C9 /* Launcher.xcassets */,
 				FB73EA561E4C0024001F268E /* Login.xcassets */,
 				FB94D21D1E559A9B00BC86E5 /* Chat.xcassets */,
+				FBDEBB091E5B34070053CCF8 /* MyInfomation.xcassets */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -874,6 +887,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB73EAD01E4D9571001F268E /* login_movie.mp4 in Resources */,
+				FBDEBB0A1E5B34070053CCF8 /* MyInfomation.xcassets in Resources */,
 				FB73EA571E4C0024001F268E /* Login.xcassets in Resources */,
 				FB309AAB1E49CAD800CE91C9 /* Launcher.xcassets in Resources */,
 				FB73EAD11E4D9571001F268E /* normal_movie.mp4 in Resources */,
@@ -1008,8 +1022,10 @@
 				FB776EBD1E4AFB98008763CE /* EHIUserContext.m in Sources */,
 				5C6E9C681E263E980092425C /* EHMineHeaderView.m in Sources */,
 				FB776EC01E4AFBD6008763CE /* EHIUrlList.m in Sources */,
+				FBDEBB081E5B2E350053CCF8 /* EHISexSelectView.m in Sources */,
 				FB11B2511E49AC4000074D2D /* EHIHomeViewController.m in Sources */,
 				FB776EAF1E4AEE9A008763CE /* NSMutableDictionary+EHIDicSaveString.m in Sources */,
+				FBDEBB051E5B2D0B0053CCF8 /* EHIShowInfoLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

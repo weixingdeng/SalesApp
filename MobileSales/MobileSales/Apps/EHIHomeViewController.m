@@ -116,6 +116,10 @@ static EHIHomeViewController *rootVC = nil;
                                               imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)]];
         [_myInfomationVC.tabBarItem setSelectedImage:[[UIImage imageNamed:@"tabbar_myinfo_high"]
                                                       imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)]];
+        [_myInfomationVC.nameLabel setText:@"赵丽颖"];
+        [_myInfomationVC.userNoLabel setText:@"工号:106628"];
+        [_myInfomationVC.sexLabel setText:@"性别"];
+        _myInfomationVC.isBoy = NO;
 	}
 	return _myInfomationVC;
 }
