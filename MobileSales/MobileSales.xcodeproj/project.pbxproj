@@ -78,6 +78,7 @@
 		FBDEBB051E5B2D0B0053CCF8 /* EHIShowInfoLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDEBB041E5B2D0B0053CCF8 /* EHIShowInfoLabel.m */; };
 		FBDEBB081E5B2E350053CCF8 /* EHISexSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDEBB071E5B2E350053CCF8 /* EHISexSelectView.m */; };
 		FBDEBB0A1E5B34070053CCF8 /* MyInfomation.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBDEBB091E5B34070053CCF8 /* MyInfomation.xcassets */; };
+		FBDEBB0D1E5B417B0053CCF8 /* EHIChatMemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDEBB0C1E5B417B0053CCF8 /* EHIChatMemberViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -248,6 +249,8 @@
 		FBDEBB061E5B2E350053CCF8 /* EHISexSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHISexSelectView.h; sourceTree = "<group>"; };
 		FBDEBB071E5B2E350053CCF8 /* EHISexSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHISexSelectView.m; sourceTree = "<group>"; };
 		FBDEBB091E5B34070053CCF8 /* MyInfomation.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MyInfomation.xcassets; sourceTree = "<group>"; };
+		FBDEBB0B1E5B417B0053CCF8 /* EHIChatMemberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIChatMemberViewController.h; sourceTree = "<group>"; };
+		FBDEBB0C1E5B417B0053CCF8 /* EHIChatMemberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIChatMemberViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -600,6 +603,8 @@
 				FB682BA01E56F003007BE819 /* EHIChatDetailViewController.m */,
 				FB682BA11E56F003007BE819 /* EHIChatDetailViewController+Delegate.h */,
 				FB682BA21E56F003007BE819 /* EHIChatDetailViewController+Delegate.m */,
+				FBDEBB0B1E5B417B0053CCF8 /* EHIChatMemberViewController.h */,
+				FBDEBB0C1E5B417B0053CCF8 /* EHIChatMemberViewController.m */,
 				FB682B921E56EF79007BE819 /* ChatKeyboard */,
 				FB682B911E56EF69007BE819 /* ChatBar */,
 				FB682B901E56EF58007BE819 /* ChatDisplay */,
@@ -1007,6 +1012,7 @@
 				FB2EC8731E59E2970066FBF3 /* EHITextMessageCell.m in Sources */,
 				FB11B25D1E49ADEF00074D2D /* EHICRMViewController.m in Sources */,
 				FB94D20F1E55460700BC86E5 /* EHIChatListModel.m in Sources */,
+				FBDEBB0D1E5B417B0053CCF8 /* EHIChatMemberViewController.m in Sources */,
 				FB2EC8811E5A7AF70066FBF3 /* EHIChatSocketManager.m in Sources */,
 				FB94D2271E55AEDF00BC86E5 /* UIView+Frame.m in Sources */,
 				FB2EC86A1E59E1470066FBF3 /* NSDate+EHIChatFormat.m in Sources */,

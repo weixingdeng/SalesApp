@@ -39,6 +39,7 @@
     segment.selectionIndicatorColor = HEXCOLOR_718DDE;
     segment.selectionIndicatorHeight = 2;
     segment.selectionIndicatorLocation = CPBSegmentedControlSelectionIndicatorLocationDown;
+//    segment.selectionStyle = CPBSegmentedControlSelectionStyleFullWidthStripe;
     
     [self.view addSubview:segment];
     [self.view addSubview:self.chatListTable];
