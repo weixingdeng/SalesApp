@@ -9,6 +9,7 @@
 #import "EHIChatViewController.h"
 #import "EHIChatViewController+Delegate.h"
 #import "EHIChatListModel.h"
+#import "EHIChatSocketManager.h"
 
 
 @interface EHIChatViewController()

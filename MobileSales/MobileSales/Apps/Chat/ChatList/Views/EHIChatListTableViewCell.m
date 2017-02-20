@@ -86,14 +86,15 @@
 //    [self.iconLabel layoutIfNeeded];
 }
 
-//- (void)layoutSubviews
-//{
-//    [super layoutSubviews];
-//    self.iconLabel.layer.cornerRadius = CGRectGetHeight(self.iconLabel.frame)/2;
-//    self.iconLabel.clipsToBounds = YES;
-//}
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    self.iconLabel.layer.cornerRadius = CGRectGetHeight(self.iconLabel.frame)/2;
+    self.iconLabel.clipsToBounds = YES;
+}
 
 - (void)setChatListModel:(EHIChatListModel *) chatListModel {
+    [self.iconLabel layoutIfNeeded];
     if (_chatListModel != chatListModel) {
         _chatListModel = chatListModel;
     }

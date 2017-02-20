@@ -8,6 +8,7 @@
 
 #import "EHIChatDetailViewController+Delegate.h"
 #import "EHIChatManager.h"
+#import "NSString+EHIUUID.h"
 
 @implementation EHIChatDetailViewController (Delegate)
 
@@ -49,6 +50,17 @@
 {
     EHITextMessage *message = [[EHITextMessage alloc] init];
     message.text = text;
+    
+    //数据拼接
+    message.messageID = [NSString createUUID];
+    message.sendID = SHARE_USER_CONTEXT.user.user_id;
+    message.sendName = SHARE_USER_CONTEXT.user.user_name;
+    message.nodeID = self.listModel.NodeId;
+    message.date = [NSDate date];
+    
+    message.messageType = EHIMessageTypeText;
+    message.ownerTyper = EHIMessageOwnerTypeSelf;
+    
     [self sendMessage:message];
     
 }
@@ -90,17 +102,11 @@
     }];
 }
 
+//发送信息
 - (void)sendMessage:(EHIMessage *)message
 {
-    static int i = 0 ;
-    i ++;
-    message.ownerTyper = EHIMessageOwnerTypeSelf;
-    message.date = [NSDate date];
-    message.nodeID = self.listModel.NodeId;
-    message.messageID = [NSString stringWithFormat:@"%f",[[NSDate date] timeIntervalSince1970]*10000];
-    message.ownerTyper = i%2 +1;
-    message.showName = message.ownerTyper == 1 ? NO : YES;
-    message.sendName = message.ownerTyper == 1 ? @"我" : @"赵丽颖";
+    
+    [self.socketManager sendMessageWithMessage:message];
     [self addToShowMessage:message];    // 添加到列表
     
     [[EHIChatManager sharedInstance] sendMessage:message progress:^(EHIMessage * message, CGFloat pregress) {
@@ -110,6 +116,22 @@
     } failure:^(EHIMessage * message) {
         NSLog(@"send failure");
     }];
+}
+
+
+//接到信息
+- (void)receivedMessage:(EHIMessage *)message
+{
+    [self addToShowMessage:message];    // 添加到列表
+    [[EHIChatManager sharedInstance] sendMessage:message progress:^(EHIMessage * message, CGFloat pregress) {
+        
+    } success:^(EHIMessage * message) {
+        NSLog(@"send success");
+    } failure:^(EHIMessage * message) {
+        NSLog(@"send failure");
+    }];
+
+
 }
 
 #pragma mark - # Private Methods

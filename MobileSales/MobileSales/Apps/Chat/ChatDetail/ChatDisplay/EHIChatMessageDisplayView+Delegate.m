@@ -43,10 +43,10 @@
     return message.messageFrame.height;
 }
 
-//- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
-//{
-//    [self.window endEditing:YES];
-//}
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    [self.window endEditing:YES];
+}
 
 
 @end

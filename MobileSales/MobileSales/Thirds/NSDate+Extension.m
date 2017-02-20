@@ -138,6 +138,11 @@
     return [NSString stringWithFormat:@"%02lu:%02lu", (unsigned long)[self hour], (unsigned long)[self minute]];
 }
 
+- (NSString *)formatYMDHMS
+{
+    return [NSString stringWithFormat:@"%lu-%02lu-%02lu %02lu:%02lu:%02lu",(unsigned long)[self year],(unsigned long)[self month], (unsigned long)[self day], (unsigned long)[self hour], (unsigned long)[self minute], (unsigned long)[self second]];
+}
+
 - (NSInteger)weekday {
     return [NSDate weekday:self];
 }

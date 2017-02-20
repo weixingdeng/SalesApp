@@ -34,6 +34,8 @@
 
 - (NSString *)formatHM;
 
+- (NSString *)formatYMDHMS;
+
 
 /**
  *  获取星期几

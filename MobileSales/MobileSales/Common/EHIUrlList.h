@@ -16,8 +16,11 @@ typedef NS_ENUM(NSInteger, ENVIRONMENT) {
 
 @interface EHIUrlList : NSObject
 
-@property(assign,nonatomic) ENVIRONMENT environment;
+@property (assign,nonatomic) ENVIRONMENT environment;
 
-@property(strong,nonatomic) NSString *BASE_HOST;
+@property (strong,nonatomic) NSString *BASE_HOST;
+
+@property (nonatomic , copy) NSString *SOCKET_HOST;
+@property (nonatomic , assign) NSInteger SOCKET_PORT ;
 
 @end

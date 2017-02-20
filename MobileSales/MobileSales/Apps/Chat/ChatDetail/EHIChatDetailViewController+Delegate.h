@@ -11,7 +11,7 @@
 #define     MAX_SHOWTIME_MSG_COUNT      10
 #define     MAX_SHOWTIME_MSG_SECOND     30
 
-@interface EHIChatDetailViewController (Delegate)<EHIChatMessageDisplayViewDelegate,EHIChatBarDelegate>
+@interface EHIChatDetailViewController (Delegate)<EHIChatMessageDisplayViewDelegate,EHIChatBarDelegate,EHIChatSocketManagerDelegate>
 
 //- (void)registerCellClassForTableView:(UITableView *)tableView;
 
@@ -35,6 +35,6 @@
 /**
  *  接收到消息
  */
-- (void)receivedMessage:(EHIMessage *)message;
+//- (void)receivedMessage:(EHIMessage *)message;
 
 @end

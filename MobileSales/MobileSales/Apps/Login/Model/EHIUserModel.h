@@ -16,4 +16,7 @@
 //密码
 @property (nonatomic , copy) NSString *password ;
 
+//姓名
+@property (nonatomic , copy) NSString *user_name;
+
 @end

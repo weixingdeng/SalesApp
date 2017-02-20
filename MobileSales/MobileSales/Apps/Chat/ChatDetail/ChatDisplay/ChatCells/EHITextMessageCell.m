@@ -43,8 +43,8 @@
     [self.messageBackgroundView setContentCompressionResistancePriority:100 forAxis:UILayoutConstraintAxisHorizontal];
     if (lastOwnType != message.ownerTyper) {
         if (message.ownerTyper == EHIMessageOwnerTypeSelf) {
+            [_messageLabel setTextColor:[UIColor whiteColor]];
             [self.messageBackgroundView setImage:[UIImage imageNamed:@"chat_send"]];
-//            [self.messageBackgroundView setHighlightedImage:[UIImage imageNamed:@"message_sender_bgHL"]];
             
             [self.messageLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
                 make.right.mas_equalTo(self.messageBackgroundView).mas_offset(-MSG_SPACE_RIGHT);
@@ -56,8 +56,8 @@
             }];
         }
         else if (message.ownerTyper == EHIMessageOwnerTypeFriend){
+            [_messageLabel setTextColor:HEXCOLOR_333333];
             [self.messageBackgroundView setImage:[UIImage imageNamed:@"chat_recive"]];
-//            [self.messageBackgroundView setHighlightedImage:[UIImage imageNamed:@"chat_recive_highlight"]];
             
             [self.messageLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
                 make.left.mas_equalTo(self.messageBackgroundView).mas_offset(MSG_SPACE_LEFT);

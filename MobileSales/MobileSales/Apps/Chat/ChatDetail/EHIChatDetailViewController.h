@@ -10,6 +10,7 @@
 #import "EHIChatListModel.h"
 #import "EHIChatMessageDisplayView.h"
 #import "EHIChatBar.h"
+#import "EHIChatSocketManager.h"
 
 @interface EHIChatDetailViewController : EHIViewController
 
@@ -20,5 +21,8 @@
 
 /// 聊天输入栏
 @property (nonatomic, strong) EHIChatBar *chatBar;
+
+/// 聊天socket管理器
+@property (nonatomic, strong) EHIChatSocketManager *socketManager;
 
 @end

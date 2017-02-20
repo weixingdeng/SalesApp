@@ -25,6 +25,8 @@
     
     //加载动画
 //    [self loadAnimationLaunch];
+    SHARE_USER_CONTEXT.user.user_name = @"邓卫星";
+    SHARE_USER_CONTEXT.user.user_id = @"11968";
     [self initHomeViewController];
 }
 

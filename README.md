@@ -7,6 +7,8 @@
 * pod 'IQKeyboardManager'
 * pod 'Masonry'
 * pod 'UMengAnalytics'
+* pod 'FMDB'
+* pod 'CocoaAsyncSocket'
 
 ### 第三方库
 

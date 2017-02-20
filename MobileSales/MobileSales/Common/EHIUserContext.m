@@ -28,4 +28,12 @@
     return _urlList;
 }
 
+- (EHIUserModel *)user
+{
+    if (!_user) {
+        _user = [[EHIUserModel alloc] init];
+    }
+    return _user;
+}
+
 @end

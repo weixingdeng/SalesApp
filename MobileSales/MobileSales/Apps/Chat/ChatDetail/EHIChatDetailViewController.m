@@ -53,6 +53,7 @@
     self.title = self.listModel.NodeName;
     
     [self setNavigationRight];
+    [self connectToChatSocketServer];
 }
 
 - (void)addMasonry
@@ -82,6 +83,14 @@
     
 }
 
+//开始连接socket服务器
+- (void)connectToChatSocketServer
+{
+    [[EHIChatSocketManager shareInstance] connectToHostWithHost:SHARE_USER_CONTEXT.urlList.SOCKET_HOST
+                                                       withPort:SHARE_USER_CONTEXT.urlList.SOCKET_PORT];
+    [[EHIChatSocketManager shareInstance] setDelegate:self];
+}
+
 
 - (EHIChatMessageDisplayView *)messageView
 {
@@ -100,6 +109,14 @@
     return _chatBar;
 }
 
+- (EHIChatSocketManager *)socketManager
+{
+    if (!_socketManager) {
+        _socketManager = [EHIChatSocketManager shareInstance];
+        [_socketManager setDelegate:self];
+    }
+    return _socketManager;
+}
 
 
 - (void)didReceiveMemoryWarning {
