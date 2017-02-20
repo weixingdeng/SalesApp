@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5C6E9C601E263E880092425C /* EHILoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E9C5F1E263E880092425C /* EHILoginViewController.m */; };
-		5C6E9C671E263E980092425C /* EHIMyInfomationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E9C631E263E980092425C /* EHIMyInfomationViewController.m */; };
 		5C6E9C681E263E980092425C /* EHMineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E9C661E263E980092425C /* EHMineHeaderView.m */; };
 		5C70F3DC1E2C7B3A00E20321 /* EHILoginContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C70F3DB1E2C7B3A00E20321 /* EHILoginContentView.m */; };
 		AC306C9B95FE8E79D7E1020A /* libPods-MobileSales.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 085593713B4FFC660683E189 /* libPods-MobileSales.a */; };
@@ -22,6 +21,7 @@
 		FB2564C11E24A6AD00A9B857 /* MobileSalesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2564C01E24A6AD00A9B857 /* MobileSalesUITests.m */; };
 		FB2564F51E25ECF000A9B857 /* UIColor+ColorWithHex.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2564F41E25ECF000A9B857 /* UIColor+ColorWithHex.m */; };
 		FB26CE721E5AE2C900317299 /* NSString+EHIDateFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = FB26CE711E5AE2C900317299 /* NSString+EHIDateFormat.m */; };
+		FB26CE761E5AF1A800317299 /* EHIMyInfomationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB26CE741E5AF1A800317299 /* EHIMyInfomationViewController.m */; };
 		FB2EC8671E59DD270066FBF3 /* EHIMessageBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2EC8661E59DD270066FBF3 /* EHIMessageBaseCell.m */; };
 		FB2EC86A1E59E1470066FBF3 /* NSDate+EHIChatFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2EC8691E59E1470066FBF3 /* NSDate+EHIChatFormat.m */; };
 		FB2EC86F1E59E19C0066FBF3 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2EC86C1E59E19C0066FBF3 /* NSDate+Extension.m */; };
@@ -99,8 +99,6 @@
 		085593713B4FFC660683E189 /* libPods-MobileSales.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MobileSales.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C6E9C5E1E263E880092425C /* EHILoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHILoginViewController.h; sourceTree = "<group>"; };
 		5C6E9C5F1E263E880092425C /* EHILoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHILoginViewController.m; sourceTree = "<group>"; };
-		5C6E9C621E263E980092425C /* EHIMyInfomationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIMyInfomationViewController.h; sourceTree = "<group>"; };
-		5C6E9C631E263E980092425C /* EHIMyInfomationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIMyInfomationViewController.m; sourceTree = "<group>"; };
 		5C6E9C651E263E980092425C /* EHMineHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHMineHeaderView.h; sourceTree = "<group>"; };
 		5C6E9C661E263E980092425C /* EHMineHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHMineHeaderView.m; sourceTree = "<group>"; };
 		5C70F3DA1E2C7B3A00E20321 /* EHILoginContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHILoginContentView.h; sourceTree = "<group>"; };
@@ -131,6 +129,8 @@
 		FB2564F41E25ECF000A9B857 /* UIColor+ColorWithHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ColorWithHex.m"; sourceTree = "<group>"; };
 		FB26CE701E5AE2C900317299 /* NSString+EHIDateFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+EHIDateFormat.h"; sourceTree = "<group>"; };
 		FB26CE711E5AE2C900317299 /* NSString+EHIDateFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+EHIDateFormat.m"; sourceTree = "<group>"; };
+		FB26CE731E5AF1A800317299 /* EHIMyInfomationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIMyInfomationViewController.h; sourceTree = "<group>"; };
+		FB26CE741E5AF1A800317299 /* EHIMyInfomationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIMyInfomationViewController.m; sourceTree = "<group>"; };
 		FB2EC8651E59DD270066FBF3 /* EHIMessageBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIMessageBaseCell.h; sourceTree = "<group>"; };
 		FB2EC8661E59DD270066FBF3 /* EHIMessageBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIMessageBaseCell.m; sourceTree = "<group>"; };
 		FB2EC8681E59E1470066FBF3 /* NSDate+EHIChatFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+EHIChatFormat.h"; sourceTree = "<group>"; };
@@ -297,8 +297,8 @@
 		5C6E9C611E263E980092425C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5C6E9C621E263E980092425C /* EHIMyInfomationViewController.h */,
-				5C6E9C631E263E980092425C /* EHIMyInfomationViewController.m */,
+				FB26CE731E5AF1A800317299 /* EHIMyInfomationViewController.h */,
+				FB26CE741E5AF1A800317299 /* EHIMyInfomationViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -971,6 +971,7 @@
 				FB682B981E56EFCF007BE819 /* EHIChatViewController+Delegate.m in Sources */,
 				FB2564F51E25ECF000A9B857 /* UIColor+ColorWithHex.m in Sources */,
 				FB682BCC1E598F24007BE819 /* EHITextMessage.m in Sources */,
+				FB26CE761E5AF1A800317299 /* EHIMyInfomationViewController.m in Sources */,
 				FB25649D1E24A6AD00A9B857 /* main.m in Sources */,
 				FB73EA501E4B1777001F268E /* EHIMovieViewController.m in Sources */,
 				FB12DB2F1E4B4FC0006940A3 /* EHILauncherButton.m in Sources */,
@@ -987,7 +988,6 @@
 				5C6E9C601E263E880092425C /* EHILoginViewController.m in Sources */,
 				FB776EB81E4AF065008763CE /* NSString+MD5Addition.m in Sources */,
 				FB94D1E01E53F2E700BC86E5 /* NSFileManager+Paths.m in Sources */,
-				5C6E9C671E263E980092425C /* EHIMyInfomationViewController.m in Sources */,
 				FB73EADE1E4DB585001F268E /* EHISingleAlertController.m in Sources */,
 				FB26CE721E5AE2C900317299 /* NSString+EHIDateFormat.m in Sources */,
 				FB2EC8731E59E2970066FBF3 /* EHITextMessageCell.m in Sources */,
