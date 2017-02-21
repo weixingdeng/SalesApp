@@ -7,6 +7,7 @@
 //
 
 #import "EHIChatListTableViewCell.h"
+#import "NSDate+Extension.h"
 
 @interface EHIChatListTableViewCell()
 
@@ -46,9 +47,6 @@
     [self.contentView addSubview:self.redIconView];
     
     //test
-    self.lastMsgLabel.text = @"张三:你好吗我看到了";
-    self.timeLabel.text = @"下午 4:50";
-    
     [self.iconLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.offset(autoHeightOf6(10));
         make.bottom.offset(-autoHeightOf6(10));
@@ -94,12 +92,26 @@
 }
 
 - (void)setChatListModel:(EHIChatListModel *) chatListModel {
+
+    //设置填充数据时候 立刻刷新视图 (为了切圆角)
     [self.iconLabel layoutIfNeeded];
+    
     if (_chatListModel != chatListModel) {
         _chatListModel = chatListModel;
     }
     [self.iconLabel setText:chatListModel.ShortName];
     [self.titleLabel setText:chatListModel.NodeName];
+    [self.redIconView setHidden:chatListModel.isRead];
+    [self.timeLabel setText:[chatListModel.date formatHM]];
+    
+    NSDictionary *contentDic = [chatListModel.content mj_JSONObject];
+    if (chatListModel.senderName.length && [contentDic[@"text"] length]) {
+        NSString *showString = [NSString stringWithFormat:@"%@:%@",chatListModel.senderName,contentDic[@"text"]];
+        [self.lastMsgLabel setText:showString];
+    }else
+    {
+        [self.lastMsgLabel setText:@""];
+    }
 }
 
 

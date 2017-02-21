@@ -22,6 +22,7 @@
 		FB2564F51E25ECF000A9B857 /* UIColor+ColorWithHex.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2564F41E25ECF000A9B857 /* UIColor+ColorWithHex.m */; };
 		FB26CE721E5AE2C900317299 /* NSString+EHIDateFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = FB26CE711E5AE2C900317299 /* NSString+EHIDateFormat.m */; };
 		FB26CE761E5AF1A800317299 /* EHIMyInfomationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB26CE741E5AF1A800317299 /* EHIMyInfomationViewController.m */; };
+		FB26CE7A1E5BEE6000317299 /* EHIDBFrameDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = FB26CE791E5BEE6000317299 /* EHIDBFrameDAO.m */; };
 		FB2EC8671E59DD270066FBF3 /* EHIMessageBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2EC8661E59DD270066FBF3 /* EHIMessageBaseCell.m */; };
 		FB2EC86A1E59E1470066FBF3 /* NSDate+EHIChatFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2EC8691E59E1470066FBF3 /* NSDate+EHIChatFormat.m */; };
 		FB2EC86F1E59E19C0066FBF3 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2EC86C1E59E19C0066FBF3 /* NSDate+Extension.m */; };
@@ -69,7 +70,6 @@
 		FB94D1EA1E53FB7A00BC86E5 /* EHIDBBaseDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = FB94D1E71E53FB7A00BC86E5 /* EHIDBBaseDAO.m */; };
 		FB94D1EB1E53FB7A00BC86E5 /* EHIDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB94D1E91E53FB7A00BC86E5 /* EHIDBManager.m */; };
 		FB94D1EF1E53FB8200BC86E5 /* EHIDBChatDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = FB94D1EE1E53FB8200BC86E5 /* EHIDBChatDAO.m */; };
-		FB94D1F31E53FB8A00BC86E5 /* EHIDBFrameDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = FB94D1F11E53FB8A00BC86E5 /* EHIDBFrameDAO.m */; };
 		FB94D20F1E55460700BC86E5 /* EHIChatListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FB94D20E1E55460700BC86E5 /* EHIChatListModel.m */; };
 		FB94D2121E55469F00BC86E5 /* EHIContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FB94D2111E55469F00BC86E5 /* EHIContactModel.m */; };
 		FB94D2191E556B9000BC86E5 /* EHIResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FB94D2181E556B9000BC86E5 /* EHIResponseModel.m */; };
@@ -135,6 +135,8 @@
 		FB26CE711E5AE2C900317299 /* NSString+EHIDateFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+EHIDateFormat.m"; sourceTree = "<group>"; };
 		FB26CE731E5AF1A800317299 /* EHIMyInfomationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIMyInfomationViewController.h; sourceTree = "<group>"; };
 		FB26CE741E5AF1A800317299 /* EHIMyInfomationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIMyInfomationViewController.m; sourceTree = "<group>"; };
+		FB26CE781E5BEE6000317299 /* EHIDBFrameDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIDBFrameDAO.h; sourceTree = "<group>"; };
+		FB26CE791E5BEE6000317299 /* EHIDBFrameDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIDBFrameDAO.m; sourceTree = "<group>"; };
 		FB2EC8651E59DD270066FBF3 /* EHIMessageBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIMessageBaseCell.h; sourceTree = "<group>"; };
 		FB2EC8661E59DD270066FBF3 /* EHIMessageBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIMessageBaseCell.m; sourceTree = "<group>"; };
 		FB2EC8681E59E1470066FBF3 /* NSDate+EHIChatFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+EHIChatFormat.h"; sourceTree = "<group>"; };
@@ -232,8 +234,6 @@
 		FB94D1EC1E53FB8200BC86E5 /* EHIChatSQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIChatSQL.h; sourceTree = "<group>"; };
 		FB94D1ED1E53FB8200BC86E5 /* EHIDBChatDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIDBChatDAO.h; sourceTree = "<group>"; };
 		FB94D1EE1E53FB8200BC86E5 /* EHIDBChatDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIDBChatDAO.m; sourceTree = "<group>"; };
-		FB94D1F01E53FB8A00BC86E5 /* EHIDBFrameDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIDBFrameDAO.h; sourceTree = "<group>"; };
-		FB94D1F11E53FB8A00BC86E5 /* EHIDBFrameDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIDBFrameDAO.m; sourceTree = "<group>"; };
 		FB94D1F21E53FB8A00BC86E5 /* EHIFrameSQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIFrameSQL.h; sourceTree = "<group>"; };
 		FB94D20D1E55460700BC86E5 /* EHIChatListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIChatListModel.h; sourceTree = "<group>"; };
 		FB94D20E1E55460700BC86E5 /* EHIChatListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIChatListModel.m; sourceTree = "<group>"; };
@@ -739,8 +739,8 @@
 			isa = PBXGroup;
 			children = (
 				FB94D1F21E53FB8A00BC86E5 /* EHIFrameSQL.h */,
-				FB94D1F01E53FB8A00BC86E5 /* EHIDBFrameDAO.h */,
-				FB94D1F11E53FB8A00BC86E5 /* EHIDBFrameDAO.m */,
+				FB26CE781E5BEE6000317299 /* EHIDBFrameDAO.h */,
+				FB26CE791E5BEE6000317299 /* EHIDBFrameDAO.m */,
 			);
 			name = EHIDBFrameUtil;
 			path = EHIFrameUtil;
@@ -1021,8 +1021,8 @@
 				FB5A5D381E49DB2F00810253 /* UITabBar+EHIBadge.m in Sources */,
 				FB776EB71E4AF065008763CE /* IPAddress.c in Sources */,
 				5C70F3DC1E2C7B3A00E20321 /* EHILoginContentView.m in Sources */,
+				FB26CE7A1E5BEE6000317299 /* EHIDBFrameDAO.m in Sources */,
 				FB2EC86F1E59E19C0066FBF3 /* NSDate+Extension.m in Sources */,
-				FB94D1F31E53FB8A00BC86E5 /* EHIDBFrameDAO.m in Sources */,
 				FB94D1EA1E53FB7A00BC86E5 /* EHIDBBaseDAO.m in Sources */,
 				FB682BC31E598D15007BE819 /* EHIMessage.m in Sources */,
 				FB776EBD1E4AFB98008763CE /* EHIUserContext.m in Sources */,

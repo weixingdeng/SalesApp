@@ -49,10 +49,29 @@
                            
                        } SuccessCallBack:^(id object) {
                            
+                           [self saveLoginMessageWithObject:object];
+                           
                            [self initHomeViewController];
                            
                        }];
     }
+}
+
+//保存本地信息
+- (void)saveLoginMessageWithObject:(id)object
+{
+    EHIResponseModel *responseModel = (EHIResponseModel *)object;
+    if (responseModel.Data) {
+        NSDictionary *dataDic = (NSDictionary *)responseModel.Data;
+        
+        SHARE_USER_CONTEXT.user.user_id = dataDic[@"UserNo"];
+        SHARE_USER_CONTEXT.user.user_name = dataDic[@"UserName"];
+        SHARE_USER_CONTEXT.user.user_sex = dataDic[@"Sex"];
+    }
+    [[NSUserDefaults standardUserDefaults] setObject:self.loginContentView.userIdTextField.text forKey:USER_ID_KEY];
+      [[NSUserDefaults standardUserDefaults] setObject:SHARE_USER_CONTEXT.user.user_name forKey:@"name_ehi"];
+      [[NSUserDefaults standardUserDefaults] setObject:SHARE_USER_CONTEXT.user.user_sex forKey:@"sex_ehi"];
+    
 }
 
 //是否自动登录
@@ -97,8 +116,28 @@
 }
 
 //展示登录错误信息
-- (void)showLoginErrorMessage:(NSString *)message
+- (void)showLoginErrorMessage:(id)object
 {
+    NSString *message = @"";
+    if ([object isKindOfClass:[NSError class]]) {
+        message = @"请检查你的网络后重试或联系技术部";
+    }else
+    {
+        EHIResponseModel *model = (EHIResponseModel *)object;
+        if (model.Msg.length) {
+            message = model.Msg;
+        }else
+        {
+            message = @"登录失败 请重试";
+        }
+    }
+    
+    [EHISingleAlertController showSingleAlertOnViewController:self
+                                                    withTitle:@"登录失败" withMessage:message withActionTitle:@"确定" handler:^(WXAlertAction *action) {
+                                                        
+                                                    }];
+    
+    
     
 }
 

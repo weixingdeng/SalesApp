@@ -62,15 +62,15 @@
     
     [self.userIdTextField mas_makeConstraints:^(MASConstraintMaker *make)
     {
-        make.top.equalTo(self.idImageView.mas_top);
+        make.centerY.mas_equalTo(self.idImageView.mas_centerY);
         make.left.equalTo(self.idImageView.mas_right).offset(10);
         make.right.equalTo(self.mas_right).offset(0);
-        make.height.equalTo(self.idImageView.mas_height);
+        make.height.equalTo(@(50));
     }];
     
     [self.idLineView mas_makeConstraints:^(MASConstraintMaker *make)
     {
-        make.top.equalTo(self.userIdTextField.mas_bottom).offset(18);
+        make.top.equalTo(self.userIdTextField.mas_bottom).offset(1);
         make.left.equalTo(self.mas_left).offset(0);
         make.right.equalTo(self.mas_right).offset(0);
         make.height.equalTo(@(1));
@@ -78,7 +78,7 @@
     
     [self.passWordImageView mas_makeConstraints:^(MASConstraintMaker *make)
      {
-         make.top.equalTo(self.idLineView.mas_top).offset(18);
+         make.centerY.equalTo(self.idLineView.mas_top).offset(25);
          make.left.equalTo(self.mas_left).offset(padding);
          make.right.equalTo(self.userPassWordTextField.mas_left).offset(-10);
          make.height.equalTo(@(iconPointSize));
@@ -87,15 +87,16 @@
     
     [self.userPassWordTextField mas_makeConstraints:^(MASConstraintMaker *make)
      {
-         make.top.equalTo(self.passWordImageView.mas_top);
+//         make.top.equalTo(self.passWordImageView.mas_top);
+         make.centerY.mas_equalTo(self.passWordImageView.mas_centerY);
          make.left.equalTo(self.passWordImageView.mas_right).offset(10);
          make.right.equalTo(self.mas_right).offset(0);
-         make.height.equalTo(self.passWordImageView.mas_height);
+         make.height.equalTo(@(50));
      }];
     
     [self.passWordLineView mas_makeConstraints:^(MASConstraintMaker *make)
      {
-         make.top.equalTo(self.userPassWordTextField.mas_bottom).offset(18);
+         make.top.equalTo(self.userPassWordTextField.mas_bottom).offset(1);
          make.left.equalTo(self.mas_left).offset(0);
          make.right.equalTo(self.mas_right).offset(0);
          make.height.equalTo(@(1));

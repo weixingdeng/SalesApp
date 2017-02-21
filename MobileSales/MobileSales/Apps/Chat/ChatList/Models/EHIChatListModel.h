@@ -37,10 +37,13 @@
 @property (nonatomic, strong) NSDate *date;
 
 //最后一条信息内容
-@property (nonatomic, strong) NSString *content;
+@property (nonatomic, copy) NSString *content;
 
 //是否已读
-@property (nonatomic, assign, readonly) BOOL isRead;
+@property (nonatomic, assign) BOOL isRead;
+
+//发送者名字
+@property (nonatomic , copy) NSString *senderName ;
 
 
 @end

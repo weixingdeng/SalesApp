@@ -7,6 +7,7 @@
 //
 
 #import "EHIChatMessageDisplayView+Delegate.h"
+#import "EHIMyInfomationViewController.h"
 
 @implementation EHIChatMessageDisplayView (Delegate)
 
@@ -30,12 +31,27 @@
     if (message.messageType == EHIMessageTypeText) {
         EHITextMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EHITextMessageCell"];
         [cell setMessage:message];
+        [cell.avatarButton addTarget:self action:@selector(clickAvatar) forControlEvents:UIControlEventTouchUpInside];
         return cell;
     }
     
     return [tableView dequeueReusableCellWithIdentifier:@"EmptyCell"];
 }
 
+- (void)clickAvatar
+{
+    EHIMyInfomationViewController *infoVC = [[EHIMyInfomationViewController alloc] init];
+    [[self viewController].navigationController pushViewController:infoVC animated:YES];
+}
+- (UIViewController*)viewController {
+    for (UIView* next = [self superview]; next; next = next.superview) {
+        UIResponder* nextResponder = [next nextResponder];
+        if ([nextResponder isKindOfClass:[UIViewController class]]) {
+            return (UIViewController*)nextResponder;
+        }
+    }
+    return nil;
+}
 //MARK: UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath
 {

@@ -71,8 +71,8 @@
 - (void)addToShowMessage:(EHIMessage *)message
 {
     message.showTime = [self needShowTime:message.date];
-    [self.messageView addMessage:message];
     dispatch_async(dispatch_get_main_queue(), ^{
+        [self.messageView addMessage:message];
         [self.messageView scrollToBottomWithAnimation:YES];
     });
 }
@@ -109,6 +109,10 @@
     [self.socketManager sendMessageWithMessage:message];
     [self addToShowMessage:message];    // 添加到列表
     
+    [[EHIChatManager sharedInstance] addMessage:message
+                               toChatListNodeId:self.listModel.NodeId
+                                         isRead:YES];
+    
     [[EHIChatManager sharedInstance] sendMessage:message progress:^(EHIMessage * message, CGFloat pregress) {
         
     } success:^(EHIMessage * message) {
@@ -122,8 +126,18 @@
 //接到信息
 - (void)receivedMessage:(EHIMessage *)message
 {
-    [self addToShowMessage:message];    // 添加到列表
-    [[EHIChatManager sharedInstance] sendMessage:message progress:^(EHIMessage * message, CGFloat pregress) {
+    BOOL isRead = NO;
+    if ([self.listModel.NodeId isEqualToString:message.nodeID]) {
+        [self addToShowMessage:message];
+        isRead = YES;
+    }
+
+    [[EHIChatManager sharedInstance] addMessage:message
+                               toChatListNodeId:self.listModel.NodeId
+                                         isRead:isRead];
+    
+    [[EHIChatManager sharedInstance] sendMessage:message
+                                        progress:^(EHIMessage * message, CGFloat pregress) {
         
     } success:^(EHIMessage * message) {
         NSLog(@"send success");

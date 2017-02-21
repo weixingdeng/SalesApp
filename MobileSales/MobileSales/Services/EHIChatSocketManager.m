@@ -10,6 +10,8 @@
 #import "NSMutableDictionary+EHIDicSaveString.h"
 #import "NSDate+Extension.h"
 #import "NSString+EHIDateFormat.h"
+#import "EHIChatDetailViewController.h"
+#import "EHIChatManager.h"
 
 static const int ERROR_CODE = 0;
 
@@ -104,6 +106,9 @@ static const int ERROR_CODE = 0;
     [data appendData:bodyData];
     
     [self.socket writeData:data withTimeout:-1 tag:EHISocketTagMESSAGE];
+    
+    //加入到聊天列表
+    
     
 }
 
@@ -220,7 +225,7 @@ static const int ERROR_CODE = 0;
         NSLog(@"%d",[headDic[@"messageType"] isEqualToString:@"TEXT"]);
         if ([headDic[@"messageType"] isEqualToString:@"TEXT"]) {
             EHITextMessage *textMessage = [[EHITextMessage alloc] init];
-            textMessage.nodeID = headDic[@"nodeId"];
+            textMessage.nodeID = [NSString stringWithFormat:@"%@",headDic[@"nodeId"]];
             textMessage.messageID = headDic[@"id"];
             textMessage.sendID = headDic[@"senderId"];
             textMessage.sendName = headDic[@"senderName"];
@@ -263,9 +268,30 @@ static const int ERROR_CODE = 0;
         if (bodyString.length) {
             textMessage.text = bodyString;
         }
+#warning 如果聊天详情页代理不释放 会崩在这儿 原因待查
+        //如果是在聊天详情页
         if (self.delegate && [self.delegate respondsToSelector:@selector(receivedMessage:)]) {
             [self.delegate receivedMessage:textMessage];
+        }else
+        {
+            //r如果不在聊天详情页 isRead  传NO
+            [[EHIChatManager sharedInstance] addMessage:message
+                                       toChatListNodeId:message.nodeID
+                                                 isRead:NO];
+            //不是在详情页 存到数据库
+            [[EHIChatManager sharedInstance] sendMessage:message
+                                                progress:^(EHIMessage * message, CGFloat pregress) {
+                
+            } success:^(EHIMessage * message) {
+                NSLog(@"send success");
+            } failure:^(EHIMessage * message) {
+                NSLog(@"send failure");
+            }];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:HAVE_NEW_MESSAGE_NOTIFATION object:nil];
         }
+      
+      
     }
     
      message = nil;

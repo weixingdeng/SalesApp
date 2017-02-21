@@ -8,12 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "EHIDBChatDAO.h"
+#import "EHIDBFrameDAO.h"
 
 @interface EHIChatManager : NSObject
 
 + (EHIChatManager *)sharedInstance;
 
 @property (nonatomic, strong) EHIDBChatDAO *chatDAO;
+@property (nonatomic, strong) EHIDBFrameDAO *frameDAO;
 @property (nonatomic, strong, readonly) NSString *userID;
 
 /**
@@ -33,8 +35,21 @@
                        complete:(void (^)(NSArray *, BOOL))complete;
 
 /**
- *  获取有最后聊天信息的对话
+ *  添加到聊天列表
  */
-- (NSArray *)lastConversationByNodeId:(NSInteger)nodeID;
+- (BOOL)addMessage:(EHIMessage *)message
+  toChatListNodeId:(NSString *)nodeId
+            isRead:(BOOL)isRead;
+/**
+ *  添加到聊天列表
+ */
+- (EHIChatListModel *)updateChatListStateWithChatListModel:(EHIChatListModel *)chatList;
 
+/**
+ *  更新聊天列表为已读
+ */
+- (BOOL)updateChatToReadWithNodeLevel:(NSString *)nodeLevel
+                           withNodeId:(NSString *)nodeId;
+
+- (BOOL)isMessageNoRead;
 @end

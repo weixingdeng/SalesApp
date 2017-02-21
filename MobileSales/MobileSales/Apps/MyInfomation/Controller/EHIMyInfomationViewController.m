@@ -8,6 +8,7 @@
 
 #import "EHIMyInfomationViewController.h"
 #import "EHISexSelectView.h"
+#import "EHILoginViewController.h"
 
 @interface EHIMyInfomationViewController ()
 
@@ -71,6 +72,14 @@
     }];
 }
 
+- (void)exitLogin
+{
+    [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:USER_ID_KEY];
+    SHARE_USER_CONTEXT.user.user_id = nil;
+    SHARE_USER_CONTEXT.user.user_name = nil;
+    SHARE_USER_CONTEXT.user.user_sex = nil;
+    self.window.rootViewController = [[EHILoginViewController alloc] init];
+}
 
 - (UIImageView *)iconImgView {
 	if (_iconImgView == nil) {
@@ -89,6 +98,7 @@
 - (EHIShowInfoLabel *)nameLabel {
 	if (_nameLabel == nil) {
         _nameLabel = [[EHIShowInfoLabel alloc] init];
+        _nameLabel.text = SHARE_USER_CONTEXT.user.user_name;
 	}
 	return _nameLabel;
 }
@@ -96,6 +106,7 @@
 - (EHIShowInfoLabel *)userNoLabel {
 	if (_userNoLabel == nil) {
         _userNoLabel = [[EHIShowInfoLabel alloc] init];
+        _userNoLabel.text = [NSString stringWithFormat:@"工号:%@",SHARE_USER_CONTEXT.user.user_id];
 	}
 	return _userNoLabel;
 }
@@ -103,6 +114,7 @@
 - (EHIShowInfoLabel *)sexLabel {
     if (_sexLabel == nil) {
         _sexLabel = [[EHIShowInfoLabel alloc] init];
+        _sexLabel.text = @"性别";
     }
     return _sexLabel;
 }
@@ -110,7 +122,7 @@
 - (EHISexSelectView *)sexView
 {
     if (!_sexView) {
-        _sexView = [[EHISexSelectView alloc] initWithSelectBoy:self.isBoy];
+        _sexView = [[EHISexSelectView alloc] initWithSelectBoy:NO];
     }
     return _sexView;
 }
@@ -121,6 +133,7 @@
         _exitBtn.backgroundColor = HEXCOLOR_718DDE;
         _exitBtn.layer.cornerRadius = 4;
         _exitBtn.clipsToBounds = YES;
+        [_exitBtn addTarget:self action:@selector(exitLogin) forControlEvents:UIControlEventTouchUpInside];
 
 	}
 	return _exitBtn;
@@ -128,7 +141,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 

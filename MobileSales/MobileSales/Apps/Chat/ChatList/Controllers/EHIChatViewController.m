@@ -10,7 +10,8 @@
 #import "EHIChatViewController+Delegate.h"
 #import "EHIChatListModel.h"
 #import "EHIChatSocketManager.h"
-
+#import "EHIChatManager.h"
+#import "UITabBar+EHIBadge.h"
 
 @interface EHIChatViewController()
 
@@ -24,7 +25,35 @@
     self.view.backgroundColor = HEXCOLOR_F7F7F7;
     [self addSegmentViewAndTableView];
     [self registerCellClass];
-//    [self requestFrameData];
+    [self requestFrameData];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadTableView) name:HAVE_NEW_MESSAGE_NOTIFATION object:nil];
+}
+
+- (void)reloadTableView
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.chatListTable reloadData];
+        BOOL hasNoRead = [[EHIChatManager sharedInstance] isMessageNoRead];
+        if (hasNoRead) {
+            [self.tabBarController.tabBar showBadgeOnItemIndex:0];
+            return;
+        }
+        [self.tabBarController.tabBar hideBedgeOnItemIndex:0];
+    });
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.chatListTable reloadData];
+    BOOL hasNoRead = [[EHIChatManager sharedInstance] isMessageNoRead];
+    if (hasNoRead) {
+        [self.tabBarController.tabBar showBadgeOnItemIndex:0];
+        return;
+    }
+    [self.tabBarController.tabBar hideBedgeOnItemIndex:0];
 }
 
 #pragma mark 界面视图
@@ -110,6 +139,15 @@
         }
         [self.chatListTable reloadData];
     }
+    [self connectToChatSocketServer];
+    
+}
+
+//开始连接socket服务器
+- (void)connectToChatSocketServer
+{
+    [[EHIChatSocketManager shareInstance] connectToHostWithHost:SHARE_USER_CONTEXT.urlList.SOCKET_HOST
+                                                       withPort:SHARE_USER_CONTEXT.urlList.SOCKET_PORT];
 }
 
 - (UITableView *)chatListTable

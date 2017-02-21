@@ -13,6 +13,7 @@
 #import "EHIMyInfomationViewController.h"
 #import "EHINavigationController.h"
 #import "UITabBar+EHIBadge.h"
+#import "EHIChatManager.h"
 
 static EHIHomeViewController *rootVC = nil;
 
@@ -43,7 +44,13 @@ static EHIHomeViewController *rootVC = nil;
     [super viewDidLoad];
     [self.tabBar setBackgroundColor:HEXCOLOR_F7F7F7];
     [self.tabBar setTintColor:HEXCOLOR_718DDE];
-    [self.tabBar showBadgeOnItemIndex:0];
+    BOOL hasNoRead = [[EHIChatManager sharedInstance] isMessageNoRead];
+    if (hasNoRead) {
+        [self.tabBar showBadgeOnItemIndex:0];
+    }else
+    {
+        [self.tabBar hideBedgeOnItemIndex:0];
+    }
     self.delegate = self;
     [self setViewControllers:self.childVCArray];
 }
@@ -59,7 +66,7 @@ static EHIHomeViewController *rootVC = nil;
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
 {
     if (viewController == self.childVCArray[1] || viewController == self.childVCArray[2]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误" message:@"正在开发中" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"正在开发中" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
         [alert show];
         return NO;
     }
@@ -116,10 +123,10 @@ static EHIHomeViewController *rootVC = nil;
                                               imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)]];
         [_myInfomationVC.tabBarItem setSelectedImage:[[UIImage imageNamed:@"tabbar_myinfo_high"]
                                                       imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)]];
-        [_myInfomationVC.nameLabel setText:@"赵丽颖"];
-        [_myInfomationVC.userNoLabel setText:@"工号:106628"];
-        [_myInfomationVC.sexLabel setText:@"性别"];
-        _myInfomationVC.isBoy = NO;
+//        [_myInfomationVC.nameLabel setText:@"赵丽颖"];
+//        [_myInfomationVC.userNoLabel setText:@"工号:106628"];
+//        [_myInfomationVC.sexLabel setText:@"性别"];
+//        _myInfomationVC.isBoy = NO;
 	}
 	return _myInfomationVC;
 }

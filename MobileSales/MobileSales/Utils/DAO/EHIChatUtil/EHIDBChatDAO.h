@@ -25,10 +25,5 @@
                    count:(NSUInteger)count
                 complete:(void (^)(NSArray *data, BOOL hasMore))complete;
 
-/**
- *  最后一条聊天记录（消息页用）
- */
-- (NSString *)lastMessageByUserID:(NSString *)userID
-                           nodeID:(NSString *)nodeID;
 
 @end

@@ -19,4 +19,7 @@
 //姓名
 @property (nonatomic , copy) NSString *user_name;
 
+//性别
+@property (nonatomic , copy) NSString *user_sex;
+
 @end

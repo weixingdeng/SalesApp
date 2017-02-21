@@ -24,10 +24,10 @@
     [self initThirdSDK];
     
     //加载动画
-//    [self loadAnimationLaunch];
-    SHARE_USER_CONTEXT.user.user_name = @"邓卫星";
-    SHARE_USER_CONTEXT.user.user_id = @"11968";
-    [self initHomeViewController];
+    [self loadAnimationLaunch];
+//    SHARE_USER_CONTEXT.user.user_name = @"邓卫星";
+//    SHARE_USER_CONTEXT.user.user_id = @"11969";
+//    [self initHomeViewController];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -101,6 +101,9 @@
     BOOL isLogin = [[[NSUserDefaults standardUserDefaults] objectForKey:USER_ID_KEY] length] != 0;
     //如果登录了
     if (isLogin) {
+      SHARE_USER_CONTEXT.user.user_id = [[NSUserDefaults standardUserDefaults] objectForKey:USER_ID_KEY];
+        SHARE_USER_CONTEXT.user.user_name = [[NSUserDefaults standardUserDefaults] objectForKey:@"name_ehi"];
+       SHARE_USER_CONTEXT.user.user_sex = [[NSUserDefaults standardUserDefaults] objectForKey:@"sex_ehi"];
         [self initHomeViewController];
     }else
     {

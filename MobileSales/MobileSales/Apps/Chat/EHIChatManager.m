@@ -51,13 +51,37 @@ static EHIChatManager *chatManager;
 }
 
 /**
- *  获取有最后聊天信息的对话
+ *  添加到聊天列表
  */
-- (NSArray *)lastConversationByNodeId:(NSInteger)nodeID
+- (BOOL)addMessage:(EHIMessage *)message
+        toChatListNodeId:(NSString *)nodeId
+            isRead:(BOOL)isRead{
+    return [self.frameDAO addMessage:message
+                    toChatListNodeId:nodeId
+                              isRead:isRead];
+}
+
+/**
+ *  添加到聊天列表
+ */
+- (EHIChatListModel *)updateChatListStateWithChatListModel:(EHIChatListModel *)chatList
 {
-    __block NSMutableArray *data = [[NSMutableArray alloc] init];
-    return data;
-    
+    return [self.frameDAO updateChatListStateWithChatListModel:chatList];
+}
+
+/**
+ *  更新聊天列表为已读
+ */
+- (BOOL)updateChatToReadWithNodeLevel:(NSString *)nodeLevel
+                           withNodeId:(NSString *)nodeId
+{
+    return [self.frameDAO updateChatToReadWithNodeLevel:nodeLevel
+                                             withNodeId:nodeId];
+}
+
+- (BOOL)isMessageNoRead
+{
+    return [self.frameDAO isMessageNoRead];
 }
 
 #pragma mark - Getter -
@@ -67,6 +91,14 @@ static EHIChatManager *chatManager;
         _chatDAO = [[EHIDBChatDAO alloc] init];
     }
     return _chatDAO;
+}
+
+- (EHIDBFrameDAO *)frameDAO
+{
+    if (!_frameDAO) {
+        _frameDAO = [[EHIDBFrameDAO alloc] init];
+    }
+    return _frameDAO;
 }
 
 

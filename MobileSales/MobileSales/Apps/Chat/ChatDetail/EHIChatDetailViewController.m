@@ -8,6 +8,8 @@
 
 #import "EHIChatDetailViewController.h"
 #import "EHIChatDetailViewController+Delegate.h"
+#import "EHIChatManager.h"
+#import "EHIChatMemberViewController.h"
 
 @interface EHIChatDetailViewController ()
 
@@ -15,22 +17,24 @@
 
 @implementation EHIChatDetailViewController
 
-- (void)loadView
-{
-    [super loadView];
-    
-    [self.view addSubview:self.messageView];
-    [self.messageView resetMessageView];
-    [self.view addSubview:self.chatBar];
-    
-    [self addMasonry];
-}
+//- (void)loadView
+//{
+//    [super loadView];
+//    
+//    [self.view addSubview:self.messageView];
+//    [self.messageView resetMessageView];
+//    [self.view addSubview:self.chatBar];
+//    [self addMasonry];
+//}
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [IQKeyboardManager sharedManager].enable = NO;
     [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
+    
+    [self.socketManager setDelegate:self];
+    [self.messageView resetMessageView];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
@@ -42,18 +46,28 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-//    [IQKeyboardManager sharedManager].enable = YES;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+   
+}
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    [[EHIChatSocketManager shareInstance] setDelegate:nil];
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = self.listModel.NodeName;
+    [self.view addSubview:self.messageView];
+    [self.view addSubview:self.chatBar];
+    [self addMasonry];
     
     [self setNavigationRight];
-    [self connectToChatSocketServer];
+    [[EHIChatSocketManager shareInstance] setDelegate:self];
+    [[EHIChatManager sharedInstance] updateChatToReadWithNodeLevel:@"0" withNodeId:self.listModel.NodeId];
+    
 }
 
 - (void)addMasonry
@@ -80,15 +94,8 @@
 
 - (void)rightBarButtonDown
 {
-    
-}
-
-//开始连接socket服务器
-- (void)connectToChatSocketServer
-{
-    [[EHIChatSocketManager shareInstance] connectToHostWithHost:SHARE_USER_CONTEXT.urlList.SOCKET_HOST
-                                                       withPort:SHARE_USER_CONTEXT.urlList.SOCKET_PORT];
-    [[EHIChatSocketManager shareInstance] setDelegate:self];
+    EHIChatMemberViewController *memberVC = [[EHIChatMemberViewController alloc] init];
+    [self.navigationController pushViewController:memberVC animated:YES];
 }
 
 
@@ -113,9 +120,14 @@
 {
     if (!_socketManager) {
         _socketManager = [EHIChatSocketManager shareInstance];
-        [_socketManager setDelegate:self];
+//        [_socketManager setDelegate:self];
     }
     return _socketManager;
+}
+
+- (void)dealloc
+{
+    NSLog(@"kill");
 }
 
 

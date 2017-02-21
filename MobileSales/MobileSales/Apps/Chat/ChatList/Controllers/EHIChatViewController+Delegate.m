@@ -9,7 +9,7 @@
 #import "EHIChatViewController+Delegate.h"
 #import "EHIChatListTableViewCell.h"
 #import "EHIChatDetailViewController.h"
-
+#import "EHIChatManager.h"
 @implementation EHIChatViewController (Delegate)
 
 - (void)registerCellClass
@@ -46,6 +46,7 @@
     EHIChatListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EHIChatListTableViewCell" forIndexPath:indexPath];
     EHIChatListModel *outerModel = self.dataAttay[self.selectIndex];
     EHIChatListModel *subModel = outerModel.Children[indexPath.row];
+    subModel = [[EHIChatManager sharedInstance] updateChatListStateWithChatListModel:subModel];
     cell.chatListModel = subModel;
     cell.iconLabel.backgroundColor = self.colorArray[indexPath.row%15];
     return cell;

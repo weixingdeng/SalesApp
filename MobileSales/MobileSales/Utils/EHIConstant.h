@@ -16,4 +16,6 @@ static NSString* const USER_ID_KEY = @"user_id";
 
 static NSString* const REQUEST_FAILED = @"网络请求失败,请稍后重试!";
 
+static NSString* const HAVE_NEW_MESSAGE_NOTIFATION = @"HAVENEW_NOTIFATION";
+
 #endif /* EHIConstant_h */

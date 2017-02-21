@@ -22,6 +22,7 @@ PODS:
   - FMDB/standard (2.6.2)
   - IQKeyboardManager (4.0.7)
   - Masonry (1.0.2)
+  - MBProgressHUD (1.0.0)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
   - UMengAnalytics (4.1.4)
@@ -32,6 +33,7 @@ DEPENDENCIES:
   - FMDB
   - IQKeyboardManager
   - Masonry
+  - MBProgressHUD (~> 1.0.0)
   - MJExtension
   - MJRefresh
   - UMengAnalytics
@@ -42,10 +44,11 @@ SPEC CHECKSUMS:
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   IQKeyboardManager: 69002bb4fea60596b710e57d426abc00e5063630
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   UMengAnalytics: 0bde5737767dfc18afb03a4cd6ba9d57bb2ad10d
 
-PODFILE CHECKSUM: 15acf6e3553ff4ca0b06c7939e94e3197a67e421
+PODFILE CHECKSUM: 17533a08e338f321e704f94663e513511df0da1d
 
 COCOAPODS: 1.0.1
