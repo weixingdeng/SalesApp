@@ -10,6 +10,7 @@
 #import "EHILoginViewController.h"
 #import "EHILoginContentView.h"
 #import "EHIHomeViewController.h"
+#import "EHIChatMemberViewController.h"
 
 @interface EHILoginViewController () <UITextFieldDelegate>
 
@@ -32,6 +33,9 @@
 {
     [super viewDidLoad];
     [self updateUI];
+    
+    [[IQKeyboardManager sharedManager] setKeyboardDistanceFromTextField:50];
+    [[IQKeyboardManager sharedManager] setEnableAutoToolbar:NO];
 }
 
 #pragma  mark - Event Response
@@ -39,8 +43,10 @@
 - (void) clickLoginButton:(UIButton *) button
 {
     BOOL isSuccess = [self isLocalCheckedSuccess];
+    
     //本地验证成功 发起登录请求
     if (isSuccess) {
+        [MBProgressHUD showMessage:@"正在登陆中..."];
       [EHIHttpRequest loginWithUserNo:self.loginContentView.userIdTextField.text
                          withPassword:self.loginContentView.userPassWordTextField.text
                        FailedCallback:^(id object) {
@@ -68,9 +74,16 @@
         SHARE_USER_CONTEXT.user.user_name = dataDic[@"UserName"];
         SHARE_USER_CONTEXT.user.user_sex = dataDic[@"Sex"];
     }
-    [[NSUserDefaults standardUserDefaults] setObject:self.loginContentView.userIdTextField.text forKey:USER_ID_KEY];
-      [[NSUserDefaults standardUserDefaults] setObject:SHARE_USER_CONTEXT.user.user_name forKey:@"name_ehi"];
-      [[NSUserDefaults standardUserDefaults] setObject:SHARE_USER_CONTEXT.user.user_sex forKey:@"sex_ehi"];
+    [[NSUserDefaults standardUserDefaults] setObject:SHARE_USER_CONTEXT.user.user_id
+                                              forKey:USER_ID_KEY];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:SHARE_USER_CONTEXT.user.user_name
+                                              forKey:USER_NAME_KEY];
+
+    [[NSUserDefaults standardUserDefaults] setObject:SHARE_USER_CONTEXT.user.user_sex
+                                                forKey:USER_SEX_KEY];
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
 }
 

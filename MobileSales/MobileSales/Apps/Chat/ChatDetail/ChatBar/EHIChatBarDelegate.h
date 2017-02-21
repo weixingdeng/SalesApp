@@ -11,6 +11,7 @@
 @class EHIChatBar;
 @protocol EHIChatBarDelegate <NSObject>
 
+@optional
 /**
  *  发送文字
  */

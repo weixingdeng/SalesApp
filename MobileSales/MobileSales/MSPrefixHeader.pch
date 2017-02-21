@@ -28,6 +28,7 @@
 #import "UIView+Frame.h"
 #import <IQKeyboardManager.h>
 #import <MJRefresh/MJRefresh.h>
+#import "MBProgressHUD+EHIProgressHUD.h"
 
 #ifdef DEBUG
 #define NSLog(...) NSLog(@"%s [%d]\n%@\n\n",__func__,__LINE__,[NSString stringWithFormat:__VA_ARGS__])

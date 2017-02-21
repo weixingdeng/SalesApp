@@ -220,9 +220,6 @@ static const int ERROR_CODE = 0;
         }
         
         NSDictionary *headDic = [_headData mj_JSONObject];
-        NSLog(@"%@",headDic);
-        NSLog(@"%@",headDic[@"messageType"]);
-        NSLog(@"%d",[headDic[@"messageType"] isEqualToString:@"TEXT"]);
         if ([headDic[@"messageType"] isEqualToString:@"TEXT"]) {
             EHITextMessage *textMessage = [[EHITextMessage alloc] init];
             textMessage.nodeID = [NSString stringWithFormat:@"%@",headDic[@"nodeId"]];
@@ -234,6 +231,7 @@ static const int ERROR_CODE = 0;
             textMessage.receivedID = SHARE_USER_CONTEXT.user.user_id;
             textMessage.receivedName = SHARE_USER_CONTEXT.user.user_name;
             textMessage.ownerTyper = EHIMessageOwnerTypeFriend;
+            textMessage.showName = YES;
             
             message = textMessage;
         }

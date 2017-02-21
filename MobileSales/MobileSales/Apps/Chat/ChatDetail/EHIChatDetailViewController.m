@@ -17,16 +17,6 @@
 
 @implementation EHIChatDetailViewController
 
-//- (void)loadView
-//{
-//    [super loadView];
-//    
-//    [self.view addSubview:self.messageView];
-//    [self.messageView resetMessageView];
-//    [self.view addSubview:self.chatBar];
-//    [self addMasonry];
-//}
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -34,6 +24,7 @@
     [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
     
     [self.socketManager setDelegate:self];
+    //每次进入都刷新列表
     [self.messageView resetMessageView];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
@@ -66,7 +57,8 @@
     
     [self setNavigationRight];
     [[EHIChatSocketManager shareInstance] setDelegate:self];
-    [[EHIChatManager sharedInstance] updateChatToReadWithNodeLevel:@"0" withNodeId:self.listModel.NodeId];
+    //每次聊天都把当前聊天置为已读状态
+    [[EHIChatManager sharedInstance] updateChatToReadWithNodeId:self.listModel.NodeId];
     
 }
 
@@ -95,6 +87,8 @@
 - (void)rightBarButtonDown
 {
     EHIChatMemberViewController *memberVC = [[EHIChatMemberViewController alloc] init];
+    memberVC.memberArray = [NSMutableArray arrayWithArray:self.listModel.Contacts];
+    self.hidesBottomBarWhenPushed=YES;
     [self.navigationController pushViewController:memberVC animated:YES];
 }
 
@@ -120,14 +114,8 @@
 {
     if (!_socketManager) {
         _socketManager = [EHIChatSocketManager shareInstance];
-//        [_socketManager setDelegate:self];
     }
     return _socketManager;
-}
-
-- (void)dealloc
-{
-    NSLog(@"kill");
 }
 
 

@@ -23,8 +23,8 @@
 
 
 //更新聊天列表为已读
-- (BOOL)updateChatToReadWithNodeLevel:(NSString *)nodeLevel
-                           withNodeId:(NSString *)nodeId;
+- (BOOL)updateChatToReadWithNodeId:(NSString *)nodeId;
 
+//查看是否有未读聊天信息
 - (BOOL)isMessageNoRead;
 @end

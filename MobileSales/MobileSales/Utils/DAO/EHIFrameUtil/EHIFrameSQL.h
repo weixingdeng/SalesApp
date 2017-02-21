@@ -40,6 +40,6 @@
 
 #define SQL_SELECT_CONVERSATION_INFO  @"SELECT * FROM %@ WHERE NodeId = %@"
 
-#define SQL_UPDATE_ISREAD @"UPDATE %@ SET IsRead = %d WHERE NodeLevel = %@ and NodeId = %@"
+#define SQL_UPDATE_ISREAD @"UPDATE %@ SET IsRead = %d WHERE NodeId = %@"
 
 #endif /* EHIFrameSQL_h */

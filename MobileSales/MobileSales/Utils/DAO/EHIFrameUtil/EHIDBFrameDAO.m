@@ -58,9 +58,11 @@
     return ok;
 }
 
+//查询是否有未读聊天信息
 - (BOOL)isMessageNoRead
 {
-      NSString *sqlString = [NSString stringWithFormat:SQL_SELECT_NOREAD_MESSAGE, FRAME_TABLE_NAME,0];
+    NSString *sqlString = [NSString stringWithFormat:SQL_SELECT_NOREAD_MESSAGE, FRAME_TABLE_NAME,0];
+    
     __block BOOL hasNoRead = NO;
     [self excuteQuerySQL:sqlString resultBlock:^(FMResultSet *rsSet) {
         while ([rsSet next]) {
@@ -96,10 +98,9 @@
 }
 
 //更新聊天列表为已读
-- (BOOL)updateChatToReadWithNodeLevel:(NSString *)nodeLevel
-                           withNodeId:(NSString *)nodeId
+- (BOOL)updateChatToReadWithNodeId:(NSString *)nodeId
 {
-    NSString *sqlString = [NSString stringWithFormat:SQL_UPDATE_ISREAD, FRAME_TABLE_NAME,1, nodeLevel,nodeId];
+    NSString *sqlString = [NSString stringWithFormat:SQL_UPDATE_ISREAD, FRAME_TABLE_NAME, 1, nodeId];
     BOOL ok = [self excuteSQL:sqlString , nil];
     return ok;
 }

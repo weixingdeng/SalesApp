@@ -22,12 +22,17 @@
     [super viewDidLoad];
     self.title = @"我的资料";
     
+    [self addContent];
+    
     [self.view addSubview:self.iconImgView];
     [self.view addSubview:self.nameLabel];
     [self.view addSubview:self.userNoLabel];
     [self.view addSubview:self.sexLabel];
     [self.view addSubview:self.sexView];
-    [self.view addSubview:self.exitBtn];
+    if (!self.isOtherInfo) {
+        [self.view addSubview:self.exitBtn];
+    }
+    
     
     [self addMasonry];
 }
@@ -64,20 +69,42 @@
         make.top.mas_equalTo(self.sexLabel.mas_bottom).offset(autoHeightOf6(15));
     }];
     
-    [self.exitBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.offset(40);
-        make.right.offset(-40);
-        make.height.mas_equalTo(40);
-        make.top.mas_equalTo(self.sexView.mas_bottom).offset(autoHeightOf6(70));
-    }];
+    if (!self.isOtherInfo) {
+        [self.exitBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.offset(40);
+            make.right.offset(-40);
+            make.height.mas_equalTo(40);
+            make.top.mas_equalTo(self.sexView.mas_bottom).offset(autoHeightOf6(70));
+        }];
+    }
 }
 
+//填充内容
+- (void)addContent
+{
+    if (self.isOtherInfo == NO) {
+         self.userNoLabel.text = [NSString stringWithFormat:@"工号:%@",SHARE_USER_CONTEXT.user.user_id];
+        self.nameLabel.text = SHARE_USER_CONTEXT.user.user_name;
+    }else
+    {
+        self.nameLabel.text = self.userName;
+        self.userNoLabel.text = [NSString stringWithFormat:@"工号:%@",self.userNo];
+    }
+    
+    self.isBoy = YES;
+}
 - (void)exitLogin
 {
-    [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:USER_ID_KEY];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:USER_ID_KEY];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:USER_NAME_KEY];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:USER_SEX_KEY];
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
     SHARE_USER_CONTEXT.user.user_id = nil;
     SHARE_USER_CONTEXT.user.user_name = nil;
     SHARE_USER_CONTEXT.user.user_sex = nil;
+    
     self.window.rootViewController = [[EHILoginViewController alloc] init];
 }
 
@@ -98,7 +125,7 @@
 - (EHIShowInfoLabel *)nameLabel {
 	if (_nameLabel == nil) {
         _nameLabel = [[EHIShowInfoLabel alloc] init];
-        _nameLabel.text = SHARE_USER_CONTEXT.user.user_name;
+        
 	}
 	return _nameLabel;
 }
@@ -106,7 +133,6 @@
 - (EHIShowInfoLabel *)userNoLabel {
 	if (_userNoLabel == nil) {
         _userNoLabel = [[EHIShowInfoLabel alloc] init];
-        _userNoLabel.text = [NSString stringWithFormat:@"工号:%@",SHARE_USER_CONTEXT.user.user_id];
 	}
 	return _userNoLabel;
 }
@@ -122,7 +148,7 @@
 - (EHISexSelectView *)sexView
 {
     if (!_sexView) {
-        _sexView = [[EHISexSelectView alloc] initWithSelectBoy:NO];
+        _sexView = [[EHISexSelectView alloc] initWithSelectBoy:self.isBoy];
     }
     return _sexView;
 }

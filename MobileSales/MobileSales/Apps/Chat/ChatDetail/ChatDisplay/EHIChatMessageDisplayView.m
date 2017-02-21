@@ -37,7 +37,6 @@
         //添加点击手势
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTouchTableView)];
         [self.chatDetailTable addGestureRecognizer:tap];
-//        [self resetMessageView];
     }
     return self;
 }

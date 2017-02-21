@@ -56,6 +56,8 @@ static NSString* const HTTP_DELETE = @"DELETE";
     [urlRequest addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:urlRequest completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+        //隐藏hud
+        [MBProgressHUD hideHUD];
         //如果错误 返回错误信息
         if (error) {
             NSLog(@"❌请求失败\n:%@",error);

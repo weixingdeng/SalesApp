@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5C6E9C601E263E880092425C /* EHILoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E9C5F1E263E880092425C /* EHILoginViewController.m */; };
-		5C6E9C681E263E980092425C /* EHMineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E9C661E263E980092425C /* EHMineHeaderView.m */; };
 		5C70F3DC1E2C7B3A00E20321 /* EHILoginContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C70F3DB1E2C7B3A00E20321 /* EHILoginContentView.m */; };
 		AC306C9B95FE8E79D7E1020A /* libPods-MobileSales.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 085593713B4FFC660683E189 /* libPods-MobileSales.a */; };
 		FB11B2511E49AC4000074D2D /* EHIHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB11B2501E49AC4000074D2D /* EHIHomeViewController.m */; };
@@ -75,6 +74,8 @@
 		FB94D2191E556B9000BC86E5 /* EHIResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FB94D2181E556B9000BC86E5 /* EHIResponseModel.m */; };
 		FB94D21E1E559A9B00BC86E5 /* Chat.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB94D21D1E559A9B00BC86E5 /* Chat.xcassets */; };
 		FB94D2271E55AEDF00BC86E5 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = FB94D2261E55AEDF00BC86E5 /* UIView+Frame.m */; };
+		FBCEAC951E5C6504004E8556 /* MBProgressHUD+EHIProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCEAC941E5C6504004E8556 /* MBProgressHUD+EHIProgressHUD.m */; };
+		FBCEAC9B1E5C8FA7004E8556 /* EHIMemberCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCEAC9A1E5C8FA7004E8556 /* EHIMemberCollectionViewCell.m */; };
 		FBDEBB051E5B2D0B0053CCF8 /* EHIShowInfoLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDEBB041E5B2D0B0053CCF8 /* EHIShowInfoLabel.m */; };
 		FBDEBB081E5B2E350053CCF8 /* EHISexSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDEBB071E5B2E350053CCF8 /* EHISexSelectView.m */; };
 		FBDEBB0A1E5B34070053CCF8 /* MyInfomation.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBDEBB091E5B34070053CCF8 /* MyInfomation.xcassets */; };
@@ -103,8 +104,6 @@
 		085593713B4FFC660683E189 /* libPods-MobileSales.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MobileSales.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C6E9C5E1E263E880092425C /* EHILoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHILoginViewController.h; sourceTree = "<group>"; };
 		5C6E9C5F1E263E880092425C /* EHILoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHILoginViewController.m; sourceTree = "<group>"; };
-		5C6E9C651E263E980092425C /* EHMineHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHMineHeaderView.h; sourceTree = "<group>"; };
-		5C6E9C661E263E980092425C /* EHMineHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHMineHeaderView.m; sourceTree = "<group>"; };
 		5C70F3DA1E2C7B3A00E20321 /* EHILoginContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHILoginContentView.h; sourceTree = "<group>"; };
 		5C70F3DB1E2C7B3A00E20321 /* EHILoginContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHILoginContentView.m; sourceTree = "<group>"; };
 		6761FB462D2B42CFD819AECF /* Pods-MobileSales.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileSales.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileSales/Pods-MobileSales.debug.xcconfig"; sourceTree = "<group>"; };
@@ -244,6 +243,10 @@
 		FB94D21D1E559A9B00BC86E5 /* Chat.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Chat.xcassets; sourceTree = "<group>"; };
 		FB94D2251E55AEDF00BC86E5 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		FB94D2261E55AEDF00BC86E5 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		FBCEAC931E5C6504004E8556 /* MBProgressHUD+EHIProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+EHIProgressHUD.h"; sourceTree = "<group>"; };
+		FBCEAC941E5C6504004E8556 /* MBProgressHUD+EHIProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+EHIProgressHUD.m"; sourceTree = "<group>"; };
+		FBCEAC991E5C8FA7004E8556 /* EHIMemberCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIMemberCollectionViewCell.h; sourceTree = "<group>"; };
+		FBCEAC9A1E5C8FA7004E8556 /* EHIMemberCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIMemberCollectionViewCell.m; sourceTree = "<group>"; };
 		FBDEBB031E5B2D0B0053CCF8 /* EHIShowInfoLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIShowInfoLabel.h; sourceTree = "<group>"; };
 		FBDEBB041E5B2D0B0053CCF8 /* EHIShowInfoLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIShowInfoLabel.m; sourceTree = "<group>"; };
 		FBDEBB061E5B2E350053CCF8 /* EHISexSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHISexSelectView.h; sourceTree = "<group>"; };
@@ -317,8 +320,6 @@
 		5C6E9C641E263E980092425C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5C6E9C651E263E980092425C /* EHMineHeaderView.h */,
-				5C6E9C661E263E980092425C /* EHMineHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -448,6 +449,8 @@
 				FB2EC8831E5A7FCD0066FBF3 /* NSString+EHIUUID.m */,
 				FB26CE701E5AE2C900317299 /* NSString+EHIDateFormat.h */,
 				FB26CE711E5AE2C900317299 /* NSString+EHIDateFormat.m */,
+				FBCEAC931E5C6504004E8556 /* MBProgressHUD+EHIProgressHUD.h */,
+				FBCEAC941E5C6504004E8556 /* MBProgressHUD+EHIProgressHUD.m */,
 			);
 			name = Extends;
 			path = Thirds;
@@ -605,6 +608,8 @@
 				FB682BA21E56F003007BE819 /* EHIChatDetailViewController+Delegate.m */,
 				FBDEBB0B1E5B417B0053CCF8 /* EHIChatMemberViewController.h */,
 				FBDEBB0C1E5B417B0053CCF8 /* EHIChatMemberViewController.m */,
+				FBCEAC991E5C8FA7004E8556 /* EHIMemberCollectionViewCell.h */,
+				FBCEAC9A1E5C8FA7004E8556 /* EHIMemberCollectionViewCell.m */,
 				FB682B921E56EF79007BE819 /* ChatKeyboard */,
 				FB682B911E56EF69007BE819 /* ChatBar */,
 				FB682B901E56EF58007BE819 /* ChatDisplay */,
@@ -1018,15 +1023,16 @@
 				FB2EC86A1E59E1470066FBF3 /* NSDate+EHIChatFormat.m in Sources */,
 				FB682BA41E56F003007BE819 /* EHIChatDetailViewController+Delegate.m in Sources */,
 				FB2EC8671E59DD270066FBF3 /* EHIMessageBaseCell.m in Sources */,
+				FBCEAC9B1E5C8FA7004E8556 /* EHIMemberCollectionViewCell.m in Sources */,
 				FB5A5D381E49DB2F00810253 /* UITabBar+EHIBadge.m in Sources */,
 				FB776EB71E4AF065008763CE /* IPAddress.c in Sources */,
 				5C70F3DC1E2C7B3A00E20321 /* EHILoginContentView.m in Sources */,
 				FB26CE7A1E5BEE6000317299 /* EHIDBFrameDAO.m in Sources */,
+				FBCEAC951E5C6504004E8556 /* MBProgressHUD+EHIProgressHUD.m in Sources */,
 				FB2EC86F1E59E19C0066FBF3 /* NSDate+Extension.m in Sources */,
 				FB94D1EA1E53FB7A00BC86E5 /* EHIDBBaseDAO.m in Sources */,
 				FB682BC31E598D15007BE819 /* EHIMessage.m in Sources */,
 				FB776EBD1E4AFB98008763CE /* EHIUserContext.m in Sources */,
-				5C6E9C681E263E980092425C /* EHMineHeaderView.m in Sources */,
 				FB776EC01E4AFBD6008763CE /* EHIUrlList.m in Sources */,
 				FBDEBB081E5B2E350053CCF8 /* EHISexSelectView.m in Sources */,
 				FB11B2511E49AC4000074D2D /* EHIHomeViewController.m in Sources */,

@@ -57,6 +57,7 @@
     message.sendName = SHARE_USER_CONTEXT.user.user_name;
     message.nodeID = self.listModel.NodeId;
     message.date = [NSDate date];
+    message.showName = NO;
     
     message.messageType = EHIMessageTypeText;
     message.ownerTyper = EHIMessageOwnerTypeSelf;
@@ -86,19 +87,22 @@
 // chatView 获取历史记录
 - (void)chatMessageDisplayView:(EHIChatMessageDisplayView *)chatTVC getRecordsFromDate:(NSDate *)date count:(NSUInteger)count completed:(void (^)(NSDate *, NSArray *, BOOL))completed
 {
-    [[EHIChatManager sharedInstance] messageRecordWithNodeID:self.listModel.NodeId fromDate:date count:count complete:^(NSArray *array, BOOL hasMore) {
-        if (array.count > 0) {
-            int count = 0;
-            NSTimeInterval tm = 0;
-            for (EHIMessage *message in array) {
-                if (++count > MAX_SHOWTIME_MSG_COUNT || tm == 0 || message.date.timeIntervalSince1970 - tm > MAX_SHOWTIME_MSG_SECOND) {
-                    tm = message.date.timeIntervalSince1970;
-                    count = 0;
-                    message.showTime = YES;
-                }
-            }
-        }
-        completed(date, array, hasMore);
+    [[EHIChatManager sharedInstance] messageRecordWithNodeID:self.listModel.NodeId
+                                                    fromDate:date
+                                                       count:count
+                                                    complete:^(NSArray *array, BOOL hasMore) {
+                                                            if (array.count > 0) {
+                                                                int count = 0;
+                                                                NSTimeInterval tm = 0;
+                                                                for (EHIMessage *message in array) {
+                                                                    if (++count > MAX_SHOWTIME_MSG_COUNT || tm == 0 || message.date.timeIntervalSince1970 - tm > MAX_SHOWTIME_MSG_SECOND) {
+                                                                        tm = message.date.timeIntervalSince1970;
+                                                                        count = 0;
+                                                                        message.showTime = YES;
+                                                                    }
+                                                                }
+                                                            }
+                                                            completed(date, array, hasMore);
     }];
 }
 

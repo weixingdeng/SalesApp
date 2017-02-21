@@ -24,10 +24,8 @@
     [self initThirdSDK];
     
     //加载动画
-    [self loadAnimationLaunch];
-//    SHARE_USER_CONTEXT.user.user_name = @"邓卫星";
-//    SHARE_USER_CONTEXT.user.user_id = @"11969";
-//    [self initHomeViewController];
+//    [self loadAnimationLaunch];
+    [self initHomeViewController];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,6 +63,7 @@
         
         [[NSUserDefaults standardUserDefaults] setObject:ISFIRSTSTARTAPP_FALSE
                                                   forKey:ISFIRSTSTARTAPP_KEY];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }
     
     self.window.rootViewController = movieVC;
@@ -101,10 +100,20 @@
     BOOL isLogin = [[[NSUserDefaults standardUserDefaults] objectForKey:USER_ID_KEY] length] != 0;
     //如果登录了
     if (isLogin) {
-      SHARE_USER_CONTEXT.user.user_id = [[NSUserDefaults standardUserDefaults] objectForKey:USER_ID_KEY];
-        SHARE_USER_CONTEXT.user.user_name = [[NSUserDefaults standardUserDefaults] objectForKey:@"name_ehi"];
-       SHARE_USER_CONTEXT.user.user_sex = [[NSUserDefaults standardUserDefaults] objectForKey:@"sex_ehi"];
+        SHARE_USER_CONTEXT.user.user_id = [[NSUserDefaults standardUserDefaults]
+                                         objectForKey:USER_ID_KEY];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        SHARE_USER_CONTEXT.user.user_name = [[NSUserDefaults standardUserDefaults]
+                                             objectForKey:USER_NAME_KEY];
+          [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        SHARE_USER_CONTEXT.user.user_sex = [[NSUserDefaults standardUserDefaults]
+                                            objectForKey:USER_SEX_KEY];
+        
+        
         [self initHomeViewController];
+        
     }else
     {
         [self initLoginViewController];

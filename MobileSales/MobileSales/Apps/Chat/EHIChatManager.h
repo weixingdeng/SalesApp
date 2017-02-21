@@ -48,8 +48,7 @@
 /**
  *  更新聊天列表为已读
  */
-- (BOOL)updateChatToReadWithNodeLevel:(NSString *)nodeLevel
-                           withNodeId:(NSString *)nodeId;
+- (BOOL)updateChatToReadWithNodeId:(NSString *)nodeId;
 
 - (BOOL)isMessageNoRead;
 @end

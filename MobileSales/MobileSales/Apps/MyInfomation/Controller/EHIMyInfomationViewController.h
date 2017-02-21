@@ -29,4 +29,11 @@
 //性别
 @property (nonatomic , assign) BOOL isBoy;
 
+//是否是自己的信息
+@property (nonatomic , assign) BOOL isOtherInfo;
+
+@property (nonatomic , copy) NSString *userName;
+
+@property (nonatomic , copy) NSString *userNo;
+
 @end

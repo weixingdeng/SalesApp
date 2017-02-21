@@ -17,7 +17,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
+    NSLog(@"%@",NSHomeDirectory());
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     EHIRootViewController *rootVC = [[EHIRootViewController alloc] init];
     [self.window setRootViewController:rootVC];

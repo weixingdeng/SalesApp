@@ -10,4 +10,6 @@
 
 @interface EHIChatMemberViewController : EHIViewController
 
+@property (nonatomic , strong) NSMutableArray *memberArray;
+
 @end

@@ -23,6 +23,7 @@
 
 #pragma mark messageDisplay delegate
 
+//显示message
 - (void)addToShowMessage:(EHIMessage *)message;
 
 
@@ -31,10 +32,5 @@
  */
 - (void)sendMessage:(EHIMessage *)message;
 
-
-/**
- *  接收到消息
- */
-//- (void)receivedMessage:(EHIMessage *)message;
 
 @end

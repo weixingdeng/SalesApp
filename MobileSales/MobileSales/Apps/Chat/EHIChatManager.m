@@ -72,11 +72,9 @@ static EHIChatManager *chatManager;
 /**
  *  更新聊天列表为已读
  */
-- (BOOL)updateChatToReadWithNodeLevel:(NSString *)nodeLevel
-                           withNodeId:(NSString *)nodeId
+- (BOOL)updateChatToReadWithNodeId:(NSString *)nodeId
 {
-    return [self.frameDAO updateChatToReadWithNodeLevel:nodeLevel
-                                             withNodeId:nodeId];
+    return [self.frameDAO updateChatToReadWithNodeId:nodeId];
 }
 
 - (BOOL)isMessageNoRead

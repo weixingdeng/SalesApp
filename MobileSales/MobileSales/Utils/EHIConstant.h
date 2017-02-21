@@ -13,6 +13,8 @@ static NSString* const ISFIRSTSTARTAPP_KEY = @"isFirstStartApp";
 static NSString* const ISFIRSTSTARTAPP_FALSE = @"notfirststart";
 
 static NSString* const USER_ID_KEY = @"user_id";
+static NSString* const USER_NAME_KEY = @"user_name";
+static NSString* const USER_SEX_KEY = @"user_sex";
 
 static NSString* const REQUEST_FAILED = @"网络请求失败,请稍后重试!";
 

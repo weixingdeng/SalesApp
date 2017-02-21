@@ -46,7 +46,6 @@
     [self.contentView addSubview:self.timeLabel];
     [self.contentView addSubview:self.redIconView];
     
-    //test
     [self.iconLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.offset(autoHeightOf6(10));
         make.bottom.offset(-autoHeightOf6(10));
@@ -80,8 +79,6 @@
         make.width.equalTo(@(80));
         make.height.equalTo(@18);
     }];
-    
-//    [self.iconLabel layoutIfNeeded];
 }
 
 - (void)layoutSubviews

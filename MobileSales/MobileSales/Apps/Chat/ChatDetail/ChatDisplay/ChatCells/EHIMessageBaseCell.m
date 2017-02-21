@@ -135,7 +135,7 @@
         [_timeLabel setFont:[UIFont systemFontOfSize:10.0f]];
         [_timeLabel setTextColor:[UIColor whiteColor]];
         [_timeLabel setBackgroundColor:[UIColor grayColor]];
-        [_timeLabel setAlpha:0.7f];
+        [_timeLabel setAlpha:0.6f];
         [_timeLabel.layer setMasksToBounds:YES];
         [_timeLabel.layer setCornerRadius:5.0f];
     }

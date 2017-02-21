@@ -25,7 +25,7 @@
     self.view.backgroundColor = HEXCOLOR_F7F7F7;
     [self addSegmentViewAndTableView];
     [self registerCellClass];
-    [self requestFrameData];
+//    [self requestFrameData];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadTableView) name:HAVE_NEW_MESSAGE_NOTIFATION object:nil];
 }
@@ -94,6 +94,7 @@
 //网络请求
 - (void)requestFrameData
 {
+    [MBProgressHUD showMessage:@""];
     [EHIHttpRequest getChatFramesInfoWithNodeId:0 FailedCallback:^(id object) {
         
         [self requestFaildHandle:object];

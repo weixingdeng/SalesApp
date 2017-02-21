@@ -31,18 +31,29 @@
     if (message.messageType == EHIMessageTypeText) {
         EHITextMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EHITextMessageCell"];
         [cell setMessage:message];
-        [cell.avatarButton addTarget:self action:@selector(clickAvatar) forControlEvents:UIControlEventTouchUpInside];
+        [cell.avatarButton addTarget:self action:@selector(clickAvatar:) forControlEvents:UIControlEventTouchUpInside];
         return cell;
     }
     
     return [tableView dequeueReusableCellWithIdentifier:@"EmptyCell"];
 }
 
-- (void)clickAvatar
+//点击头像
+- (void)clickAvatar:(UIButton *)btn
 {
+    //获取点击的cell的下标
+    EHITextMessageCell *cell = (EHITextMessageCell *)btn.superview.superview;
+    NSIndexPath *index = [self.chatDetailTable indexPathForCell:cell];
+    EHIMessage *message = self.data[index.row];
+    
     EHIMyInfomationViewController *infoVC = [[EHIMyInfomationViewController alloc] init];
+    infoVC.userName = message.sendName;
+    infoVC.userNo = message.sendID;
+    infoVC.isOtherInfo = message.ownerTyper != EHIMessageOwnerTypeSelf;
+    [self viewController].hidesBottomBarWhenPushed=YES;
     [[self viewController].navigationController pushViewController:infoVC animated:YES];
 }
+
 - (UIViewController*)viewController {
     for (UIView* next = [self superview]; next; next = next.superview) {
         UIResponder* nextResponder = [next nextResponder];
