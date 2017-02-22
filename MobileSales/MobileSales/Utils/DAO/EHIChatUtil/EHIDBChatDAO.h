@@ -25,5 +25,11 @@
                    count:(NSUInteger)count
                 complete:(void (^)(NSArray *data, BOOL hasMore))complete;
 
+/**
+ *  更新消息发送状态 并返回消息的nodeid
+ */
+- (NSString *)updateMessageSendStatusTo:(EHIMessageSendState)status
+                    WithMessageID:(NSString *)messageID;
+
 
 @end

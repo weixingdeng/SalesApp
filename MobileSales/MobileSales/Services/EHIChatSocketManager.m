@@ -301,6 +301,7 @@ static const int TIMEOUT = -1;
 - (void)handleACKDataWithSocket:(GCDAsyncSocket *)socket
            withHeaderDictionary:(NSDictionary *)dic
 {
+    
     [self resetToReadNextSocketWithSocket:socket];
 }
 

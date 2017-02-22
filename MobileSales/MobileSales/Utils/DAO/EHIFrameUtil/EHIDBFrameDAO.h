@@ -27,4 +27,5 @@
 
 //查看是否有未读聊天信息
 - (BOOL)isMessageNoRead;
+
 @end

@@ -57,9 +57,12 @@
                                             date < '%@'\
                                             order by date desc LIMIT '%ld'"
 
-//查找最后一条消息
-#define     SQL_SELECT_LAST_MESSAGE         @"SELECT * FROM %@ WHERE date =\
-                                                ( SELECT MAX(date) FROM %@ WHERE nodeid = '%@' )"
+//更新消息状态
+#define     SQL_UPDATE_MESSAGE         @"UPDATE %@ SET send_status = %d WHERE msgid = %@"
+
+//根据messageid 查 nodeid
+#define     SQL_SELECT_NODEID       @"SELECT nodeid FROM %@ WHERE msgid = '%@'"
+
 
 
 #endif /* EHIChatSQL_h */

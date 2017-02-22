@@ -23,6 +23,10 @@
 #define     MSGBG_SPACE_X       5.0f
 #define     MSGBG_SPACE_Y       1.0f
 
+#define     ACTIVITY_WIDTH      40.0f
+
+#define     SEND_AGAIN_WIDTH    30.0f
+
 @interface EHIMessageBaseCell()
 
 @end
@@ -38,6 +42,8 @@
         [self.contentView addSubview:self.avatarButton];
         [self.contentView addSubview:self.usernameLabel];
         [self.contentView addSubview:self.messageBackgroundView];
+        [self.contentView addSubview:self.activityView];
+        [self.contentView addSubview:self.sendAgainBtn];
         [self addMasonry];
     }
     return self;
@@ -65,6 +71,18 @@
     [self.messageBackgroundView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(self.avatarButton.mas_left).mas_offset(-MSGBG_SPACE_X);
         make.top.mas_equalTo(self.usernameLabel.mas_bottom).mas_offset(-MSGBG_SPACE_Y);
+    }];
+    
+    [self.activityView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.mas_equalTo(self.messageBackgroundView);
+        make.right.mas_equalTo(self.messageBackgroundView.mas_left).offset(-5);
+        make.height.width.mas_equalTo(ACTIVITY_WIDTH);
+    }];
+    
+    [self.sendAgainBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.mas_equalTo(self.messageBackgroundView.centerY);
+        make.right.mas_equalTo(self.messageBackgroundView.mas_left).offset(-5);
+        make.height.width.mas_equalTo(SEND_AGAIN_WIDTH);
     }];
 }
 
@@ -118,11 +136,36 @@
         }];
     }
     
+    if (message.ownerTyper == EHIMessageOwnerTypeSelf) {
+        switch (message.sendState) {
+            case EHIMessageSending:{
+                [self.activityView startAnimating];
+                self.sendAgainBtn.hidden = YES;
+                break;
+            }
+                
+            case EHIMessageSendSuccess:{
+                [self.activityView stopAnimating];
+                self.sendAgainBtn.hidden = YES;
+                break;
+            }
+                
+            case EHIMessageSendFail:{
+                self.sendAgainBtn.hidden = _message.ownerTyper == EHIMessageOwnerTypeFriend;
+                break;
+            }
+            default:
+                break;
+        }
+    }else
+    {
+        self.sendAgainBtn.hidden = YES;
+    }
+    
     [self.usernameLabel setHidden:!message.showName];
     [self.usernameLabel mas_updateConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(message.showName ? NAMELABEL_HEIGHT : 0);
     }];
-    
     _message = message;
 }
 
@@ -168,6 +211,30 @@
         [_messageBackgroundView setUserInteractionEnabled:YES];
     }
     return _messageBackgroundView;
+}
+
+- (UIActivityIndicatorView *)activityView
+{
+    if (!_activityView) {
+        _activityView = [[UIActivityIndicatorView alloc] init];
+        _activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    }
+    return _activityView;
+}
+
+- (UIButton *)sendAgainBtn
+{
+    if (!_sendAgainBtn) {
+        _sendAgainBtn = [[UIButton alloc] init];
+        [_sendAgainBtn setBackgroundImage:EHI_LOAD_IMAGE(@"chat_sendagain") forState:UIControlStateNormal];
+        [_sendAgainBtn addTarget:self action:@selector(sendAgainBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _sendAgainBtn;
+}
+
+- (void)sendAgainBtnClick
+{
+    NSLog(@"click");
 }
 
 @end

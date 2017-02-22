@@ -23,6 +23,11 @@
 //聊天背景
 @property (nonatomic, strong) UIImageView *messageBackgroundView;
 
+//状态 菊花
+@property (nonatomic , strong) UIActivityIndicatorView  *activityView;
+
+@property (nonatomic , strong) UIButton  *sendAgainBtn;
+
 @property (nonatomic, strong) EHIMessage *message;
 
 @end

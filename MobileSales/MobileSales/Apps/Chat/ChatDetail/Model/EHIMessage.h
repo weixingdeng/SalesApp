@@ -39,6 +39,7 @@ typedef NS_ENUM(NSInteger, EHIMessageOwnerType){
  *  消息发送状态
  */
 typedef NS_ENUM(NSInteger, EHIMessageSendState){
+    EHIMessageSending,
     EHIMessageSendSuccess,       // 消息发送成功
     EHIMessageSendFail,          // 消息发送失败
 };

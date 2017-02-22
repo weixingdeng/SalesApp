@@ -43,7 +43,8 @@
                         @"",
                         @(message.ownerTyper),
                         @(message.messageType),
-                        @"", @"", @"", @"",
+                        @(message.sendState),
+                        @"", @"", @"",
                         @"", @"", @"",nil];
     BOOL ok = [self excuteSQL:sqlString withArrParameter:arrPara];
     return ok;
@@ -79,6 +80,30 @@
     }
     complete(data, hasMore);
 
+}
+
+#error HERE
+/**
+ *  更新消息发送状态 并返回消息的nodeid
+ */
+- (NSString *)updateMessageSendStatusTo:(EHIMessageSendState)status
+                    WithMessageID:(NSString *)messageID
+{
+    NSString *sqlString = [NSString stringWithFormat:SQL_UPDATE_MESSAGE, MESSAGE_TABLE_NAME,status, messageID];
+    BOOL ok = [self excuteSQL:sqlString , nil];
+    if (ok) {
+        NSString *sqlString = [NSString stringWithFormat:SQL_SELECT_NODEID, MESSAGE_TABLE_NAME,messageID];
+        
+        __block NSString *nodeID ;
+        [self excuteQuerySQL:sqlString resultBlock:^(FMResultSet *rsSet) {
+            while ([rsSet next]) {
+                nodeID = [rsSet stringForColumn:@"nodeid"];
+            }
+            [rsSet close];
+        }];
+        return nodeID;
+    }
+    return nil;
 }
 
 #pragma mark - Private Methods -
