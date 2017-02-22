@@ -9,6 +9,7 @@
 #import "EHIMyInfomationViewController.h"
 #import "EHISexSelectView.h"
 #import "EHILoginViewController.h"
+#import "EHIChatSocketManager.h"
 
 @interface EHIMyInfomationViewController ()
 
@@ -18,12 +19,16 @@
 
 @implementation EHIMyInfomationViewController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self addContent];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"我的资料";
-    
-    [self addContent];
-    
+
     [self.view addSubview:self.iconImgView];
     [self.view addSubview:self.nameLabel];
     [self.view addSubview:self.userNoLabel];
@@ -104,6 +109,9 @@
     SHARE_USER_CONTEXT.user.user_id = nil;
     SHARE_USER_CONTEXT.user.user_name = nil;
     SHARE_USER_CONTEXT.user.user_sex = nil;
+    
+    [[EHIChatSocketManager shareInstance] disconnectSocket];
+    [[EHIChatSocketManager shareInstance] setDelegate:nil];
     
     self.window.rootViewController = [[EHILoginViewController alloc] init];
 }

@@ -20,8 +20,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-//    [IQKeyboardManager sharedManager].enable = NO;
-//    [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
     
     [self.socketManager setDelegate:self];
     //每次进入都刷新列表
@@ -88,10 +86,12 @@
 
 - (void)rightBarButtonDown
 {
+    [self.chatBar.textView resignFirstResponder];
     EHIChatMemberViewController *memberVC = [[EHIChatMemberViewController alloc] init];
     memberVC.memberArray = [NSMutableArray arrayWithArray:self.listModel.Contacts];
     self.hidesBottomBarWhenPushed=YES;
     [self.navigationController pushViewController:memberVC animated:YES];
+
 }
 
 

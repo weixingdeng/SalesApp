@@ -22,6 +22,7 @@
 		FB26CE721E5AE2C900317299 /* NSString+EHIDateFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = FB26CE711E5AE2C900317299 /* NSString+EHIDateFormat.m */; };
 		FB26CE761E5AF1A800317299 /* EHIMyInfomationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB26CE741E5AF1A800317299 /* EHIMyInfomationViewController.m */; };
 		FB26CE7A1E5BEE6000317299 /* EHIDBFrameDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = FB26CE791E5BEE6000317299 /* EHIDBFrameDAO.m */; };
+		FB26CEBE1E5D5E1C00317299 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB26CEBD1E5D5E1C00317299 /* AudioToolbox.framework */; };
 		FB2EC8671E59DD270066FBF3 /* EHIMessageBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2EC8661E59DD270066FBF3 /* EHIMessageBaseCell.m */; };
 		FB2EC86A1E59E1470066FBF3 /* NSDate+EHIChatFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2EC8691E59E1470066FBF3 /* NSDate+EHIChatFormat.m */; };
 		FB2EC86F1E59E19C0066FBF3 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2EC86C1E59E19C0066FBF3 /* NSDate+Extension.m */; };
@@ -136,6 +137,7 @@
 		FB26CE741E5AF1A800317299 /* EHIMyInfomationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIMyInfomationViewController.m; sourceTree = "<group>"; };
 		FB26CE781E5BEE6000317299 /* EHIDBFrameDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIDBFrameDAO.h; sourceTree = "<group>"; };
 		FB26CE791E5BEE6000317299 /* EHIDBFrameDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIDBFrameDAO.m; sourceTree = "<group>"; };
+		FB26CEBD1E5D5E1C00317299 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		FB2EC8651E59DD270066FBF3 /* EHIMessageBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIMessageBaseCell.h; sourceTree = "<group>"; };
 		FB2EC8661E59DD270066FBF3 /* EHIMessageBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIMessageBaseCell.m; sourceTree = "<group>"; };
 		FB2EC8681E59E1470066FBF3 /* NSDate+EHIChatFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+EHIChatFormat.h"; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB26CEBE1E5D5E1C00317299 /* AudioToolbox.framework in Frameworks */,
 				AC306C9B95FE8E79D7E1020A /* libPods-MobileSales.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +288,7 @@
 		20ED32A83CD5B41DD6B9F01A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FB26CEBD1E5D5E1C00317299 /* AudioToolbox.framework */,
 				085593713B4FFC660683E189 /* libPods-MobileSales.a */,
 			);
 			name = Frameworks;

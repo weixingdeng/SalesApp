@@ -41,11 +41,13 @@
 //点击头像
 - (void)clickAvatar:(UIButton *)btn
 {
+    //键盘消失
+     [self.window endEditing:YES];
+    
     //获取点击的cell的下标
     EHITextMessageCell *cell = (EHITextMessageCell *)btn.superview.superview;
     NSIndexPath *index = [self.chatDetailTable indexPathForCell:cell];
     EHIMessage *message = self.data[index.row];
-    
     EHIMyInfomationViewController *infoVC = [[EHIMyInfomationViewController alloc] init];
     infoVC.userName = message.sendName;
     infoVC.userNo = message.sendID;

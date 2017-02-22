@@ -14,9 +14,8 @@
 #import "EHITextMessage.h"
 
 typedef NS_ENUM(NSInteger, EHISocketTag) {
-    EHISocketTagMESSAGE = 1000,
-    EHISocketTagACK,          // 文字
-    EHISocketTagINIT,         // 
+    EHISocketTagDetault = 10001,
+    EHISocketTagINIT
 };
 
 @interface EHIChatSocketManager : NSObject<GCDAsyncSocketDelegate>
@@ -33,5 +32,7 @@ typedef NS_ENUM(NSInteger, EHISocketTag) {
 
 
 - (void)sendMessageWithMessage:(EHIMessage *)message;
+
+- (void)disconnectSocket;
 
 @end

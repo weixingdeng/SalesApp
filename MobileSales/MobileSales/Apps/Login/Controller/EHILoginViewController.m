@@ -38,6 +38,20 @@
     [[IQKeyboardManager sharedManager] setEnableAutoToolbar:NO];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [IQKeyboardManager sharedManager].enable = YES;
+    [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [IQKeyboardManager sharedManager].enable = NO;
+    [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
+}
+
 #pragma  mark - Event Response
 //登录
 - (void) clickLoginButton:(UIButton *) button
@@ -146,12 +160,12 @@
     }
     
     [EHISingleAlertController showSingleAlertOnViewController:self
-                                                    withTitle:@"登录失败" withMessage:message withActionTitle:@"确定" handler:^(WXAlertAction *action) {
+                                                    withTitle:@"登录失败"
+                                                  withMessage:message
+                                              withActionTitle:@"确定"
+                                                      handler:^(WXAlertAction *action) {
                                                         
                                                     }];
-    
-    
-    
 }
 
 

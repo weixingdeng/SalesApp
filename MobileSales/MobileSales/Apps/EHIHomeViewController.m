@@ -144,4 +144,9 @@ static EHIHomeViewController *rootVC = nil;
 	return _childVCArray;
 }
 
+- (void)dealloc
+{
+    NSLog(@"home kill");
+}
+
 @end

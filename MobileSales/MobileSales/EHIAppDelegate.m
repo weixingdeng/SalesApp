@@ -18,8 +18,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [IQKeyboardManager sharedManager].enable = NO;
-    [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
+   //初始化第三方SDK
+    [self initThirdSDK];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     EHIRootViewController *rootVC = [[EHIRootViewController alloc] init];
@@ -29,6 +29,19 @@
     SHARE_USER_CONTEXT.urlList.environment = ENVIRONMENT_DEMO;
     
     return YES;
+}
+
+#pragma mark initThirt
+//初始化第三方sdk
+- (void)initThirdSDK
+{
+    [IQKeyboardManager sharedManager].enable = NO;
+    [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
+    
+    [MobClick startWithConfigure:nil];
+    
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

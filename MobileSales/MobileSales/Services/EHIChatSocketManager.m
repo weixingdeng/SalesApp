@@ -12,8 +12,11 @@
 #import "NSString+EHIDateFormat.h"
 #import "EHIChatDetailViewController.h"
 #import "EHIChatManager.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 static const int ERROR_CODE = 0;
+static const int HEAD = sizeof(int);
+static const int TIMEOUT = -1;
 
 @interface EHIChatSocketManager()
 
@@ -23,18 +26,20 @@ static const int ERROR_CODE = 0;
 @property (nonatomic , strong) NSData *headData;
 @property (nonatomic , strong) NSData *bodyData;
 
+@property (nonatomic , strong) EHIMessage *getMessage;
+
 @end
 
 @implementation EHIChatSocketManager
-
+{
+    int firstSend ;
+}
 + (EHIChatSocketManager *)shareInstance
 {
     static EHIChatSocketManager *sharedInstance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [[self alloc] init];
-//        sharedInstance.headLenth = ERROR_CODE;
-//        sharedInstance.bodyLenth = ERROR_CODE;
     });
     
     return sharedInstance;
@@ -60,6 +65,7 @@ static const int ERROR_CODE = 0;
     if ([self.socket isConnected]) {
         [self.socket disconnect];
     }
+    self.socket = nil;
 }
 
 //发送消息
@@ -88,13 +94,13 @@ static const int ERROR_CODE = 0;
         
         headData = [headDic mj_JSONData] ;
         //获取包头长度 转成data
-        int headLenth = headData.length;
+        int headLenth = (int)headData.length;
         headLenthData = [NSData dataWithBytes:&headLenth length:sizeof(headLenth)];
         
         //包体
         bodyData  = [textMessage.text dataUsingEncoding:NSUTF8StringEncoding];
         //获取包体长度 转成data
-        int boayLenth = bodyData.length;
+        int boayLenth = (int)bodyData.length;
         bodyLenthData = [NSData dataWithBytes:&boayLenth length:sizeof(boayLenth)];
     }
     
@@ -105,16 +111,13 @@ static const int ERROR_CODE = 0;
     [data appendData:headData];
     [data appendData:bodyData];
     
-    [self.socket writeData:data withTimeout:-1 tag:EHISocketTagMESSAGE];
-    
-    //加入到聊天列表
-    
-    
+    [self.socket writeData:data withTimeout:-1 tag:EHISocketTagDetault];
 }
 
-//发送初始化
+//发送初始化包
 - (void)sendINITSocket
 {
+    NSLog(@"发送初始化包");
     NSData *headData = nil;
     NSData *headLenthData = nil;
 
@@ -129,7 +132,7 @@ static const int ERROR_CODE = 0;
 
     headData = [headDic mj_JSONData] ;
     //获取包头长度 转成data
-    int headLenth = headData.length;
+    int headLenth = (int)headData.length;
     headLenthData = [NSData dataWithBytes:&headLenth length:sizeof(headLenth)];
     
     //获取包体长度 转成data
@@ -141,126 +144,175 @@ static const int ERROR_CODE = 0;
     [data appendData:bodyLenthData];
     [data appendData:headData];
     
-    [self.socket writeData:data withTimeout:-1 tag:EHISocketTagINIT];
+    [self.socket writeData:data withTimeout:TIMEOUT tag:EHISocketTagDetault];
 }
 
 //发送确认包
-- (void)sendACKSocket
+- (void)sendACKSocketWithMessageId:(NSString *)messageId
 {
+    NSData *headData = nil;
+    NSData *headLenthData = nil;
     
+    NSData *bodyLenthData = nil;
+    
+    NSMutableDictionary *headDic = [[NSMutableDictionary alloc] initWithCapacity:0];
+    [headDic saveString:@"ACK" forKey:@"type"];
+    [headDic saveString:messageId forKey:@"id"];
+    
+    headData = [headDic mj_JSONData] ;
+    //获取包头长度 转成data
+    int headLenth = (int)headData.length;
+    headLenthData = [NSData dataWithBytes:&headLenth length:sizeof(headLenth)];
+    
+    //获取包体长度 转成data
+    int boayLenth = 0;
+    bodyLenthData = [NSData dataWithBytes:&boayLenth length:sizeof(boayLenth)];
+    //拼接包发送
+    NSMutableData *data = [[NSMutableData alloc] initWithCapacity:0];
+    [data appendData:headLenthData];
+    [data appendData:bodyLenthData];
+    [data appendData:headData];
+    
+    [self.socket writeData:data withTimeout:-1 tag:EHISocketTagDetault];
 }
 
 #pragma mark GCDAsyncSocketDelegate
 - (void)socket:(GCDAsyncSocket *)sock didConnectToHost:(NSString *)host port:(uint16_t)port
 {
     NSLog(@"连接服务器成功");
+    firstSend = 0;
     [self sendINITSocket];
 }
 
 - (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(nullable NSError *)err
 {
-    NSLog(@"断开连接");
-    NSLog(@"error : %@",err);
+    NSLog(@"断开连接 error : %@",err);
 }
 
 //收到信息
 - (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
 {
-    NSLog(@"收到消息 %@:",[data mj_JSONString]);
-    if (tag == EHISocketTagINIT) {
-        NSLog(@"init");
-        [sock readDataToLength:4 withTimeout:-1 tag:EHISocketTagMESSAGE];
-    }else if (tag == EHISocketTagACK){
-        NSLog(@"ack");
-    }else if (tag == EHISocketTagMESSAGE){
-        NSLog(@"message");
-        [self ehi_socket:sock didReadMessageData:data];
-    }
-}
-
-//处理收到的消息
-- (void)ehi_socket:(GCDAsyncSocket *)sock didReadMessageData:(NSData *)data
-{
-    static EHIMessage *message = nil;
+    NSLog(@"收到消息");
     //如果没有包头长度 取包头长度
     if (_headLenth == ERROR_CODE) {
         [data getBytes:&_headLenth length:sizeof(_headLenth)];
-//        _headLenth   = -((const char *)[data bytes])[0];
+        
         //如果取不出包头长度 则出错了
         if (_headLenth <= 0) {
-            NSLog(@"接受消息失败");
+            
             return;
         }
-        [sock readDataToLength:4 withTimeout:-1 tag:EHISocketTagMESSAGE];
+        [sock readDataToLength:HEAD withTimeout:TIMEOUT tag:EHISocketTagDetault];
         return;
     }
     
     //如果没有包体长度 取包体长度
     if (_bodyLenth == ERROR_CODE) {
         [data getBytes:&_bodyLenth length:sizeof(_bodyLenth)];
-//        _bodyLenth = -((const char *)[data bytes])[0];;
         
-        //如果还没有
-        if (_bodyLenth == ERROR_CODE) {
-            NSLog(@"接受消息失败");
-            return;
+        //如果为0 可能是没有数据或者失败 都返回错误
+        if (_bodyLenth == ERROR_CODE){
+            _bodyLenth = -1;
+             [sock readDataToLength:_headLenth withTimeout:TIMEOUT tag:EHISocketTagDetault];
+             return;
         }
-        [sock readDataToLength:_headLenth withTimeout:-1 tag:EHISocketTagMESSAGE];
+        [sock readDataToLength:_headLenth withTimeout:TIMEOUT tag:EHISocketTagDetault];
         return;
     }
     
-    //如果没有包头数据 读取
+    //如果没有包头数据 读取包头内容
     if (!_headData) {
         _headData = data;
-
+        
         if (!_headData) {
             NSLog(@"包头为空,接受消息失败");
             return;
         }
         
         NSDictionary *headDic = [_headData mj_JSONObject];
-        if ([headDic[@"messageType"] isEqualToString:@"TEXT"]) {
-            EHITextMessage *textMessage = [[EHITextMessage alloc] init];
-            textMessage.nodeID = [NSString stringWithFormat:@"%@",headDic[@"nodeId"]];
-            textMessage.messageID = headDic[@"id"];
-            textMessage.sendID = [NSString stringWithFormat:@"%@",headDic[@"senderId"]];
-            textMessage.sendName = headDic[@"senderName"];
-            textMessage.date = [NSString getDateWithString:headDic[@"time"]];
-            textMessage.messageType = EHIMessageTypeText;
-            textMessage.receivedID = SHARE_USER_CONTEXT.user.user_id;
-            textMessage.receivedName = SHARE_USER_CONTEXT.user.user_name;
-            textMessage.ownerTyper = EHIMessageOwnerTypeFriend;
-            
-            message = textMessage;
+        //收到的消息类型
+        NSString *type = headDic[@"type"];
+        
+        //收到的是普通消息
+        if ([type isEqualToString:@"MESSAGE"]) {
+            [self handleMESSAGEDataWithSocket:sock
+                     withHeaderDictionary:headDic];
+            return;
         }
         
-        //如果包体有长度 读取包体长度数据
-        if (_bodyLenth) {
-            [sock readDataToLength:_bodyLenth withTimeout:-1 tag:EHISocketTagMESSAGE];
+        //收到的是确认消息
+        if ([type isEqualToString:@"ACK"]) {
+            [self handleACKDataWithSocket:sock
+                     withHeaderDictionary:headDic];
             return;
-        }else
-        {
-            message = nil;
-            
-            _headLenth = ERROR_CODE;
-            _bodyLenth = ERROR_CODE;
-            
-            _headData = nil;
-            _bodyData = nil;
-            
-            [sock readDataToLength:4 withTimeout:-1 tag:EHISocketTagMESSAGE];
-            return;
-            
         }
+        
+        //收到的是初始化消息
+        if ([type isEqualToString:@"INIT"]) {
+             [self handleINITDataWithSocket:sock
+                       withHeaderDictionary:headDic];
+            return;
+        }
+        
+        return;
     }
+    
+    //处理包体
+    [self finalyHandleMessageWithSocket:sock withData:data];
+    
+}
 
-    //取包体内容
-    _bodyData = data;
-    if (message.messageType == EHIMessageTypeText) {
+//处理收到的确认消息
+- (void)handleACKDataWithSocket:(GCDAsyncSocket *)socket
+           withHeaderDictionary:(NSDictionary *)dic
+{
+    [self resetToReadNextSocketWithSocket:socket];
+}
+
+//处理收到的初始化消息
+- (void)handleINITDataWithSocket:(GCDAsyncSocket *)socket
+            withHeaderDictionary:(NSDictionary *)dic
+{
+    [self resetToReadNextSocketWithSocket:socket];
+}
+
+//处理收到的普通消息 进行下一步处理
+- (void)handleMESSAGEDataWithSocket:(GCDAsyncSocket *)socket
+               withHeaderDictionary:(NSDictionary *)dic
+{
+    if ([dic[@"messageType"] isEqualToString:@"TEXT"]){
         
-        NSString *bodyString = [[NSString  alloc] initWithData:_bodyData encoding:NSUTF8StringEncoding];
+        EHITextMessage *textMessage = [[EHITextMessage alloc] init];
+        textMessage.nodeID = [NSString stringWithFormat:@"%@",dic[@"nodeId"]];
+        textMessage.messageID = dic[@"id"];
+        textMessage.sendID = [NSString stringWithFormat:@"%@",dic[@"senderId"]];
+        textMessage.sendName = dic[@"senderName"];
+        textMessage.date = [NSString getDateWithString:dic[@"time"]];
+        textMessage.messageType = EHIMessageTypeText;
+        textMessage.receivedID = SHARE_USER_CONTEXT.user.user_id;
+        textMessage.receivedName = SHARE_USER_CONTEXT.user.user_name;
+        textMessage.ownerTyper = EHIMessageOwnerTypeFriend;
         
-        EHITextMessage *textMessage = (EHITextMessage *)message;
+        self.getMessage = textMessage;
+    }
+    
+    [socket readDataToLength:_bodyLenth
+                 withTimeout:TIMEOUT
+                         tag:EHISocketTagDetault];
+}
+
+//最终消息的处理
+- (void)finalyHandleMessageWithSocket:(GCDAsyncSocket *)socket
+                                 withData:(NSData *)data
+{
+    //发送确认收到消息
+    [self sendACKSocketWithMessageId:self.getMessage.messageID];
+    
+    if (self.getMessage.messageType == EHIMessageTypeText) {
+        
+        NSString *bodyString = [[NSString  alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        
+        EHITextMessage *textMessage = (EHITextMessage *)self.getMessage;
         if (bodyString.length) {
             textMessage.text = bodyString;
         }
@@ -271,43 +323,55 @@ static const int ERROR_CODE = 0;
         }else
         {
             //r如果不在聊天详情页 isRead  传NO
-            [[EHIChatManager sharedInstance] addMessage:message
-                                       toChatListNodeId:message.nodeID
+            [[EHIChatManager sharedInstance] addMessage:textMessage
+                                       toChatListNodeId:textMessage.nodeID
                                                  isRead:NO];
             //不是在详情页 存到数据库
-            [[EHIChatManager sharedInstance] sendMessage:message
+            [[EHIChatManager sharedInstance] sendMessage:textMessage
                                                 progress:^(EHIMessage * message, CGFloat pregress) {
-                
-            } success:^(EHIMessage * message) {
-                NSLog(@"send success");
-            } failure:^(EHIMessage * message) {
-                NSLog(@"send failure");
-            }];
+                                                    
+                                                } success:^(EHIMessage * message) {
+                                                    NSLog(@"send success");
+                                                } failure:^(EHIMessage * message) {
+                                                    NSLog(@"send failure");
+                                                }];
+            
+            AudioServicesPlaySystemSound (kSystemSoundID_Vibrate);//震动
             
             [[NSNotificationCenter defaultCenter] postNotificationName:HAVE_NEW_MESSAGE_NOTIFATION object:nil];
         }
-      
-      
+
     }
-    
-     message = nil;
-    
+    [self resetToReadNextSocketWithSocket:socket];
+}
+
+//重置所有状态 接受下一条内容
+- (void)resetToReadNextSocketWithSocket:(GCDAsyncSocket *)socket
+{
     _headLenth = ERROR_CODE;
     _bodyLenth = ERROR_CODE;
     
     _headData = nil;
     _bodyData = nil;
-    [sock readDataToLength:4 withTimeout:-1 tag:EHISocketTagMESSAGE];
-    return; 
+    [socket readDataToLength:HEAD withTimeout:TIMEOUT tag:EHISocketTagDetault];
 }
+
 
 - (void)socket:(GCDAsyncSocket *)sock didWriteDataWithTag:(long)tag
 {
     NSLog(@"消息发送成功");
-    if (tag == EHISocketTagINIT) {
-        [self.socket readDataWithTimeout:-1 tag:EHISocketTagINIT ];
+    if (firstSend == 0) {
+         [sock readDataToLength:HEAD withTimeout:TIMEOUT tag:EHISocketTagDetault];
     }
-    
+    firstSend ++;
+}
+
+- (EHIMessage *)getMessage
+{
+    if (!_getMessage) {
+        _getMessage = [[EHIMessage alloc] init];
+    }
+    return _getMessage;
 }
 
 - (GCDAsyncSocket *)socket

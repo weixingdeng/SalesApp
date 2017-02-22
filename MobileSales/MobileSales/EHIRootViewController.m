@@ -20,8 +20,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //初始化第三方SDK
-    [self initThirdSDK];
     
     //加载动画
     [self loadAnimationLaunch];
@@ -32,15 +30,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-#pragma mark initThirt
-//初始化第三方sdk
-- (void)initThirdSDK
-{
-    [MobClick startWithConfigure:nil];
-    
-    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
-    
-}
+
 
 //加载启动动画
 - (void)loadAnimationLaunch
@@ -89,7 +79,7 @@
 //初始化主页
 - (void)initHomeViewController
 {
-    EHIHomeViewController *rootVC = [EHIHomeViewController sharedRootViewController];
+    EHIHomeViewController *rootVC = [[EHIHomeViewController alloc] init];
     [self.window setRootViewController:rootVC];
 }
 
@@ -121,6 +111,10 @@
     
 }
 
+- (void)dealloc
+{
+    NSLog(@"root kill");
+}
 
 /*
 #pragma mark - Navigation
