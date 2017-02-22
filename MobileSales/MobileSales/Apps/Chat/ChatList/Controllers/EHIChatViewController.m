@@ -12,6 +12,7 @@
 #import "EHIChatSocketManager.h"
 #import "EHIChatManager.h"
 #import "UITabBar+EHIBadge.h"
+#import <AFNetworkReachabilityManager.h>
 
 @interface EHIChatViewController()
 
@@ -26,8 +27,30 @@
     [self addSegmentViewAndTableView];
     [self registerCellClass];
     [self requestFrameData];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadTableView) name:HAVE_NEW_MESSAGE_NOTIFATION object:nil];
+}
+
+- (void)networkStatusChange:(NSNotification *)noti
+{
+    AFNetworkReachabilityStatus status = [noti.userInfo[@"AFNetworkingReachabilityNotificationStatusItem"] longValue];
+    switch (status) {
+        case AFNetworkReachabilityStatusReachableViaWiFi:
+        case AFNetworkReachabilityStatusReachableViaWWAN:
+        case AFNetworkReachabilityStatusUnknown:
+                self.title = @"沟通";
+            break;
+        case AFNetworkReachabilityStatusNotReachable:
+                self.title = @"沟通(未连接)";
+            break;
+        default:
+            break;
+    }
+
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)reloadTableView
@@ -54,6 +77,10 @@
         return;
     }
     [self.tabBarController.tabBar hideBedgeOnItemIndex:0];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadTableView) name:HAVE_NEW_MESSAGE_NOTIFATION object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkStatusChange:) name:AFNetworkingReachabilityDidChangeNotification object:nil];
 }
 
 #pragma mark 界面视图
@@ -68,7 +95,6 @@
     segment.selectionIndicatorColor = HEXCOLOR_718DDE;
     segment.selectionIndicatorHeight = 2;
     segment.selectionIndicatorLocation = CPBSegmentedControlSelectionIndicatorLocationDown;
-//    segment.selectionStyle = CPBSegmentedControlSelectionStyleFullWidthStripe;
     
     [self.view addSubview:segment];
     [self.view addSubview:self.chatListTable];

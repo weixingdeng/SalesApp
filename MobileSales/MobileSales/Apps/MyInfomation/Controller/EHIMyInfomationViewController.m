@@ -110,6 +110,8 @@
     SHARE_USER_CONTEXT.user.user_name = nil;
     SHARE_USER_CONTEXT.user.user_sex = nil;
     
+    
+    
     [[EHIChatSocketManager shareInstance] disconnectSocket];
     [[EHIChatSocketManager shareInstance] setDelegate:nil];
     

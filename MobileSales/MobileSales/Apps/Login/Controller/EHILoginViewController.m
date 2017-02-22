@@ -110,7 +110,7 @@
 //初始化主页
 - (void)initHomeViewController
 {
-    EHIHomeViewController *rootVC = [EHIHomeViewController sharedRootViewController];
+    EHIHomeViewController *rootVC = [[EHIHomeViewController alloc] init];
     [self.window setRootViewController:rootVC];
 }
 

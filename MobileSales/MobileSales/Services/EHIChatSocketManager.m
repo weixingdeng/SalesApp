@@ -13,6 +13,7 @@
 #import "EHIChatDetailViewController.h"
 #import "EHIChatManager.h"
 #import <AudioToolbox/AudioToolbox.h>
+#import <AFNetworkReachabilityManager.h>
 
 static const int ERROR_CODE = 0;
 static const int HEAD = sizeof(int);
@@ -33,6 +34,7 @@ static const int TIMEOUT = -1;
 @implementation EHIChatSocketManager
 {
     int firstSend ;
+    int auto_connect_time;
 }
 + (EHIChatSocketManager *)shareInstance
 {
@@ -43,6 +45,24 @@ static const int TIMEOUT = -1;
     });
     
     return sharedInstance;
+}
+
+- (instancetype)init
+{
+    if (self = [super init]) {
+        [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+            
+            [self autoConnect];
+        }];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(autoConnect) name:UIApplicationDidBecomeActiveNotification object:nil];
+    }
+    return self;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 //连接到服务器
@@ -181,12 +201,27 @@ static const int TIMEOUT = -1;
 {
     NSLog(@"连接服务器成功");
     firstSend = 0;
+    auto_connect_time = 0;
     [self sendINITSocket];
 }
 
 - (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(nullable NSError *)err
 {
-    NSLog(@"断开连接 error : %@",err);
+    if (err) {
+        [self performSelector:@selector(autoConnect) withObject:self afterDelay:pow(2, auto_connect_time)];
+        auto_connect_time ++ ;
+        if (auto_connect_time >= 5) {
+            auto_connect_time = 5;
+        }
+    }
+}
+
+//自动重连
+- (void)autoConnect
+{
+    if (![self.socket isConnected]) {
+        [self.socket connectToHost:SHARE_USER_CONTEXT.urlList.SOCKET_HOST onPort:SHARE_USER_CONTEXT.urlList.SOCKET_PORT error:nil];
+    }
 }
 
 //收到信息
