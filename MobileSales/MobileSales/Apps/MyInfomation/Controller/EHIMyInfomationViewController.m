@@ -10,6 +10,8 @@
 #import "EHISexSelectView.h"
 #import "EHILoginViewController.h"
 #import "EHIChatSocketManager.h"
+#import "EHIChatManager.h"
+#import "EHIDBManager.h"
 
 @interface EHIMyInfomationViewController ()
 
@@ -110,7 +112,12 @@
     SHARE_USER_CONTEXT.user.user_name = nil;
     SHARE_USER_CONTEXT.user.user_sex = nil;
     
+    //吧数据库单利释放 否则不会创建新的数据库
+    //MARK:暂时写法 有问题 待改
+    [EHIChatManager sharedInstance].frameDAO = nil;
+    [EHIChatManager sharedInstance].chatDAO = nil;
     
+    [EHIDBManager sharedInstance].messageQueue = nil;
     
     [[EHIChatSocketManager shareInstance] disconnectSocket];
     [[EHIChatSocketManager shareInstance] setDelegate:nil];

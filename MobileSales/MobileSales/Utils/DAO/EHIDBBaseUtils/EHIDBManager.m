@@ -25,12 +25,21 @@ static EHIDBManager *manager;
 - (id)init
 {
     if (self = [super init]) {
-        NSString *messageQueuePath = [NSFileManager pathDBMessage];
-        self.messageQueue = [FMDatabaseQueue databaseQueueWithPath:messageQueuePath];
-        
-        NSString *frameQueuePath = [NSFileManager pathDBFrame];
-        self.commonQueue = [FMDatabaseQueue databaseQueueWithPath:frameQueuePath];
+//        NSString *messageQueuePath = [NSFileManager pathDBMessage];
+//        self.messageQueue = [FMDatabaseQueue databaseQueueWithPath:messageQueuePath];
+//        
+//        NSString *frameQueuePath = [NSFileManager pathDBFrame];
+//        self.commonQueue = [FMDatabaseQueue databaseQueueWithPath:frameQueuePath];
     }
     return self;
+}
+
+- (FMDatabaseQueue *)messageQueue
+{
+    if (!_messageQueue) {
+        NSString *messageQueuePath = [NSFileManager pathDBMessage];
+        _messageQueue = [FMDatabaseQueue databaseQueueWithPath:messageQueuePath];
+    }
+    return _messageQueue;
 }
 @end

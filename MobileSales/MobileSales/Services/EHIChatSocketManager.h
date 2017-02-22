@@ -35,4 +35,5 @@ typedef NS_ENUM(NSInteger, EHISocketTag) {
 
 - (void)disconnectSocket;
 
+
 @end
