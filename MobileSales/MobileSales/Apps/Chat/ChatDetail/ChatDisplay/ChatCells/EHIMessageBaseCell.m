@@ -190,6 +190,7 @@
     if (_avatarButton == nil) {
         _avatarButton = [[UIButton alloc] init];
         [_avatarButton.layer setMasksToBounds:YES];
+        [_avatarButton addTarget:self action:@selector(avatarButtonClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return _avatarButton;
 }
@@ -232,9 +233,22 @@
     return _sendAgainBtn;
 }
 
+//重发按钮
 - (void)sendAgainBtnClick
 {
-    NSLog(@"click");
+    if (_delegate && [_delegate respondsToSelector:@selector(messageCellDidClickSendAgainForMessage:)]) {
+        [_delegate messageCellDidClickSendAgainForMessage:self.message];
+    }
 }
+
+//头像点击
+- (void)avatarButtonClick
+{
+    if (_delegate && [_delegate respondsToSelector:@selector(messageCellDidClickAvatarForMessage:)]) {
+        [_delegate messageCellDidClickAvatarForMessage:self.message];
+    }
+}
+
+
 
 @end

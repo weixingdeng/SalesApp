@@ -9,7 +9,7 @@
 #import "EHIChatMessageDisplayView.h"
 #import "EHITextMessageCell.h"
 
-@interface EHIChatMessageDisplayView (Delegate)<UITableViewDelegate,UITableViewDataSource>
+@interface EHIChatMessageDisplayView (Delegate)<UITableViewDelegate,UITableViewDataSource,EHIMessageCellDelegate>
 
 - (void)registerCellClassForTableView:(UITableView *)tableView;
 

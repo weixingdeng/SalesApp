@@ -9,6 +9,8 @@
 #import "EHIDBChatDAO.h"
 #import "EHIChatSQL.h"
 
+#define TIMEOUT 30
+
 @implementation EHIDBChatDAO
 
 - (id)init
@@ -82,7 +84,6 @@
 
 }
 
-#error HERE
 /**
  *  更新消息发送状态 并返回消息的nodeid
  */
@@ -106,6 +107,28 @@
     return nil;
 }
 
+/**
+ *  查找所有的超时信息 返回
+ */
+- (void)messageSendTimeoutComplete:(void (^)(NSArray *data))complete
+{
+    __block NSMutableArray *data = [[NSMutableArray alloc] init];
+    NSString *sqlString = [NSString stringWithFormat:SQL_SELECT_TIMEOUT_MESSAGE,
+                           MESSAGE_TABLE_NAME,
+                           @(EHIMessageSending),
+                           [NSString stringWithFormat:@"%lf", [NSDate date].timeIntervalSince1970 - TIMEOUT]];
+    
+    [self excuteQuerySQL:sqlString resultBlock:^(FMResultSet *retSet) {
+        while ([retSet next]) {
+            EHIMessage *message = [self createDBMessageByFMResultSet:retSet];
+            [data insertObject:message atIndex:0];
+        }
+        [retSet close];
+    }];
+    
+    complete(data);
+
+}
 #pragma mark - Private Methods -
 - (EHIMessage *)createDBMessageByFMResultSet:(FMResultSet *)retSet
 {

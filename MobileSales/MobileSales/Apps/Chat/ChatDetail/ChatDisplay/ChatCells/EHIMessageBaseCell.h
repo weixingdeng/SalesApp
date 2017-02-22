@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EHIMessageCellDelegate.h"
 #import "EHIMessage.h"
 
 @interface EHIMessageBaseCell : UITableViewCell
+
+@property (nonatomic, assign) id<EHIMessageCellDelegate>delegate;
 
 //时间
 @property (nonatomic, strong) UILabel *timeLabel;

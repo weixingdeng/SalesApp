@@ -11,6 +11,7 @@
 #import "EHIChatMessageDisplayView.h"
 #import "EHIChatBar.h"
 #import "EHIChatSocketManager.h"
+#import "EHIMessageStatusManager.h"
 
 @interface EHIChatDetailViewController : EHIViewController
 
@@ -24,5 +25,8 @@
 
 /// 聊天socket管理器
 @property (nonatomic, strong) EHIChatSocketManager *socketManager;
+
+//检查发送失败消息
+@property (nonatomic , strong) EHIMessageStatusManager *statusManager;
 
 @end

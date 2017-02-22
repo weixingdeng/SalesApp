@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class EHIChatMessageDisplayView;
+@class EHIMessage;
 @protocol EHIChatMessageDisplayViewDelegate <NSObject>
 
 /**
@@ -28,5 +29,17 @@
             getRecordsFromDate:(NSDate *)date
                          count:(NSUInteger)count
                      completed:(void (^)(NSDate *, NSArray *, BOOL))completed;
+
+/**
+ *  用户头像点击事件
+ */
+- (void)chatMessageDisplayView:(EHIChatMessageDisplayView *)chatTVC
+            didClickMessageAvatar:(EHIMessage *)message;
+
+/**
+ *  重发消息点击事件
+ */
+- (void)chatMessageDisplayView:(EHIChatMessageDisplayView *)chatTVC
+         didClickMessageSendAgain:(EHIMessage *)message;
 
 @end

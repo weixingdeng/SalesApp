@@ -82,6 +82,26 @@ static EHIChatManager *chatManager;
     return [self.frameDAO isMessageNoRead];
 }
 
+/**
+ *  更新消息的发送状态 并返回消息的nodeid
+ */
+- (NSString *)updateMessageSendStatusTo:(EHIMessageSendState)status
+                          WithMessageID:(NSString *)messageID
+{
+    return [self.chatDAO updateMessageSendStatusTo:status
+                                     WithMessageID:messageID];
+}
+
+/**
+ *  查找所有的超时信息 返回
+ */
+- (void)messageSendTimeoutComplete:(void (^)(NSArray *data))complete
+{
+    [self.chatDAO messageSendTimeoutComplete:^(NSArray *data) {
+        complete(data);
+    }];
+}
+
 #pragma mark - Getter -
 - (EHIDBChatDAO *)chatDAO
 {

@@ -32,4 +32,8 @@
                     WithMessageID:(NSString *)messageID;
 
 
+/**
+ *  查找所有的超时信息 返回
+ */
+- (void)messageSendTimeoutComplete:(void (^)(NSArray *data))complete;
 @end

@@ -9,7 +9,7 @@
 #import "EHIChatDetailViewController+Delegate.h"
 #import "EHIChatManager.h"
 #import "NSString+EHIUUID.h"
-
+#import "EHIMyInfomationViewController.h"
 @implementation EHIChatDetailViewController (Delegate)
 
 #pragma mark keyboad代理
@@ -150,8 +150,70 @@
     } failure:^(EHIMessage * message) {
         NSLog(@"send failure");
     }];
+}
 
+//接到确认信息
+- (void)receivedACKWithMessageId:(NSString *)messageId toSenderStatus:(EHIMessageSendState)status
+{
+    NSString *nodeId = [[EHIChatManager sharedInstance]
+                        updateMessageSendStatusTo:status
+                        WithMessageID:messageId];
+    if (nodeId) {
+        if (self.listModel.NodeId == nodeId) {
+            for (EHIMessage *message in self.messageView.data) {
+                if (messageId == message.messageID) {
+                    message.sendState = status;
+                    [self.messageView.chatDetailTable reloadData];
+                    return;
+                }
+            }
+        }
+    }
+}
 
+//检查信息
+- (void)messageStatusCheckComplete:(NSArray *)data
+{
+    for (EHIMessage *sendingMessage in data) {
+       [self receivedACKWithMessageId:sendingMessage.messageID
+                       toSenderStatus:EHIMessageSendFail];
+
+    }
+}
+
+/**
+ *  用户头像点击事件
+ */
+- (void)chatMessageDisplayView:(EHIChatMessageDisplayView *)chatTVC
+         didClickMessageAvatar:(EHIMessage *)message
+{
+    //键盘消失
+    [self.window endEditing:YES];
+    
+    //获取点击的cell的下标
+    EHIMyInfomationViewController *infoVC = [[EHIMyInfomationViewController alloc] init];
+    infoVC.userName = message.sendName;
+    infoVC.userNo = message.sendID;
+    infoVC.isOtherInfo = message.ownerTyper != EHIMessageOwnerTypeSelf;
+    self.hidesBottomBarWhenPushed=YES;
+    [self.navigationController pushViewController:infoVC animated:YES];
+
+}
+
+/**
+ *  重发消息点击事件
+ */
+- (void)chatMessageDisplayView:(EHIChatMessageDisplayView *)chatTVC
+      didClickMessageSendAgain:(EHIMessage *)message
+{
+    for (EHIMessage *sendMessage in self.messageView.data) {
+        if (message.messageID == sendMessage.messageID) {
+            [self.messageView.data removeObject:sendMessage];
+            return;
+        }
+    }
+    [self sendMessage:message];
+    
 }
 
 #pragma mark - # Private Methods

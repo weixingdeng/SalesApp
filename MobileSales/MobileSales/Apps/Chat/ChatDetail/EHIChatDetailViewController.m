@@ -29,6 +29,7 @@
     [[EHIChatManager sharedInstance] updateChatToReadWithNodeId:self.listModel.NodeId];
     
      [[EHIChatSocketManager shareInstance] setDelegate:self];
+    [[EHIMessageStatusManager shareInstance] setDelegate:self];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
@@ -48,6 +49,7 @@
 {
     [super viewDidDisappear:animated];
     [[EHIChatSocketManager shareInstance] setDelegate:nil];
+    [[EHIMessageStatusManager shareInstance] setDelegate:nil];
 }
 
 
@@ -120,6 +122,13 @@
     return _socketManager;
 }
 
+- (EHIMessageStatusManager *)statusManager
+{
+    if (!_statusManager) {
+        _statusManager = [EHIMessageStatusManager shareInstance];
+    }
+    return _statusManager;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

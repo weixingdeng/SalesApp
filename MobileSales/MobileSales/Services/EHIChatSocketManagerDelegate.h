@@ -7,10 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EHIMessage.h"
+
+
+@class EHIMessage;
 
 @protocol EHIChatSocketManagerDelegate <NSObject>
 
 - (void)receivedMessage:(EHIMessage *)message;
+
+- (void)receivedACKWithMessageId:(NSString *)messageId toSenderStatus:(EHIMessageSendState)status;
+
 
 @end

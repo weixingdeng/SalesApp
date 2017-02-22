@@ -50,5 +50,20 @@
  */
 - (BOOL)updateChatToReadWithNodeId:(NSString *)nodeId;
 
+/**
+ *  查询是否有未读信息
+ */
 - (BOOL)isMessageNoRead;
+
+/**
+ *  更新消息的发送状态 并返回消息的nodeid
+ */
+- (NSString *)updateMessageSendStatusTo:(EHIMessageSendState)status
+                                        WithMessageID:(NSString *)messageID;
+
+/**
+ *  查找所有的超时信息 返回
+ */
+- (void)messageSendTimeoutComplete:(void (^)(NSArray *data))complete;
+
 @end

@@ -7,7 +7,6 @@
 //
 
 #import "EHIChatMessageDisplayView+Delegate.h"
-#import "EHIMyInfomationViewController.h"
 
 @implementation EHIChatMessageDisplayView (Delegate)
 
@@ -31,31 +30,33 @@
     if (message.messageType == EHIMessageTypeText) {
         EHITextMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EHITextMessageCell"];
         [cell setMessage:message];
-        [cell.avatarButton addTarget:self action:@selector(clickAvatar:) forControlEvents:UIControlEventTouchUpInside];
+        [cell setDelegate:self];
         return cell;
     }
     
     return [tableView dequeueReusableCellWithIdentifier:@"EmptyCell"];
 }
 
-//点击头像
-- (void)clickAvatar:(UIButton *)btn
+//d点击头像
+- (void)messageCellDidClickAvatarForMessage:(EHIMessage *)message
 {
-    //键盘消失
-     [self.window endEditing:YES];
-    
-    //获取点击的cell的下标
-    EHITextMessageCell *cell = (EHITextMessageCell *)btn.superview.superview;
-    NSIndexPath *index = [self.chatDetailTable indexPathForCell:cell];
-    EHIMessage *message = self.data[index.row];
-    EHIMyInfomationViewController *infoVC = [[EHIMyInfomationViewController alloc] init];
-    infoVC.userName = message.sendName;
-    infoVC.userNo = message.sendID;
-    infoVC.isOtherInfo = message.ownerTyper != EHIMessageOwnerTypeSelf;
-    [self viewController].hidesBottomBarWhenPushed=YES;
-    [[self viewController].navigationController pushViewController:infoVC animated:YES];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(chatMessageDisplayView:didClickMessageAvatar:)]) {
+        [self.delegate chatMessageDisplayView:self
+                        didClickMessageAvatar:message];
+    }
 }
 
+//点击重发
+- (void)messageCellDidClickSendAgainForMessage:(EHIMessage *)message
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(chatMessageDisplayView:didClickMessageSendAgain:)]) {
+        [self.delegate chatMessageDisplayView:self
+                        didClickMessageAvatar:message];
+    }
+}
+
+#error mark
+//获取view的顶级vc
 - (UIViewController*)viewController {
     for (UIView* next = [self superview]; next; next = next.superview) {
         UIResponder* nextResponder = [next nextResponder];
