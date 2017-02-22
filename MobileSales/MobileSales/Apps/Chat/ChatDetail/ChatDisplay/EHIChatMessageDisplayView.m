@@ -51,8 +51,10 @@
 //重置
 - (void)resetMessageView
 {
-    [self.chatDetailTable setMj_header:self.refresHeader];
+    [self.data removeAllObjects];
+    [self.chatDetailTable reloadData];
     self.curDate = [NSDate date];
+    [self.chatDetailTable setMj_header:self.refresHeader];
     
     WEAKSELF(self);
     [self p_tryToRefreshMoreRecord:^(NSInteger count, BOOL hasMore) {

@@ -14,4 +14,5 @@
 
 - (NSString *)chatTimeFormat;
 
+- (NSString *)chatListTimeInfo;
 @end

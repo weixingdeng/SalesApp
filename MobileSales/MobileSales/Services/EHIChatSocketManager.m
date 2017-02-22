@@ -155,7 +155,6 @@ static const int ERROR_CODE = 0;
 {
     NSLog(@"连接服务器成功");
     [self sendINITSocket];
-//    [sock readDataWithTimeout:-1 tag:EHISocketTagINIT];
 }
 
 - (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(nullable NSError *)err
@@ -224,14 +223,13 @@ static const int ERROR_CODE = 0;
             EHITextMessage *textMessage = [[EHITextMessage alloc] init];
             textMessage.nodeID = [NSString stringWithFormat:@"%@",headDic[@"nodeId"]];
             textMessage.messageID = headDic[@"id"];
-            textMessage.sendID = headDic[@"senderId"];
+            textMessage.sendID = [NSString stringWithFormat:@"%@",headDic[@"senderId"]];
             textMessage.sendName = headDic[@"senderName"];
             textMessage.date = [NSString getDateWithString:headDic[@"time"]];
             textMessage.messageType = EHIMessageTypeText;
             textMessage.receivedID = SHARE_USER_CONTEXT.user.user_id;
             textMessage.receivedName = SHARE_USER_CONTEXT.user.user_name;
             textMessage.ownerTyper = EHIMessageOwnerTypeFriend;
-            textMessage.showName = YES;
             
             message = textMessage;
         }

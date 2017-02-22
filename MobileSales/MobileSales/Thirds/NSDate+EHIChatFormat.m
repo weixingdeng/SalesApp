@@ -25,4 +25,20 @@
         return [NSString stringWithFormat:@"%@ %@", self.formatYMD, self.formatHM];
     }
 }
+
+- (NSString *)chatListTimeInfo
+{
+    if ([self isToday]) {       // 今天
+        return self.formatHM;
+    }
+    else if ([self isYesterday]) {      // 昨天
+        return @"昨天";
+    }
+    else if ([self isThisWeek]){        // 本周
+        return self.dayFromWeekday;
+    }
+    else {
+        return [self formatYMDWith:@"/"];
+    }
+}
 @end

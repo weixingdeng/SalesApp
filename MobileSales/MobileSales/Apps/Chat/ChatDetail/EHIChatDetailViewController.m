@@ -20,12 +20,17 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [IQKeyboardManager sharedManager].enable = NO;
-    [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
+//    [IQKeyboardManager sharedManager].enable = NO;
+//    [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
     
     [self.socketManager setDelegate:self];
     //每次进入都刷新列表
     [self.messageView resetMessageView];
+    
+    //每次聊天都把当前聊天置为已读状态
+    [[EHIChatManager sharedInstance] updateChatToReadWithNodeId:self.listModel.NodeId];
+    
+     [[EHIChatSocketManager shareInstance] setDelegate:self];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
@@ -56,10 +61,7 @@
     [self addMasonry];
     
     [self setNavigationRight];
-    [[EHIChatSocketManager shareInstance] setDelegate:self];
-    //每次聊天都把当前聊天置为已读状态
-    [[EHIChatManager sharedInstance] updateChatToReadWithNodeId:self.listModel.NodeId];
-    
+   
 }
 
 - (void)addMasonry

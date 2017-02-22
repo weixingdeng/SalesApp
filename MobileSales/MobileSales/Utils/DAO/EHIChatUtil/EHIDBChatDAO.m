@@ -30,30 +30,21 @@
 }
 
 - (BOOL)addMessage:(EHIMessage *)message
-{
-//    if (message == nil || message.messageID == nil || message.userID == nil || (message.friendID == nil && message.groupID == nil)) {
-//        return NO;
-//    }
-    
-//    NSString *fid = @"";
-//    NSString *subfid;
-//    if (message.partnerType == EHIPartnerTypeUser) {
-//        fid = message.friendID;
-//    }
-//    else {
-//        fid = message.groupID;
-//        subfid = message.friendID;
-//    }
-    
+{    
     NSString *sqlString = [NSString stringWithFormat:SQL_ADD_MESSAGE, MESSAGE_TABLE_NAME];
     NSArray *arrPara = [NSArray arrayWithObjects:
                         message.messageID,
                         message.nodeID,
                         [message.content mj_JSONString],
                         EHITimeStamp(message.date),
-                        @"",message.sendName, @"", @"", @(message.ownerTyper),
-                        @"", @"", @"", @"", @"",
-                        @"", @"", @"", @"",nil];
+                        message.sendID,
+                        message.sendName,
+                        @"",
+                        @"",
+                        @(message.ownerTyper),
+                        @(message.messageType),
+                        @"", @"", @"", @"",
+                        @"", @"", @"",nil];
     BOOL ok = [self excuteSQL:sqlString withArrParameter:arrPara];
     return ok;
 }
@@ -93,20 +84,26 @@
 #pragma mark - Private Methods -
 - (EHIMessage *)createDBMessageByFMResultSet:(FMResultSet *)retSet
 {
-//    EHIMessageType type = [retSet intForColumn:@"msg_type"];
-    EHIMessage * message = [EHIMessage createMessageByType:1];
+
+    EHIMessage * message = [EHIMessage createMessageByType:EHIMessageTypeText];
     message.messageID = [retSet stringForColumn:@"msgid"];
-//    message.userID = [retSet stringForColumn:@"uid"];
-    
-//    message.friendID = [retSet stringForColumn:@"fid"];
     message.nodeID = [retSet stringForColumn:@"nodeID"];
-    message.sendName = [retSet stringForColumn:@"sender_name"];
+    
+    NSString *content = [retSet stringForColumn:@"content"];
+    message.content = [[NSMutableDictionary alloc] initWithDictionary:[content mj_JSONObject]];
     
     NSString *dateString = [retSet stringForColumn:@"date"];
     message.date = [NSDate dateWithTimeIntervalSince1970:dateString.doubleValue];
+    
+    message.sendID = [retSet stringForColumn:@"sender_id"];
+    message.sendName = [retSet stringForColumn:@"sender_name"];
+    
+    message.receivedID = [retSet stringForColumn:@"received_id"];
+    message.receivedName = [retSet stringForColumn:@"received_name"];
+    
     message.ownerTyper = [retSet intForColumn:@"own_type"];
-    NSString *content = [retSet stringForColumn:@"content"];
-    message.content = [[NSMutableDictionary alloc] initWithDictionary:[content mj_JSONObject]];
+    message.messageType = [retSet intForColumn:@"msg_type"];
+    
     message.sendState = [retSet intForColumn:@"send_status"];
     message.readState = [retSet intForColumn:@"received_status"];
     return message;

@@ -72,6 +72,7 @@
 - (void)addToShowMessage:(EHIMessage *)message
 {
     message.showTime = [self needShowTime:message.date];
+    message.showName = message.ownerTyper == EHIMessageOwnerTypeSelf ? NO : YES;
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.messageView addMessage:message];
         [self.messageView scrollToBottomWithAnimation:YES];
@@ -100,6 +101,7 @@
                                                                         count = 0;
                                                                         message.showTime = YES;
                                                                     }
+                                                                    message.showName = message.ownerTyper == EHIMessageOwnerTypeSelf ? NO : YES;
                                                                 }
                                                             }
                                                             completed(date, array, hasMore);

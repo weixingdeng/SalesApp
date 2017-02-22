@@ -7,7 +7,7 @@
 //
 
 #import "EHIChatListTableViewCell.h"
-#import "NSDate+Extension.h"
+#import "NSDate+EHIChatFormat.h"
 
 @interface EHIChatListTableViewCell()
 
@@ -99,7 +99,7 @@
     [self.iconLabel setText:chatListModel.ShortName];
     [self.titleLabel setText:chatListModel.NodeName];
     [self.redIconView setHidden:chatListModel.isRead];
-    [self.timeLabel setText:[chatListModel.date formatHM]];
+    [self.timeLabel setText:chatListModel.date.chatListTimeInfo];
     
     NSDictionary *contentDic = [chatListModel.content mj_JSONObject];
     if (chatListModel.senderName.length && [contentDic[@"text"] length]) {
