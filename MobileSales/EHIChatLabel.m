@@ -52,7 +52,7 @@
     if(self.copyingEnabled)
     {
         if (!self.text) return;
-        // Copy the label text
+
         UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
         [pasteboard setString:self.text];
     }

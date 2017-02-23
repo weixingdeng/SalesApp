@@ -9,6 +9,7 @@
 #import "EHITextMessageCell.h"
 #import "EHITextMessage.h"
 #import "EHIChatLabel.h"
+#import "UIImage+EHIResize.h"
 
 @interface EHITextMessageCell()
 
@@ -17,7 +18,7 @@
 @end
 
 #define     MSG_SPACE_TOP       14
-#define     MSG_SPACE_BTM       20
+#define     MSG_SPACE_BTM       14
 #define     MSG_SPACE_LEFT      19
 #define     MSG_SPACE_RIGHT     22
 
@@ -42,7 +43,7 @@
     
     if (message.ownerTyper == EHIMessageOwnerTypeSelf) {
         [_messageLabel setTextColor:[UIColor whiteColor]];
-        [self.messageBackgroundView setImage:[UIImage imageNamed:@"chat_send"]];
+        [self.messageBackgroundView setImage:[UIImage resizeImage:@"chat_send"]];
         
         [self.messageLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.right.mas_equalTo(self.messageBackgroundView).mas_offset(-MSG_SPACE_RIGHT);
@@ -55,7 +56,7 @@
     }
     else if (message.ownerTyper == EHIMessageOwnerTypeFriend){
         [_messageLabel setTextColor:HEXCOLOR_333333];
-        [self.messageBackgroundView setImage:[UIImage imageNamed:@"chat_recive"]];
+        [self.messageBackgroundView setImage:[UIImage resizeImage:@"chat_recive"]];
         
         [self.messageLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(self.messageBackgroundView).mas_offset(MSG_SPACE_LEFT);

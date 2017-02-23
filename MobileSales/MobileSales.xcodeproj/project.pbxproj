@@ -24,6 +24,7 @@
 		FB26CE7A1E5BEE6000317299 /* EHIDBFrameDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = FB26CE791E5BEE6000317299 /* EHIDBFrameDAO.m */; };
 		FB26CEBE1E5D5E1C00317299 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB26CEBD1E5D5E1C00317299 /* AudioToolbox.framework */; };
 		FB26CF121E5E8B9000317299 /* EHIChatLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FB26CF111E5E8B9000317299 /* EHIChatLabel.m */; };
+		FB26CF151E5EA4A300317299 /* UIImage+EHIResize.m in Sources */ = {isa = PBXBuildFile; fileRef = FB26CF141E5EA4A300317299 /* UIImage+EHIResize.m */; };
 		FB2EC8671E59DD270066FBF3 /* EHIMessageBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2EC8661E59DD270066FBF3 /* EHIMessageBaseCell.m */; };
 		FB2EC86A1E59E1470066FBF3 /* NSDate+EHIChatFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2EC8691E59E1470066FBF3 /* NSDate+EHIChatFormat.m */; };
 		FB2EC86F1E59E19C0066FBF3 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2EC86C1E59E19C0066FBF3 /* NSDate+Extension.m */; };
@@ -144,6 +145,8 @@
 		FB26CEBD1E5D5E1C00317299 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		FB26CF101E5E8B9000317299 /* EHIChatLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIChatLabel.h; sourceTree = "<group>"; };
 		FB26CF111E5E8B9000317299 /* EHIChatLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIChatLabel.m; sourceTree = "<group>"; };
+		FB26CF131E5EA4A300317299 /* UIImage+EHIResize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+EHIResize.h"; sourceTree = "<group>"; };
+		FB26CF141E5EA4A300317299 /* UIImage+EHIResize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+EHIResize.m"; sourceTree = "<group>"; };
 		FB2EC8651E59DD270066FBF3 /* EHIMessageBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIMessageBaseCell.h; sourceTree = "<group>"; };
 		FB2EC8661E59DD270066FBF3 /* EHIMessageBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIMessageBaseCell.m; sourceTree = "<group>"; };
 		FB2EC8681E59E1470066FBF3 /* NSDate+EHIChatFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+EHIChatFormat.h"; sourceTree = "<group>"; };
@@ -465,6 +468,8 @@
 				FB26CE711E5AE2C900317299 /* NSString+EHIDateFormat.m */,
 				FBCEAC931E5C6504004E8556 /* MBProgressHUD+EHIProgressHUD.h */,
 				FBCEAC941E5C6504004E8556 /* MBProgressHUD+EHIProgressHUD.m */,
+				FB26CF131E5EA4A300317299 /* UIImage+EHIResize.h */,
+				FB26CF141E5EA4A300317299 /* UIImage+EHIResize.m */,
 			);
 			name = Extends;
 			path = Thirds;
@@ -1052,6 +1057,7 @@
 				FB2EC86F1E59E19C0066FBF3 /* NSDate+Extension.m in Sources */,
 				FB94D1EA1E53FB7A00BC86E5 /* EHIDBBaseDAO.m in Sources */,
 				FB682BC31E598D15007BE819 /* EHIMessage.m in Sources */,
+				FB26CF151E5EA4A300317299 /* UIImage+EHIResize.m in Sources */,
 				FB776EBD1E4AFB98008763CE /* EHIUserContext.m in Sources */,
 				FB776EC01E4AFBD6008763CE /* EHIUrlList.m in Sources */,
 				FBDEBB081E5B2E350053CCF8 /* EHISexSelectView.m in Sources */,

@@ -337,6 +337,7 @@ static const int TIMEOUT = -1;
         textMessage.receivedID = SHARE_USER_CONTEXT.user.user_id;
         textMessage.receivedName = SHARE_USER_CONTEXT.user.user_name;
         textMessage.ownerTyper = EHIMessageOwnerTypeFriend;
+        textMessage.sendState = EHIMessageSendSuccess;
         
         self.getMessage = textMessage;
     }

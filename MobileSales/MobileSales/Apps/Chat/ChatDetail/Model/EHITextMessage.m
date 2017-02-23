@@ -43,7 +43,7 @@ static UILabel *textLabel = nil;
 {
     if (kMessageFrame == nil) {
         kMessageFrame = [[EHIMessageFrame alloc] init];
-        kMessageFrame.height = 20 + (self.showTime ? 30 : 0) + (self.showName ? 15 : 0) + 20;
+        kMessageFrame.height = 23 + (self.showTime ? 30 : 0) + (self.showName ? 15 : 0) + 23;
         textLabel.text = self.text;
         kMessageFrame.contentSize = [textLabel sizeThatFits:CGSizeMake(MAX_MESSAGE_WIDTH, MAXFLOAT)];
         kMessageFrame.height += kMessageFrame.contentSize.height;
