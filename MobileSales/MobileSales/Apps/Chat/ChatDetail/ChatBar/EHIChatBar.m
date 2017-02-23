@@ -46,7 +46,7 @@
         make.height.mas_equalTo(36);
         make.right.offset(-14);
         make.bottom.mas_equalTo(-6);
-        make.width.mas_equalTo(50);
+        make.width.mas_equalTo(60);
     }];
 }
 

@@ -76,6 +76,7 @@
         make.left.right.bottom.equalTo(self.view);
         make.height.mas_greaterThanOrEqualTo(40);
     }];
+     [self.view layoutIfNeeded];
 }
 
 //设置导航右边

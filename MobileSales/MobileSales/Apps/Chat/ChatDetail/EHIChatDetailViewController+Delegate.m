@@ -20,13 +20,11 @@
 
 - (void)keyboardDidShow:(NSNotification *)notification
 {
-//    NSLog(@"---didshow---");
     [self.messageView scrollToBottomWithAnimation:YES];
 }
 
 - (void)keyboardFrameWillChange:(NSNotification *)notification
 {
-//    NSLog(@"---frame---");
     CGRect keyboardFrame = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
     [self.chatBar mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(self.view).mas_offset(-keyboardFrame.size.height);
@@ -74,6 +72,7 @@
     message.showTime = [self needShowTime:message.date];
     message.showName = message.ownerTyper == EHIMessageOwnerTypeSelf ? NO : YES;
     dispatch_async(dispatch_get_main_queue(), ^{
+        NSLog(@"插入到数据库");
         [self.messageView addMessage:message];
         [self.messageView scrollToBottomWithAnimation:YES];
     });
@@ -133,6 +132,7 @@
 {
     BOOL isRead = NO;
     if ([self.listModel.NodeId isEqualToString:message.nodeID]) {
+        
         [self addToShowMessage:message];
         isRead = YES;
     }

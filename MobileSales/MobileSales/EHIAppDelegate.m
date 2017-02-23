@@ -18,15 +18,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-   //初始化第三方SDK
+    [NSThread sleepForTimeInterval:0.7];
+    //初始化第三方SDK
     [self initThirdSDK];
-    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     EHIRootViewController *rootVC = [[EHIRootViewController alloc] init];
     [self.window setRootViewController:rootVC];
     [self.window makeKeyAndVisible];
     
     SHARE_USER_CONTEXT.urlList.environment = ENVIRONMENT_DEMO;
+
+   
     
     return YES;
 }

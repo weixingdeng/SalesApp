@@ -49,6 +49,7 @@
                         @"", @"", @"",
                         @"", @"", @"",nil];
     BOOL ok = [self excuteSQL:sqlString withArrParameter:arrPara];
+    NSLog(@"插入聊天记录到数据库");
     return ok;
 }
 
@@ -92,6 +93,7 @@
 {
     NSString *sqlString = [NSString stringWithFormat:SQL_UPDATE_MESSAGE, MESSAGE_TABLE_NAME,status, messageID];
     BOOL ok = [self excuteSQL:sqlString , nil];
+    NSLog(@"更新消息状态");
     if (ok) {
         NSString *sqlString = [NSString stringWithFormat:SQL_SELECT_NODEID, MESSAGE_TABLE_NAME,messageID];
         
@@ -99,6 +101,7 @@
         [self excuteQuerySQL:sqlString resultBlock:^(FMResultSet *rsSet) {
             while ([rsSet next]) {
                 nodeID = [rsSet stringForColumn:@"nodeid"];
+                NSLog(@"查到nodeID%@",nodeID);
             }
             [rsSet close];
         }];

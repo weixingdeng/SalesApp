@@ -131,7 +131,7 @@
     
     
     
-    if (message.ownerTyper == EHIMessageOwnerTypeSelf) {
+//    if (message.ownerTyper == EHIMessageOwnerTypeSelf) {
         switch (message.sendState) {
             case EHIMessageSending:{
                 [self.activityView startAnimating];
@@ -146,16 +146,16 @@
             }
                 
             case EHIMessageSendFail:{
-                self.sendAgainBtn.hidden = _message.ownerTyper == EHIMessageOwnerTypeFriend;
+                self.sendAgainBtn.hidden = message.ownerTyper == EHIMessageOwnerTypeFriend;
                 break;
             }
             default:
                 break;
         }
-    }else
-    {
-        self.sendAgainBtn.hidden = YES;
-    }
+//    }else
+//    {
+//        self.sendAgainBtn.hidden = YES;
+//    }
     
     [self.usernameLabel setHidden:!message.showName];
     [self.usernameLabel mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -172,8 +172,7 @@
         _timeLabel = [[UILabel alloc] init];
         [_timeLabel setFont:[UIFont systemFontOfSize:10.0f]];
         [_timeLabel setTextColor:[UIColor whiteColor]];
-        [_timeLabel setBackgroundColor:[UIColor grayColor]];
-        [_timeLabel setAlpha:0.6f];
+        [_timeLabel setBackgroundColor:HEXCOLOR_D4D4D4];
         [_timeLabel.layer setMasksToBounds:YES];
         [_timeLabel.layer setCornerRadius:5.0f];
     }
