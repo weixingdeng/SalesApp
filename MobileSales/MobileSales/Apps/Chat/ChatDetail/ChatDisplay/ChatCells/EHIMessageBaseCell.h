@@ -10,6 +10,10 @@
 #import "EHIMessageCellDelegate.h"
 #import "EHIMessage.h"
 
+#define     SEND_AGAIN_WIDTH    30.0f
+
+#define     STATUS_GAP          3.0f
+
 @interface EHIMessageBaseCell : UITableViewCell
 
 @property (nonatomic, assign) id<EHIMessageCellDelegate>delegate;

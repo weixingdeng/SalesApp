@@ -26,7 +26,7 @@
 
 - (void)starCheckSendTimeoutMessage{
     
-    self.checkTimer = [NSTimer timerWithTimeInterval:CHECK_TIME target:self selector:@selector(checkTimeoutMessage) userInfo:nil repeats:YES];
+    self.checkTimer = [NSTimer scheduledTimerWithTimeInterval:CHECK_TIME target:self selector:@selector(checkTimeoutMessage) userInfo:nil repeats:YES];
 }
 
 - (void)stopCheckSendTimeoutMessage

@@ -51,21 +51,11 @@
 {
     if (self.delegate && [self.delegate respondsToSelector:@selector(chatMessageDisplayView:didClickMessageSendAgain:)]) {
         [self.delegate chatMessageDisplayView:self
-                        didClickMessageAvatar:message];
+                        didClickMessageSendAgain:message];
     }
 }
 
-#error mark
-//获取view的顶级vc
-- (UIViewController*)viewController {
-    for (UIView* next = [self superview]; next; next = next.superview) {
-        UIResponder* nextResponder = [next nextResponder];
-        if ([nextResponder isKindOfClass:[UIViewController class]]) {
-            return (UIViewController*)nextResponder;
-        }
-    }
-    return nil;
-}
+
 //MARK: UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath
 {

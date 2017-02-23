@@ -15,7 +15,7 @@
 
 - (void)receivedMessage:(EHIMessage *)message;
 
-- (void)receivedACKWithMessageId:(NSString *)messageId toSenderStatus:(EHIMessageSendState)status;
+- (void)receivedACKWithMessageId:(NSString *)messageId toSenderStatus:(NSInteger)status;
 
 
 @end

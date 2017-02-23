@@ -115,7 +115,7 @@
     __block NSMutableArray *data = [[NSMutableArray alloc] init];
     NSString *sqlString = [NSString stringWithFormat:SQL_SELECT_TIMEOUT_MESSAGE,
                            MESSAGE_TABLE_NAME,
-                           @(EHIMessageSending),
+                           EHIMessageSending,
                            [NSString stringWithFormat:@"%lf", [NSDate date].timeIntervalSince1970 - TIMEOUT]];
     
     [self excuteQuerySQL:sqlString resultBlock:^(FMResultSet *retSet) {

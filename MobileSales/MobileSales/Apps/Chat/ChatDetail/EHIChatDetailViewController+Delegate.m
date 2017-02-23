@@ -111,14 +111,6 @@
 //发送信息
 - (void)sendMessage:(EHIMessage *)message
 {
-    
-    [self.socketManager sendMessageWithMessage:message];
-    [self addToShowMessage:message];    // 添加到列表
-    
-    [[EHIChatManager sharedInstance] addMessage:message
-                               toChatListNodeId:self.listModel.NodeId
-                                         isRead:YES];
-    
     [[EHIChatManager sharedInstance] sendMessage:message progress:^(EHIMessage * message, CGFloat pregress) {
         
     } success:^(EHIMessage * message) {
@@ -126,6 +118,13 @@
     } failure:^(EHIMessage * message) {
         NSLog(@"send failure");
     }];
+    [[EHIChatManager sharedInstance] addMessage:message
+                               toChatListNodeId:self.listModel.NodeId
+                                         isRead:YES];
+    
+    [self addToShowMessage:message];    // 添加到列表
+    
+    [self.socketManager sendMessageWithMessage:message];
 }
 
 
@@ -161,9 +160,11 @@
     if (nodeId) {
         if (self.listModel.NodeId == nodeId) {
             for (EHIMessage *message in self.messageView.data) {
-                if (messageId == message.messageID) {
+                if ([messageId isEqualToString:message.messageID]) {
                     message.sendState = status;
-                    [self.messageView.chatDetailTable reloadData];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self.messageView.chatDetailTable reloadData];
+                    });
                     return;
                 }
             }
@@ -206,14 +207,29 @@
 - (void)chatMessageDisplayView:(EHIChatMessageDisplayView *)chatTVC
       didClickMessageSendAgain:(EHIMessage *)message
 {
-    for (EHIMessage *sendMessage in self.messageView.data) {
-        if (message.messageID == sendMessage.messageID) {
-            [self.messageView.data removeObject:sendMessage];
-            return;
+    WXAlertController *alert = [WXAlertController alertControllerWithTitle:nil message:@"重发该消息?" preferredStyle:WXAlertControllerStyleAlert];
+    WXAlertAction *cancelAction = [WXAlertAction actionWithTitle:@"取消" style:WXAlertActionStyleCancel handler:nil];
+    WXAlertAction *sendAgainAction = [WXAlertAction actionWithTitle:@"重发" style:WXAlertActionStyleDefault handler:^(WXAlertAction * _Nonnull action) {
+        
+        for (EHIMessage *sendMessage in self.messageView.data) {
+            if ([message.messageID isEqualToString:sendMessage.messageID]) {
+                [self.messageView.data removeObject:sendMessage];
+                
+                //更改消息状态
+                message.sendState = EHIMessageSending;
+                message.date = [NSDate date];
+                [message resetMessageFrame];
+                
+                [self sendMessage:message];
+                return;
+            }
         }
-    }
-    [self sendMessage:message];
+    }];
     
+    [alert addAction:cancelAction];
+    [alert addAction:sendAgainAction];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark - # Private Methods

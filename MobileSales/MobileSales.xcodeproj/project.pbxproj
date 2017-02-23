@@ -23,6 +23,7 @@
 		FB26CE761E5AF1A800317299 /* EHIMyInfomationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB26CE741E5AF1A800317299 /* EHIMyInfomationViewController.m */; };
 		FB26CE7A1E5BEE6000317299 /* EHIDBFrameDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = FB26CE791E5BEE6000317299 /* EHIDBFrameDAO.m */; };
 		FB26CEBE1E5D5E1C00317299 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB26CEBD1E5D5E1C00317299 /* AudioToolbox.framework */; };
+		FB26CF121E5E8B9000317299 /* EHIChatLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FB26CF111E5E8B9000317299 /* EHIChatLabel.m */; };
 		FB2EC8671E59DD270066FBF3 /* EHIMessageBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2EC8661E59DD270066FBF3 /* EHIMessageBaseCell.m */; };
 		FB2EC86A1E59E1470066FBF3 /* NSDate+EHIChatFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2EC8691E59E1470066FBF3 /* NSDate+EHIChatFormat.m */; };
 		FB2EC86F1E59E19C0066FBF3 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2EC86C1E59E19C0066FBF3 /* NSDate+Extension.m */; };
@@ -141,6 +142,8 @@
 		FB26CE781E5BEE6000317299 /* EHIDBFrameDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIDBFrameDAO.h; sourceTree = "<group>"; };
 		FB26CE791E5BEE6000317299 /* EHIDBFrameDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIDBFrameDAO.m; sourceTree = "<group>"; };
 		FB26CEBD1E5D5E1C00317299 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		FB26CF101E5E8B9000317299 /* EHIChatLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIChatLabel.h; sourceTree = "<group>"; };
+		FB26CF111E5E8B9000317299 /* EHIChatLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIChatLabel.m; sourceTree = "<group>"; };
 		FB2EC8651E59DD270066FBF3 /* EHIMessageBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIMessageBaseCell.h; sourceTree = "<group>"; };
 		FB2EC8661E59DD270066FBF3 /* EHIMessageBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIMessageBaseCell.m; sourceTree = "<group>"; };
 		FB2EC8681E59E1470066FBF3 /* NSDate+EHIChatFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+EHIChatFormat.h"; sourceTree = "<group>"; };
@@ -345,6 +348,8 @@
 		FB25648F1E24A6AD00A9B857 = {
 			isa = PBXGroup;
 			children = (
+				FB26CF101E5E8B9000317299 /* EHIChatLabel.h */,
+				FB26CF111E5E8B9000317299 /* EHIChatLabel.m */,
 				FB25649A1E24A6AD00A9B857 /* MobileSales */,
 				FB2564B41E24A6AD00A9B857 /* MobileSalesTests */,
 				FB2564BF1E24A6AD00A9B857 /* MobileSalesUITests */,
@@ -1036,6 +1041,7 @@
 				FB94D2271E55AEDF00BC86E5 /* UIView+Frame.m in Sources */,
 				FB2EC86A1E59E1470066FBF3 /* NSDate+EHIChatFormat.m in Sources */,
 				FB682BA41E56F003007BE819 /* EHIChatDetailViewController+Delegate.m in Sources */,
+				FB26CF121E5E8B9000317299 /* EHIChatLabel.m in Sources */,
 				FB2EC8671E59DD270066FBF3 /* EHIMessageBaseCell.m in Sources */,
 				FBCEAC9B1E5C8FA7004E8556 /* EHIMemberCollectionViewCell.m in Sources */,
 				FB5A5D381E49DB2F00810253 /* UITabBar+EHIBadge.m in Sources */,

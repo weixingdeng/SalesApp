@@ -58,12 +58,12 @@
                                             order by date desc LIMIT '%ld'"
 
 //更新消息状态
-#define     SQL_UPDATE_MESSAGE         @"UPDATE %@ SET send_status = %d WHERE msgid = %@"
+#define     SQL_UPDATE_MESSAGE         @"UPDATE %@ SET send_status = %d WHERE msgid = '%@'"
 
 //根据messageid 查 nodeid
 #define     SQL_SELECT_NODEID           @"SELECT nodeid FROM %@ WHERE msgid = '%@'"
 
 //查找所有发送时间超过30s的正在发送的信息
-#define     SQL_SELECT_TIMEOUT_MESSAGE   @"SELECT * FROM %@ WHERE send_status = '%ld' and date < '%@'"
+#define     SQL_SELECT_TIMEOUT_MESSAGE   @"SELECT * FROM %@ WHERE send_status = '%d' and date < '%@'"
 
 #endif /* EHIChatSQL_h */

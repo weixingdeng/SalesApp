@@ -301,7 +301,7 @@ static const int TIMEOUT = -1;
 - (void)handleACKDataWithSocket:(GCDAsyncSocket *)socket
            withHeaderDictionary:(NSDictionary *)dic
 {
-    if ([dic[@"id"] length]) {
+    if (![dic[@"id"] isKindOfClass:[NSNull class]]&&[dic[@"id"] length]) {
         if (self.delegate && [self.delegate respondsToSelector:@selector(receivedACKWithMessageId:toSenderStatus:)]) {
             [self.delegate receivedACKWithMessageId:dic[@"id"]
                                      toSenderStatus:EHIMessageSendSuccess];

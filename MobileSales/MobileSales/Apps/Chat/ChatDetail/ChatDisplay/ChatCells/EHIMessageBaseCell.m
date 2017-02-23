@@ -25,7 +25,7 @@
 
 #define     ACTIVITY_WIDTH      40.0f
 
-#define     SEND_AGAIN_WIDTH    30.0f
+
 
 @interface EHIMessageBaseCell()
 
@@ -75,22 +75,19 @@
     
     [self.activityView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.mas_equalTo(self.messageBackgroundView);
-        make.right.mas_equalTo(self.messageBackgroundView.mas_left).offset(-5);
+        make.right.mas_equalTo(self.messageBackgroundView.mas_left).offset(-STATUS_GAP);
         make.height.width.mas_equalTo(ACTIVITY_WIDTH);
     }];
     
     [self.sendAgainBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.mas_equalTo(self.messageBackgroundView.centerY);
-        make.right.mas_equalTo(self.messageBackgroundView.mas_left).offset(-5);
+        make.centerY.mas_equalTo(self.messageBackgroundView);
+        make.right.mas_equalTo(self.messageBackgroundView.mas_left).offset(-STATUS_GAP);
         make.height.width.mas_equalTo(SEND_AGAIN_WIDTH);
     }];
 }
 
 - (void)setMessage:(EHIMessage *)message
 {
-    if (_message && [_message.messageID isEqualToString:message.messageID]) {
-        return;
-    }
     [self.timeLabel setText:[NSString stringWithFormat:@"  %@  ", message.date.chatTimeFormat]];
     [self.usernameLabel setText:message.sendName];
   
@@ -98,43 +95,41 @@
   
     
     // 时间
-    if (!_message || _message.showTime != message.showTime) {
-        [self.timeLabel mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(message.showTime ? TIMELABEL_HEIGHT : 0);
-            make.top.mas_equalTo(self.contentView).mas_offset(message.showTime ? TIMELABEL_SPACE_Y : 0);
-        }];
-    }
+    [self.timeLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(message.showTime ? TIMELABEL_HEIGHT : 0);
+        make.top.mas_equalTo(self.contentView).mas_offset(message.showTime ? TIMELABEL_SPACE_Y : 0);
+    }];
     
-    if (!message || _message.ownerTyper != message.ownerTyper) {
-        // 头像
-        [self.avatarButton mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.width.and.height.mas_equalTo(AVATAR_WIDTH);
-            make.top.mas_equalTo(self.timeLabel.mas_bottom).mas_offset(AVATAR_SPACE_Y);
-            if(message.ownerTyper == EHIMessageOwnerTypeSelf) {
-                make.right.mas_equalTo(self.contentView).mas_offset(-AVATAR_SPACE_X);
-            }
-            else {
-                make.left.mas_equalTo(self.contentView).mas_offset(AVATAR_SPACE_X);
-            }
-        }];
-        
-        // 用户名
-        [self.usernameLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(self.avatarButton).mas_equalTo(-NAMELABEL_SPACE_Y);
-            if (message.ownerTyper == EHIMessageOwnerTypeSelf) {
-                make.right.mas_equalTo(self.avatarButton.mas_left).mas_offset(- NAMELABEL_SPACE_X);
-            }
-            else {
-                make.left.mas_equalTo(self.avatarButton.mas_right).mas_equalTo(NAMELABEL_SPACE_X);
-            }
-        }];
-        
-        // 背景
-        [self.messageBackgroundView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            message.ownerTyper == EHIMessageOwnerTypeSelf ? make.right.mas_equalTo(self.avatarButton.mas_left).mas_offset(-MSGBG_SPACE_X) : make.left.mas_equalTo(self.avatarButton.mas_right).mas_offset(MSGBG_SPACE_X);
-            make.top.mas_equalTo(self.usernameLabel.mas_bottom).mas_offset(message.showName ? 0 : -MSGBG_SPACE_Y);
-        }];
-    }
+    // 头像
+    [self.avatarButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.width.and.height.mas_equalTo(AVATAR_WIDTH);
+        make.top.mas_equalTo(self.timeLabel.mas_bottom).mas_offset(AVATAR_SPACE_Y);
+        if(message.ownerTyper == EHIMessageOwnerTypeSelf) {
+            make.right.mas_equalTo(self.contentView).mas_offset(-AVATAR_SPACE_X);
+        }
+        else {
+            make.left.mas_equalTo(self.contentView).mas_offset(AVATAR_SPACE_X);
+        }
+    }];
+    
+    // 用户名
+    [self.usernameLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.avatarButton).mas_equalTo(-NAMELABEL_SPACE_Y);
+        if (message.ownerTyper == EHIMessageOwnerTypeSelf) {
+            make.right.mas_equalTo(self.avatarButton.mas_left).mas_offset(- NAMELABEL_SPACE_X);
+        }
+        else {
+            make.left.mas_equalTo(self.avatarButton.mas_right).mas_equalTo(NAMELABEL_SPACE_X);
+        }
+    }];
+    
+    // 背景
+    [self.messageBackgroundView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        message.ownerTyper == EHIMessageOwnerTypeSelf ? make.right.mas_equalTo(self.avatarButton.mas_left).mas_offset(-MSGBG_SPACE_X) : make.left.mas_equalTo(self.avatarButton.mas_right).mas_offset(MSGBG_SPACE_X);
+        make.top.mas_equalTo(self.usernameLabel.mas_bottom).mas_offset(message.showName ? 0 : -MSGBG_SPACE_Y);
+    }];
+    
+    
     
     if (message.ownerTyper == EHIMessageOwnerTypeSelf) {
         switch (message.sendState) {
