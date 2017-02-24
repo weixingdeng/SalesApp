@@ -91,7 +91,7 @@
     [self.timeLabel setText:[NSString stringWithFormat:@"  %@  ", message.date.chatTimeFormat]];
     [self.usernameLabel setText:message.sendName];
   
-    [self.avatarButton setImage:[UIImage imageNamed:@"myinfo_girl_icon"] forState:UIControlStateNormal];
+    [self.avatarButton setImage:[UIImage imageNamed:@"myinfo_boy_icon"] forState:UIControlStateNormal];
   
     
     // 时间

@@ -24,13 +24,14 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self addContent];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"我的资料";
 
+    [self addContent];
+    
     [self.view addSubview:self.iconImgView];
     [self.view addSubview:self.nameLabel];
     [self.view addSubview:self.userNoLabel];

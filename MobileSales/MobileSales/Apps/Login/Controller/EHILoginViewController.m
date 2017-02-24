@@ -99,6 +99,17 @@
     
     [[NSUserDefaults standardUserDefaults] synchronize];
     
+    //如果勾选自动登录 本地保存账号密码
+    [[NSUserDefaults standardUserDefaults] setObject:self.loginContentView.userIdTextField.text
+                                              forKey:REMEMBER_USERNO];
+    if (self.loginContentView.autoLoginButton.selected) {
+        [[NSUserDefaults standardUserDefaults] setObject:self.loginContentView.userPassWordTextField.text
+                                                  forKey:REMEMBER_PASSWORD];
+    }else
+    {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:REMEMBER_PASSWORD];
+    }
+    
 }
 
 //是否自动登录
@@ -183,6 +194,16 @@
     [self.view addSubview:self.backgroundImageView];
      [self.view addSubview:self.logoImageView];
     [self.view addSubview:self.loginContentView];
+    
+    NSString *userNo = [[NSUserDefaults standardUserDefaults] objectForKey:REMEMBER_USERNO];
+    NSString *passwordNo = [[NSUserDefaults standardUserDefaults] objectForKey:REMEMBER_PASSWORD];
+    if (userNo && [userNo length]) {
+        self.loginContentView.userIdTextField.text = userNo;
+        self.loginContentView.autoLoginButton.selected = YES;
+    }
+    if (passwordNo) {
+        self.loginContentView.userPassWordTextField.text = passwordNo;
+    }
     //登录内容与屏幕左右边距
     CGFloat padding = 20;
     

@@ -31,24 +31,6 @@
     [self requestFrameData];
 }
 
-- (void)networkStatusChange:(NSNotification *)noti
-{
-    AFNetworkReachabilityStatus status = [noti.userInfo[@"AFNetworkingReachabilityNotificationStatusItem"] longValue];
-    switch (status) {
-        case AFNetworkReachabilityStatusReachableViaWiFi:
-        case AFNetworkReachabilityStatusReachableViaWWAN:
-        case AFNetworkReachabilityStatusUnknown:
-                self.title = @"沟通";
-            break;
-        case AFNetworkReachabilityStatusNotReachable:
-                self.title = @"沟通(未连接)";
-            break;
-        default:
-            break;
-    }
-
-}
-
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
@@ -82,7 +64,6 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadTableView) name:HAVE_NEW_MESSAGE_NOTIFATION object:nil];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkStatusChange:) name:AFNetworkingReachabilityDidChangeNotification object:nil];
 }
 
 #pragma mark 界面视图

@@ -16,6 +16,9 @@ static NSString* const USER_ID_KEY = @"user_id";
 static NSString* const USER_NAME_KEY = @"user_name";
 static NSString* const USER_SEX_KEY = @"user_sex";
 
+static NSString* const REMEMBER_USERNO = @"REMEMBER_USERNO";
+static NSString* const REMEMBER_PASSWORD = @"REMEMBER_PASSWORD";
+
 static NSString* const REQUEST_FAILED = @"网络请求失败,请稍后重试!";
 
 static NSString* const HAVE_NEW_MESSAGE_NOTIFATION = @"HAVENEW_NOTIFATION";

@@ -25,6 +25,7 @@
     //每次进入都刷新列表
     [self.messageView resetMessageView];
     
+    
     //每次聊天都把当前聊天置为已读状态
     [[EHIChatManager sharedInstance] updateChatToReadWithNodeId:self.listModel.NodeId];
     
