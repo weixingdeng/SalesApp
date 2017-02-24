@@ -22,7 +22,6 @@
     
     EHIContactModel *selfModel = [[EHIContactModel alloc] init];
     selfModel.UserName = SHARE_USER_CONTEXT.user.user_name;
-    
     if (self.memberArray) {
         [self.memberArray insertObject:selfModel atIndex:0];
     }
@@ -33,13 +32,13 @@
 {
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
     // 定义大小
-    layout.itemSize = CGSizeMake(autoWidthOf6(45), autoHeightOf6(60));
+    layout.itemSize = CGSizeMake(autoWidthOf6(42), autoHeightOf6(60));
     // 设置最小行间距
     layout.minimumLineSpacing = autoHeightOf6(18);
     // 设置垂直间距
-    layout.minimumInteritemSpacing = autoWidthOf6(32);
+    layout.minimumInteritemSpacing = autoWidthOf6(22);
     
-    layout.sectionInset = UIEdgeInsetsMake(autoHeightOf6(18), autoWidthOf6(24), autoHeightOf6(18), autoWidthOf6(24));
+    layout.sectionInset = UIEdgeInsetsMake(autoHeightOf6(28), autoWidthOf6(22), autoHeightOf6(28), autoWidthOf6(22));
     // 设置水平滚动方向（默认垂直滚动）
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     

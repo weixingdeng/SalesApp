@@ -75,7 +75,7 @@ static const int TIMEOUT = -1;
     }
     [self.socket connectToHost:socketHost onPort:socketPort error:&error];
     if(error) {
-        NSLog(@"error:%@", error);
+        NSLog(@"连接到聊天服务器失败:error:%@", error);
     }
 }
 
@@ -137,7 +137,6 @@ static const int TIMEOUT = -1;
 //发送初始化包
 - (void)sendINITSocket
 {
-    NSLog(@"发送初始化包");
     NSData *headData = nil;
     NSData *headLenthData = nil;
 
@@ -377,9 +376,9 @@ static const int TIMEOUT = -1;
                                                 progress:^(EHIMessage * message, CGFloat pregress) {
                                                     
                                                 } success:^(EHIMessage * message) {
-                                                    NSLog(@"send success");
+                                                    
                                                 } failure:^(EHIMessage * message) {
-                                                    NSLog(@"send failure");
+                                                    
                                                 }];
             
             AudioServicesPlaySystemSound (kSystemSoundID_Vibrate);//震动
@@ -405,7 +404,7 @@ static const int TIMEOUT = -1;
 
 - (void)socket:(GCDAsyncSocket *)sock didWriteDataWithTag:(long)tag
 {
-    NSLog(@"消息发送成功");
+    NSLog(@"本地检测到消息发送成功");
     if (firstSend == 0) {
          [sock readDataToLength:HEAD withTimeout:TIMEOUT tag:EHISocketTagDetault];
     }

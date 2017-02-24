@@ -20,4 +20,7 @@ static NSString* const REQUEST_FAILED = @"网络请求失败,请稍后重试!";
 
 static NSString* const HAVE_NEW_MESSAGE_NOTIFATION = @"HAVENEW_NOTIFATION";
 
+//默认的沟通区头
+static NSString* const DEFAULT_TITLES_ARRAY = @"DEFAULT_TITLES_ARRAY";
+
 #endif /* EHIConstant_h */

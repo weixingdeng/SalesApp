@@ -55,7 +55,7 @@
 #pragma  mark - Event Response
 //登录
 - (void) clickLoginButton:(UIButton *) button
-{
+{    
     BOOL isSuccess = [self isLocalCheckedSuccess];
     
     //本地验证成功 发起登录请求
@@ -110,8 +110,8 @@
 //初始化主页
 - (void)initHomeViewController
 {
-    EHIHomeViewController *rootVC = [[EHIHomeViewController alloc] init];
-    [self.window setRootViewController:rootVC];
+    EHIHomeViewController *homeVC = [[EHIHomeViewController alloc] init];
+    [self.window setRootViewController:homeVC];
 }
 
 #pragma error tips

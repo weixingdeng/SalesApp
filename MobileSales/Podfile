@@ -8,4 +8,5 @@ pod 'UMengAnalytics'
 pod 'FMDB'
 pod 'CocoaAsyncSocket'
 pod 'MBProgressHUD', '~> 1.0.0'
+pod 'Bugly'
 end

@@ -55,8 +55,8 @@
     
     [self.redIconView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.height.mas_equalTo(10);
-        make.top.equalTo(self.iconLabel.mas_top);
-        make.right.equalTo(self.iconLabel.mas_right);
+        make.top.equalTo(self.iconLabel.mas_top).offset(1);
+        make.right.equalTo(self.iconLabel.mas_right).offset(-1);
     }];
     
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {

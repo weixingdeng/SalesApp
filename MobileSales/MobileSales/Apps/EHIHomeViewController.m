@@ -66,6 +66,7 @@ static EHIHomeViewController *rootVC = nil;
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
 {
     if (viewController == self.childVCArray[1] || viewController == self.childVCArray[2]) {
+    
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"正在开发中" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
         [alert show];
         return NO;
@@ -142,11 +143,6 @@ static EHIHomeViewController *rootVC = nil;
 
 	}
 	return _childVCArray;
-}
-
-- (void)dealloc
-{
-    NSLog(@"home kill");
 }
 
 @end

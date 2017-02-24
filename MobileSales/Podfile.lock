@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - Bugly (2.4.2)
   - CocoaAsyncSocket (7.5.1):
     - CocoaAsyncSocket/GCD (= 7.5.1)
   - CocoaAsyncSocket/GCD (7.5.1)
@@ -29,6 +30,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
+  - Bugly
   - CocoaAsyncSocket
   - FMDB
   - IQKeyboardManager
@@ -40,6 +42,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Bugly: b09cd3c7e54048a0e079be88a7a99610f14eab8f
   CocoaAsyncSocket: e0a7e93b2ffa411592ff87e58524fbbc9b95b4fa
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   IQKeyboardManager: 69002bb4fea60596b710e57d426abc00e5063630
@@ -49,6 +52,6 @@ SPEC CHECKSUMS:
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   UMengAnalytics: 0bde5737767dfc18afb03a4cd6ba9d57bb2ad10d
 
-PODFILE CHECKSUM: 17533a08e338f321e704f94663e513511df0da1d
+PODFILE CHECKSUM: 11b83370b7a0fd5d878f1ffe1b37b7e6dcd3dd13
 
 COCOAPODS: 1.0.1

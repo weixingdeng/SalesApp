@@ -18,8 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-   //初始化第三方SDK
-    [self initThirdSDK];
+  
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     EHIRootViewController *rootVC = [[EHIRootViewController alloc] init];
@@ -27,6 +26,10 @@
     [self.window makeKeyAndVisible];
     
     SHARE_USER_CONTEXT.urlList.environment = ENVIRONMENT_DEMO;
+    //初始化第三方SDK
+    [self initThirdSDK];
+    
+   
     
     return YES;
 }
@@ -41,6 +44,16 @@
     [MobClick startWithConfigure:nil];
     
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    
+    //腾讯bugly初始化
+    BuglyConfig *config = [[BuglyConfig alloc] init];
+    config.debugMode = YES;
+    config.blockMonitorEnable = YES;
+    config.reportLogLevel = BuglyLogLevelWarn;
+    
+    [Bugly startWithAppId:@"9cb1749a18" developmentDevice:YES config:config];
+    
+    
     
 }
 

@@ -10,6 +10,7 @@
 #import "EHIChatManager.h"
 #import "NSString+EHIUUID.h"
 #import "EHIMyInfomationViewController.h"
+#import <AudioToolbox/AudioToolbox.h>
 @implementation EHIChatDetailViewController (Delegate)
 
 #pragma mark keyboad代理
@@ -20,13 +21,11 @@
 
 - (void)keyboardDidShow:(NSNotification *)notification
 {
-//    NSLog(@"---didshow---");
     [self.messageView scrollToBottomWithAnimation:YES];
 }
 
 - (void)keyboardFrameWillChange:(NSNotification *)notification
 {
-//    NSLog(@"---frame---");
     CGRect keyboardFrame = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
     [self.chatBar mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(self.view).mas_offset(-keyboardFrame.size.height);
@@ -114,9 +113,9 @@
     [[EHIChatManager sharedInstance] sendMessage:message progress:^(EHIMessage * message, CGFloat pregress) {
         
     } success:^(EHIMessage * message) {
-        NSLog(@"send success");
+        
     } failure:^(EHIMessage * message) {
-        NSLog(@"send failure");
+        
     }];
     [[EHIChatManager sharedInstance] addMessage:message
                                toChatListNodeId:self.listModel.NodeId
@@ -135,6 +134,9 @@
     if ([self.listModel.NodeId isEqualToString:message.nodeID]) {
         [self addToShowMessage:message];
         isRead = YES;
+    }else
+    {
+        AudioServicesPlaySystemSound (kSystemSoundID_Vibrate);//震动
     }
 
     [[EHIChatManager sharedInstance] addMessage:message
@@ -145,9 +147,9 @@
                                         progress:^(EHIMessage * message, CGFloat pregress) {
         
     } success:^(EHIMessage * message) {
-        NSLog(@"send success");
+        
     } failure:^(EHIMessage * message) {
-        NSLog(@"send failure");
+        
     }];
 }
 

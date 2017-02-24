@@ -20,7 +20,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     //加载动画
     [self loadAnimationLaunch];
 //    [self initHomeViewController];
@@ -61,6 +60,10 @@
     movieVC.selectCallback = ^(NSInteger selectIndex){
         //如果是第一次打开App 调到登录页 否则进入正常打开逻辑
         if (selectIndex == EHIAppFirstStart) {
+            //设置个默认区头
+            NSArray *titlesArray = @[@"账户设置",@"车辆咨询",@"需求发布"];
+            [[NSUserDefaults standardUserDefaults]setObject:titlesArray forKey:DEFAULT_TITLES_ARRAY];
+            
             [self initLoginViewController];
         }else if (selectIndex == EHIAppNormalStart){
             [self initNormalOpenApp];
@@ -111,10 +114,6 @@
     
 }
 
-- (void)dealloc
-{
-    NSLog(@"root kill");
-}
 
 /*
 #pragma mark - Navigation

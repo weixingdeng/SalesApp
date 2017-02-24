@@ -10,6 +10,5 @@
 
 @interface EHIHomeViewController : UITabBarController
 
-+ (EHIHomeViewController *) sharedRootViewController;
 
 @end

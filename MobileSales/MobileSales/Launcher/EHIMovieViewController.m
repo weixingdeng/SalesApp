@@ -23,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupMoviePlayer];
+    BLYLogVerbose(@"movie star");
 
 }
 
@@ -59,6 +60,7 @@
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
 }
 
 //添加登录按钮

@@ -29,12 +29,14 @@
 #import <IQKeyboardManager.h>
 #import <MJRefresh/MJRefresh.h>
 #import "MBProgressHUD+EHIProgressHUD.h"
+#import <Bugly/Bugly.h>
 
 #ifdef DEBUG
 #define NSLog(...) NSLog(@"%s [%d]\n%@\n\n",__func__,__LINE__,[NSString stringWithFormat:__VA_ARGS__])
 #else
 #define NSLog(...)
 #endif
+
 
 //存储全局需要的信息
 #define SHARE_USER_CONTEXT [EHIUserContext sharedUserDefault]

@@ -19,7 +19,9 @@
 @end
 
 @implementation EHIChatViewController
-
+{
+    EHISegmentedControl *segment;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"沟通";
@@ -87,8 +89,9 @@
 //添加头部滚动栏
 - (void)addSegmentViewAndTableView
 {
-    NSArray *titlesArray = @[@"账户设置",@"车辆咨询",@"需求发布"];
-    EHISegmentedControl *segment = [[EHISegmentedControl alloc] initWithSectionTitles:titlesArray];
+    NSArray *titlesArray = [[NSUserDefaults standardUserDefaults] objectForKey:DEFAULT_TITLES_ARRAY];
+    
+    segment = [[EHISegmentedControl alloc] initWithSectionTitles:titlesArray];
     segment.font = autoFont(15);
     segment.selectedTextColor = HEXCOLOR_718DDE;
     segment.textColor = HEXCOLOR_333333;
@@ -120,7 +123,9 @@
 //网络请求
 - (void)requestFrameData
 {
+    
     [MBProgressHUD showMessage:@"加载中..."];
+    
     [EHIHttpRequest getChatFramesInfoWithNodeId:0 FailedCallback:^(id object) {
         
         [self requestFaildHandle:object];
@@ -158,11 +163,18 @@
 - (void)requestSuccessHandle:(id)object
 {
     EHIResponseModel *responseModel = (EHIResponseModel *)object;
+    NSMutableArray *titlesArray = [NSMutableArray arrayWithCapacity:0];
     if (responseModel.Data) {
         NSArray *data = (NSArray *)responseModel.Data;
         for (NSDictionary *dic in data) {
             EHIChatListModel *model = [EHIChatListModel mj_objectWithKeyValues:dic];
+            [titlesArray addObject:model.NodeName];
             [self.dataAttay addObject:model];
+        }
+        //吧表头缓存起来 防止下次首页一片空白
+        //暂时这么写 以后可能会用数据库缓存整个首页内容
+        if (titlesArray.count) {
+            [[NSUserDefaults standardUserDefaults] setObject:titlesArray forKey:DEFAULT_TITLES_ARRAY];
         }
         [self.chatListTable reloadData];
     }
