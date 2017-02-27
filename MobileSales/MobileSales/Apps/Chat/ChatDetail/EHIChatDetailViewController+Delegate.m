@@ -43,6 +43,12 @@
     [self.view layoutIfNeeded];
 }
 
+//重置时间显示
+- (void)resetTimeShow
+{
+    lastDateInterval = 0;
+    msgAccumulate = 0;
+}
 //MARK: TLChatBarDelegate
 // 发送文本消息
 - (void)chatBar:(EHIChatBar *)chatBar sendText:(NSString *)text
@@ -73,6 +79,7 @@
     message.showTime = [self needShowTime:message.date];
     message.showName = message.ownerTyper == EHIMessageOwnerTypeSelf ? NO : YES;
     dispatch_async(dispatch_get_main_queue(), ^{
+        NSLog(@"插入到数据库");
         [self.messageView addMessage:message];
         [self.messageView scrollToBottomWithAnimation:YES];
     });
@@ -132,6 +139,7 @@
 {
     BOOL isRead = NO;
     if ([self.listModel.NodeId isEqualToString:message.nodeID]) {
+        
         [self addToShowMessage:message];
         isRead = YES;
     }else

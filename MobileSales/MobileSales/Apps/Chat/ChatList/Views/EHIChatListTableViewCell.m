@@ -47,8 +47,8 @@
     [self.contentView addSubview:self.redIconView];
     
     [self.iconLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.offset(autoHeightOf6(10));
-        make.bottom.offset(-autoHeightOf6(10));
+        make.top.offset(autoHeightOf6(8));
+        make.bottom.offset(-autoHeightOf6(8));
         make.width.equalTo(self.iconLabel.mas_height);
         make.left.offset(autoWidthOf6(18));
     }];
@@ -117,7 +117,7 @@
         _iconLabel = [[UILabel alloc] init];
         _iconLabel.textAlignment = NSTextAlignmentCenter;
         _iconLabel.textColor = [UIColor whiteColor];
-        _iconLabel.font = [UIFont boldSystemFontOfSize:14];
+        _iconLabel.font = autoFont(15);
 	}
 	return _iconLabel;
 }

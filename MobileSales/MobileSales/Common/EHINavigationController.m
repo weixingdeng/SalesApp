@@ -32,6 +32,7 @@
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:HEXCOLOR_333333,
                                                            NSFontAttributeName:[UIFont boldSystemFontOfSize:16]}];
     
+    self.navigationBar.translucent = NO;
   
 }
 

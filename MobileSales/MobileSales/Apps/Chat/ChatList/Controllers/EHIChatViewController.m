@@ -84,8 +84,7 @@
     [self.view addSubview:self.chatListTable];
     
     [segment mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.mas_offset(0);
-        make.top.mas_offset(64);
+        make.top.left.right.mas_offset(0);
         make.height.equalTo(@50);
     }];
     
@@ -179,7 +178,7 @@
         _chatListTable.separatorInset = UIEdgeInsetsMake(0, autoHeightOf6(45)+autoWidthOf6(36), 0, 0);
         _chatListTable.delegate = self;
         _chatListTable.dataSource = self;
-        _chatListTable.rowHeight = autoHeightOf6(65);
+        _chatListTable.rowHeight = autoHeightOf6(70);
         _chatListTable.tableFooterView = [UIView new];
     }
     return _chatListTable;

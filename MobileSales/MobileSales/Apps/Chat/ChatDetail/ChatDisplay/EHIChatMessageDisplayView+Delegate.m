@@ -17,6 +17,8 @@
     [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"EmptyCell"];
 }
 
+
+
 //tableView每组的单元格数量
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {

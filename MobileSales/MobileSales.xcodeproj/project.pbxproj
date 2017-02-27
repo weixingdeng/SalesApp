@@ -877,8 +877,8 @@
 				TargetAttributes = {
 					FB2564971E24A6AD00A9B857 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = WSJK7MN7ZH;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 9UM9375Q2R;
+						ProvisioningStyle = Manual;
 					};
 					FB2564B01E24A6AD00A9B857 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -1195,7 +1195,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = WSJK7MN7ZH;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chun Xie (NA92FFEFU9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chun Xie (NA92FFEFU9)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 9UM9375Q2R;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MobileSales/MSPrefixHeader.pch";
 				INFOPLIST_FILE = MobileSales/Info.plist;
@@ -1203,6 +1206,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.yihai.MobileSales;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7a728211-467d-469f-bcb3-10c601b69b6c";
+				PROVISIONING_PROFILE_SPECIFIER = MobileSalesProfileDev;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1213,7 +1218,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = WSJK7MN7ZH;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai eHi Car Rental Co., Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai eHi Car Rental Co., Ltd.";
+				DEVELOPMENT_TEAM = 9UM9375Q2R;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MobileSales/MSPrefixHeader.pch";
 				INFOPLIST_FILE = MobileSales/Info.plist;
@@ -1221,6 +1228,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.yihai.MobileSales;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "928e3672-f04d-489b-b359-4b5b34563b79";
+				PROVISIONING_PROFILE_SPECIFIER = MobileSalesProfileDis;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

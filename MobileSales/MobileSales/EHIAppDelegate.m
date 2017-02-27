@@ -17,9 +17,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
   
-    
+    [NSThread sleepForTimeInterval:0.7];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     EHIRootViewController *rootVC = [[EHIRootViewController alloc] init];
     [self.window setRootViewController:rootVC];
@@ -28,8 +27,6 @@
     SHARE_USER_CONTEXT.urlList.environment = ENVIRONMENT_DEMO;
     //初始化第三方SDK
     [self initThirdSDK];
-    
-   
     
     return YES;
 }

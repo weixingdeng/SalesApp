@@ -19,4 +19,8 @@
 
 @property (nonatomic , strong) NSArray *colorArray;
 
+//对应 EHIChatDetailVC中的isResetTime的坑
+//后期处理
+@property (nonatomic , copy) NSString *lastClickNodeId ; // 上次进入的聊天下标
+
 @end

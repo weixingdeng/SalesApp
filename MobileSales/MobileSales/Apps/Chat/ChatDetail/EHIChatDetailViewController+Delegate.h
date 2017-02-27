@@ -32,5 +32,6 @@
  */
 - (void)sendMessage:(EHIMessage *)message;
 
-
+//重置时间显示
+//- (void)resetTimeShow;
 @end

@@ -58,6 +58,10 @@
     EHIChatListModel *subModel = outerModel.Children[indexPath.row];
     
     EHIChatDetailViewController *detailVC = [[EHIChatDetailViewController alloc] init];
+    if (![subModel.NodeId isEqualToString:self.lastClickNodeId]) {
+        detailVC.isResetTime = YES;
+    }
+    self.lastClickNodeId = subModel.NodeId;
     detailVC.listModel = subModel;
     self.hidesBottomBarWhenPushed=YES;
     [self.navigationController pushViewController:detailVC animated:YES];

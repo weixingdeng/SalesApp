@@ -22,6 +22,11 @@
     [super viewWillAppear:animated];
     
     [self.socketManager setDelegate:self];
+    //坑 强制每次新对话都显示时间
+    if (self.isResetTime) {
+        [self resetTimeShow];
+        self.isResetTime = NO;
+    }
     //每次进入都刷新列表
     [self.messageView resetMessageView];
     
@@ -58,8 +63,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = self.listModel.NodeName;
+
+    [self.view addSubview:self.commentButton];
     [self.view addSubview:self.messageView];
     [self.view addSubview:self.chatBar];
+    
+    if (self.listModel.Comment.length) {
+        [self.commentButton setTitle:self.listModel.Comment forState:UIControlStateNormal];
+    }
+    
     [self addMasonry];
     
     [self setNavigationRight];
@@ -68,8 +80,19 @@
 
 - (void)addMasonry
 {
+    CGSize size = [self.commentButton.titleLabel.text boundingRectWithSize:CGSizeMake((SCREEN_WIDTH - 2 * 10.0), MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.commentButton.titleLabel.font} context:nil].size;
+    CGFloat commentHeight = size.height > 0 ? ( size.height + 10 ) : 0;
+
+    [self.commentButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(0);
+        make.right.mas_equalTo(0);
+        make.top.mas_equalTo(self.mas_topLayoutGuideBottom);
+        make.height.mas_equalTo(commentHeight);
+    }];
+    
     [self.messageView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.left.right.top.equalTo(self.view);
+        make.left.right.equalTo(self.commentButton);
+        make.top.mas_equalTo(self.commentButton.mas_bottom);
         make.bottom.equalTo(self.chatBar.mas_top);
     }];
     
@@ -77,6 +100,7 @@
         make.left.right.bottom.equalTo(self.view);
         make.height.mas_greaterThanOrEqualTo(40);
     }];
+     [self.view layoutIfNeeded];
 }
 
 //设置导航右边
@@ -130,6 +154,19 @@
         _statusManager = [EHIMessageStatusManager shareInstance];
     }
     return _statusManager;
+}
+
+- (UIButton *)commentButton
+{
+    if (!_commentButton) {
+        _commentButton = [[UIButton alloc] init];
+        [_commentButton setTitleColor:HEXCOLOR_333333 forState:UIControlStateNormal];
+        [_commentButton setBackgroundColor:HEXCOLOR_FFFBE0];
+        _commentButton.titleLabel.font = autoFont(10);
+        _commentButton.titleLabel.numberOfLines = 0;
+        _commentButton.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 10);
+    }
+    return _commentButton;
 }
 
 - (void)didReceiveMemoryWarning {

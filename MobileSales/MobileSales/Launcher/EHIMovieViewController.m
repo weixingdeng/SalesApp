@@ -34,11 +34,11 @@
     self.player.shouldAutoplay = YES;
     [self.player setControlStyle:MPMovieControlStyleNone];
     [self.player.view setFrame:self.view.bounds];
-    self.player.view.alpha = 0;
-    [UIView animateWithDuration:3 animations:^{
-        self.player.view.alpha = 1;
+//    self.player.view.alpha = 0;
+//    [UIView animateWithDuration:3 animations:^{
+//        self.player.view.alpha = 1;
         [self.player prepareToPlay];
-    }];
+//    }];
     
     switch (self.movieShowState) {
         case EHIAppFirstStart:

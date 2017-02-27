@@ -13,7 +13,9 @@
 
 - (void)scrollToBottomWithAnimation:(BOOL)animation
 {
-    CGFloat offsetY = self.contentSize.height > self.height - 64? self.contentSize.height - self.height : -(64);
+
+    CGFloat offsetY = self.contentSize.height > self.height? self.contentSize.height - self.height : 0;
+
     [self setContentOffset:CGPointMake(0, offsetY) animated:animation];
 }
 

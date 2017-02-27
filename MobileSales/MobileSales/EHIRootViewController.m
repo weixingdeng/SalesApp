@@ -22,7 +22,6 @@
     [super viewDidLoad];
     //加载动画
     [self loadAnimationLaunch];
-//    [self initHomeViewController];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,7 +39,6 @@
                         objectForKey:ISFIRSTSTARTAPP_KEY] isEqualToString:ISFIRSTSTARTAPP_FALSE];
     //如果不是第一次打开APP 进普通逻辑
     if (isNotFirstOpen) {
-        
         movieVC.movieURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"normal_movie" ofType:@"mp4"]];
         movieVC.movieShowState = EHIAppNormalStart;
         

@@ -33,8 +33,8 @@
         case ENVIRONMENT_DEMO:
         {
             self.BASE_HOST = @"http://demo5.1hai.cn/SalesAppAPI";
-            self.SOCKET_HOST = @"192.168.5.172";
-            self.SOCKET_PORT = 10000;
+            self.SOCKET_HOST = @"pythondemo.chinacloudapp.cn";
+            self.SOCKET_PORT = 8081;
             break;
         }
             
