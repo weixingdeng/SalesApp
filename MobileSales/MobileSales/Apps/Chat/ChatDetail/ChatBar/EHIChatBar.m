@@ -22,7 +22,7 @@
 - (instancetype)init
 {
     if (self = [super init]) {
-        [self setBackgroundColor:HEXCOLOR_F5F5F6];
+        [self setBackgroundColor:HEXCOLOR_E0E0E0];
         
         [self addSubview:self.textView];
         [self addSubview:self.sendBtn];
