@@ -41,12 +41,6 @@
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.chatListTable reloadData];
-        BOOL hasNoRead = [[EHIChatManager sharedInstance] isMessageNoRead];
-        if (hasNoRead) {
-            [self.tabBarController.tabBar showBadgeOnItemIndex:0];
-            return;
-        }
-        [self.tabBarController.tabBar hideBedgeOnItemIndex:0];
     });
     
 }

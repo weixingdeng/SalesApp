@@ -38,8 +38,6 @@
     [IQKeyboardManager sharedManager].enable = NO;
     [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
     
-    [MobClick startWithConfigure:nil];
-    
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     
     //腾讯bugly初始化
@@ -49,8 +47,6 @@
     config.reportLogLevel = BuglyLogLevelWarn;
     
     [Bugly startWithAppId:@"9cb1749a18" developmentDevice:YES config:config];
-    
-    
     
 }
 

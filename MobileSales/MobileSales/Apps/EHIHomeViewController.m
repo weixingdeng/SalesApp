@@ -44,6 +44,7 @@ static EHIHomeViewController *rootVC = nil;
     [super viewDidLoad];
     [self.tabBar setBackgroundColor:HEXCOLOR_F7F7F7];
     [self.tabBar setTintColor:HEXCOLOR_718DDE];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(haveNewMessage) name:HAVE_NEW_MESSAGE_NOTIFATION object:nil];
     BOOL hasNoRead = [[EHIChatManager sharedInstance] isMessageNoRead];
     if (hasNoRead) {
         [self.tabBar showBadgeOnItemIndex:0];
@@ -55,6 +56,17 @@ static EHIHomeViewController *rootVC = nil;
     [self setViewControllers:self.childVCArray];
 }
 
+- (void)haveNewMessage
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        BOOL hasNoRead = [[EHIChatManager sharedInstance] isMessageNoRead];
+        if (hasNoRead) {
+            [self.tabBarController.tabBar showBadgeOnItemIndex:0];
+            return;
+        }
+        [self.tabBarController.tabBar hideBedgeOnItemIndex:0];
+    });
+}
 
 
 - (void)didReceiveMemoryWarning {
@@ -102,6 +114,7 @@ static EHIHomeViewController *rootVC = nil;
 	return _CRMVC;
 }
 
+
 - (EHIOfficeViewController *)officeVC
 {
 	if (!_officeVC){
@@ -124,10 +137,6 @@ static EHIHomeViewController *rootVC = nil;
                                               imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)]];
         [_myInfomationVC.tabBarItem setSelectedImage:[[UIImage imageNamed:@"tabbar_myinfo_high"]
                                                       imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)]];
-//        [_myInfomationVC.nameLabel setText:@"赵丽颖"];
-//        [_myInfomationVC.userNoLabel setText:@"工号:106628"];
-//        [_myInfomationVC.sexLabel setText:@"性别"];
-//        _myInfomationVC.isBoy = NO;
 	}
 	return _myInfomationVC;
 }
